@@ -1,0 +1,37 @@
+{
+  "title": "JishoSeibiki",
+  "name": "jishoseibiki",
+  "version": "1.0.0",
+  "description": "Japanese dictionary lookup from context menu.",
+  "main": "index.js",
+  "author": "Nathan Henninger",
+  "homepage": "",
+  "icon": "",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "permissions": {
+    "cross-domain-content": ["https://glosbe.com/", "http://nihongo.monash.edu/"],
+    "private-browsing": true
+  },
+  "preferences": [
+    {
+      "name": "dictPref",
+      "type": "radio",
+      "title": "Dictionary",
+      "value": "JDIC",
+      "options": [
+        {
+          "value": "JDIC",
+          "label": "Jim Breen's WWWJDIC"
+        },
+        {
+          "value": "GLOSBE",
+          "label": "Glosbe.com"
+        }
+      ]
+    }
+  ]
+}

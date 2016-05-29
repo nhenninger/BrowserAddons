@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "JishoSeibiki",
+  "description": "Japanese dictionary lookup from context menu.",
+  "default_locale": "en",
+  "version": "1.0",
+
+  "icons": {
+    "16": "JS-icon-16.png",
+    "48": "JS-icon-48.png",
+    "128": "JS-icon-128.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+		"storage",
+    "https://glosbe.com/*",
+    "http://nihongo.monash.edu/*"
+  ],
+	"background": {
+		"scripts": ["background.js"]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "searchCommand": {
+    "message": "Search for ",
+    "description": "The text displayed before the query term in the context menu."
+  },
+  "noDefsAvail": {
+    "message": "No definitions could be retrieved.",
+    "description": "The text displayed when the array of text definitions is empty."
+  }
+}
