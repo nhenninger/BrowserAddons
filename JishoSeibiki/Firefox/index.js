@@ -5,8 +5,7 @@ var tabs = require("sdk/tabs");
 var preferences = require("sdk/simple-prefs").prefs;
 require("sdk/simple-prefs").on("", onPrefChange);
 function onPrefChange(prefname) {
-	dict = preferences.dictPref;
-	console.log("preferences changed: " + dict);
+	console.log("preferences changed: " + preferences.dictPref);
 };
 
 var contextMenu = require("sdk/context-menu");
@@ -14,16 +13,13 @@ var contextMenu = require("sdk/context-menu");
   label: "Something went wrong!",
   context: contextMenu.SelectionContext(),
   contentScriptFile: self.data.url("contentscript.js"),
-//  accessKey: "j",
-  image: self.data.url("JS-icon-16.png"),
   onMessage: function (selectionText) {
 		queryDict(selectionText);
 	}
 });
 
 function queryDict(text){
-	dict = preferences.dictPref;
-  if (dict === "JDIC") {
+  if (preferences.dictPref === "WWWJDIC") {
       contentURL = "http://nihongo.monash.edu/cgi-bin/wwwjdic?1ZUJ" + text;
       scriptFile = "JDICpanelscript.js";
     } else {

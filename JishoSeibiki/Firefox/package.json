@@ -1,11 +1,11 @@
 {
   "title": "JishoSeibiki",
   "name": "jishoseibiki",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Japanese dictionary lookup from context menu.",
   "main": "index.js",
   "author": "Nathan Henninger",
-  "homepage": "",
+  "homepage": "https://github.com/nhenninger",
   "icon": "",
   "engines": {
     "firefox": ">=38.0a1",
@@ -24,7 +24,7 @@
       "value": "JDIC",
       "options": [
         {
-          "value": "JDIC",
+          "value": "WWWJDIC",
           "label": "Jim Breen's WWWJDIC"
         },
         {

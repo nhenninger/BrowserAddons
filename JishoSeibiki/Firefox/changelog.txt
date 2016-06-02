@@ -4,4 +4,6 @@
 	
 ## TODO
 2016-06-TODO	Nathan Henninger	nathanhenninger@u.boisestate.edu
-	
+	Removed unnecessary BSU images.
+  Removed non-functional and commented-out code.
+  Use of .jpmignore to reduce file size.
