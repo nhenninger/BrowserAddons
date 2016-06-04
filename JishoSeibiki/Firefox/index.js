@@ -9,7 +9,7 @@ function onPrefChange(prefname) {
 };
 
 var contextMenu = require("sdk/context-menu");
- var menuItem = contextMenu.Item({
+contextMenu.Item({
   label: "Something went wrong!",
   context: contextMenu.SelectionContext(),
   contentScriptFile: self.data.url("contentscript.js"),
