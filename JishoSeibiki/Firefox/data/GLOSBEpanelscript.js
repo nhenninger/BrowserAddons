@@ -23,10 +23,16 @@ function extractMeanings(jsonObject) {
   for (i = 0; i < tuc.length; i++) {
     if (tuc[i].meanings) {
       for (j = 0; j < tuc[i].meanings.length; j++) {
-        var newDefinition = tuc[i].meanings[j].text.toString()
+        var newDefinition = tuc[i].meanings[j].text.toString();
         if (typeof(newDefinition) === "string") {
-          rval.push(newDefinition);
+          rval.push(decodeEntities(newDefinition));
         }
+      }
+    }
+    if (tuc[i].phrase) {
+      var newDefinition = tuc[i].phrase.text.toString();
+      if (typeof(newDefinition) === "string") {
+        rval.push(decodeEntities(newDefinition));
       }
     }
   }
@@ -56,4 +62,10 @@ function makePretty(meaningsArray) {
   }
   var currentDiv = document.getElementById("display"); 
   document.body.insertBefore(newDiv, currentDiv); 
+}
+
+function decodeEntities(encodedString) {
+    var textArea = document.createElement('textarea');
+    textArea.innerHTML = encodedString;
+    return textArea.value;
 }

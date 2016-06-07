@@ -7,3 +7,5 @@
 	Removed unnecessary BSU images.
   Removed non-functional and commented-out code.
   Use of .jpmignore to reduce file size.
+  Enhanced parsing of Glosbe.com to include additional definitions.
+  Enhanced parsing of Glosbe.com to enhance readability.
