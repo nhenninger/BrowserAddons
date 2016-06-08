@@ -2,7 +2,7 @@
   "title": "JishoSeibiki",
   "name": "jishoseibiki",
   "version": "1.1.0",
-  "description": "Japanese dictionary lookup from context menu.",
+  "description": "Japanese dictionary lookup from the context menu.",
   "main": "index.js",
   "author": "Nathan Henninger",
   "homepage": "https://github.com/nhenninger",
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "permissions": {
-    "cross-domain-content": ["https://glosbe.com/", "http://nihongo.monash.edu/"],
+    "cross-domain-content": ["https://glosbe.com/", "http://nihongo.monash.edu/", "http://jisho.org"],
     "private-browsing": true
   },
   "preferences": [
@@ -28,8 +28,12 @@
           "label": "Jim Breen's WWWJDIC"
         },
         {
-          "value": "GLOSBE",
+          "value": "GLOSBE_COM",
           "label": "Glosbe.com"
+        },
+        {
+          "value": "JISHO_ORG",
+          "label": "Jisho.org"
         }
       ]
     }

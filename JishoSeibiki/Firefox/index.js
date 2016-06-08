@@ -22,9 +22,12 @@ function queryDict(text){
   if (preferences.dictPref === "WWWJDIC") {
       contentURL = "http://nihongo.monash.edu/cgi-bin/wwwjdic?1ZUJ" + text;
       scriptFile = "JDICpanelscript.js";
-    } else {
+    } else if (preferences.dictPref === "GLOSBE_COM") {
       contentURL = "./panel.html?query=" + text;
       scriptFile = "GLOSBEpanelscript.js";
+    } else if (preferences.dictPref === "JISHO_ORG") {
+      contentURL = "./panel.html?query=" + text;
+      scriptFile = "JISHOpanelscript.js";
     }
   var panel = require("sdk/panel").Panel({
     width: 600,

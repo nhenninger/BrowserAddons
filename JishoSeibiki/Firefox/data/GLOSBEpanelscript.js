@@ -5,21 +5,9 @@ function getParameterByName(name) {
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-var query = getParameterByName('query');
-var url = "https://glosbe.com/gapi/translate?from=jpn&dest=eng&format=json&phrase=" + query;
-var request = new XMLHttpRequest();
-
-request.open("GET", url, true);
-request.onload = function () {
-  var jsonResponse = JSON.parse(request.responseText);
-  var meaningsArray = extractMeanings(jsonResponse);
-  makePretty(meaningsArray);
-};
-request.send();
-
 function extractMeanings(jsonObject) {
   var tuc = jsonObject["tuc"];
-  var rval =[];
+  var rval = [];
   for (i = 0; i < tuc.length; i++) {
     if (tuc[i].meanings) {
       for (j = 0; j < tuc[i].meanings.length; j++) {
@@ -65,7 +53,19 @@ function makePretty(meaningsArray) {
 }
 
 function decodeEntities(encodedString) {
-    var textArea = document.createElement('textarea');
+    var textArea = document.createElement("textarea");
     textArea.innerHTML = encodedString;
     return textArea.value;
 }
+
+var query = getParameterByName("query");
+var url = "https://glosbe.com/gapi/translate?from=jpn&dest=eng&format=json&phrase=" + query;
+var request = new XMLHttpRequest();
+
+request.open("GET", url, true);
+request.onload = function () {
+  var jsonResponse = JSON.parse(request.responseText);
+  var meaningsArray = extractMeanings(jsonResponse);
+  makePretty(meaningsArray);
+};
+request.send();
