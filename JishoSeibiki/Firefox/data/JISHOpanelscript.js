@@ -5,6 +5,7 @@ function getParameterByName(name) {
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+
 function extractMeanings(jsonObject) {
   var data = jsonObject["data"];
   var rval = [];
@@ -14,8 +15,16 @@ function extractMeanings(jsonObject) {
       newDefinition.japaneseArray = [];
       for (i = 0; i < data[h].japanese.length; i++) {
         var newJPObject = {};
-        newJPObject.word = data[h].japanese[i].word.toString();
-        newJPObject.reading = data[h].japanese[i].reading.toString();
+        if (data[h].japanese[i].word) {
+          newJPObject.word = data[h].japanese[i].word.toString();
+        } else {
+          newJPObject.word = "";
+        }
+        if (data[h].japanese[i].reading) {
+          newJPObject.reading = data[h].japanese[i].reading.toString();
+        } else {
+          newJPObject.reading = "";
+        }
         newDefinition.japaneseArray.push(newJPObject);
       }
     }
@@ -32,34 +41,30 @@ function extractMeanings(jsonObject) {
   return rval;
 }
 
+
 function makePretty(meaningsArray) {
   var newDiv = document.createElement("div");
   var newHeading = document.createElement("h3");
   var newHeaderText = document.createTextNode(query);
   newHeading.appendChild(newHeaderText);
   newDiv.appendChild(newHeading);
-  var newTable = document.createElement("table");
-  var newTableRow = document.createElement("tr");
-  var newTableHeading = document.createElement("th");
-  newTableHeading.appendChild(document.createTextNode("Word & Reading"));
-  newTableRow.appendChild(newTableHeading);
-  var newTableHeading = document.createElement("th");
-  newTableHeading.appendChild(document.createTextNode("English Definitions"));
-  newTableRow.appendChild(newTableHeading);
   
   if (meaningsArray.length > 0) {
+    var newTable = document.createElement("table");
     for (x = 0; x < meaningsArray.length; x++) {
       var newTableRow = document.createElement("tr");
 
-
+      // Left column for word and reading.
       var newTableData = document.createElement("td");
       if (meaningsArray[x].japaneseArray) {
         var newUL = document.createElement("ul");
         for (y = 0; y < meaningsArray[x].japaneseArray.length; y++) {
           var newLI = document.createElement("li");
           newLI.appendChild(document.createTextNode(meaningsArray[x].japaneseArray[y].word
-                                                    + "\t\t"
-                                                    + meaningsArray[x].japaneseArray[y].reading));
+                                                    + "\x09"
+                                                    + "("
+                                                    + meaningsArray[x].japaneseArray[y].reading
+                                                    + ")"));
           newUL.appendChild(newLI);
         }
         newTableData.appendChild(newUL);
@@ -67,28 +72,8 @@ function makePretty(meaningsArray) {
         newTableData.appendChild(document.createTextNode("N/A"));
       }
       newTableRow.appendChild(newTableData);
-      newTable.appendChild(newTableRow);
 
-      // var newTableData = document.createElement("td");
-      // if (meaningsArray[x].word) {
-      //   var newWordNode = document.createTextNode(meaningsArray[x].word);
-      // } else {
-      //   var newWordNode = document.createTextNode("N/A");
-      // }
-      // newTableData.appendChild(newWordNode);
-      // newTableRow.appendChild(newTableData);
-
-
-      // var newTableData = document.createElement("td");
-      // if (meaningsArray[x].reading) {
-      //   var newReadingNode = document.createTextNode(meaningsArray[x].reading);
-      // } else {
-      //   var newReadingNode = document.createTextNode("N/A");
-      // }
-      // newTableData.appendChild(newReadingNode);
-      // newTableRow.appendChild(newTableData);
-
-
+      // Right column for "senses" or meanings
       var newTableData = document.createElement("td");
       if (meaningsArray[x].meanings) {
         var newUL = document.createElement("ul");
@@ -115,12 +100,8 @@ function makePretty(meaningsArray) {
   document.body.insertBefore(newDiv, currentDiv); 
 }
 
-function decodeEntities(encodedString) {
-    var textArea = document.createElement("textarea");
-    textArea.innerHTML = encodedString;
-    return textArea.value;
-}
 
+// Execution starts here
 var query = getParameterByName("query");
 var url = "http://jisho.org/api/v1/search/words?keyword=" + query;
 var request = new XMLHttpRequest();

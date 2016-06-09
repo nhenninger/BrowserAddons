@@ -52,12 +52,14 @@ function makePretty(meaningsArray) {
   document.body.insertBefore(newDiv, currentDiv); 
 }
 
+// Necessary to turn HTML character encodings like &gt; into >
 function decodeEntities(encodedString) {
     var textArea = document.createElement("textarea");
     textArea.innerHTML = encodedString;
     return textArea.value;
 }
 
+// Execution starts here
 var query = getParameterByName("query");
 var url = "https://glosbe.com/gapi/translate?from=jpn&dest=eng&format=json&phrase=" + query;
 var request = new XMLHttpRequest();
