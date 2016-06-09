@@ -27,21 +27,20 @@ p {
 li:last-child {
   border: none;
 }
- 
-li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: 200px;
- 
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
+
+table {
+  font-family: verdana,arial,sans-serif;
+  font-size:11px;
+  color:#333333;
+  width: 100%;
+  border-width: 1px;
+  border-color: #666666;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
- 
-li a:hover {
-  font-size: 30px;
-  background: #f6f6f6;
+table td {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #666666;
 }

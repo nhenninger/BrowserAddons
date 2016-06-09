@@ -17,7 +17,7 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
   chrome.storage.sync.get({
-    dictPref: 'JDIC'
+    dictPref: 'WWWJDIC'
   }, function(items) {
     document.getElementById('dictionary').value = items.dictPref;
   });
