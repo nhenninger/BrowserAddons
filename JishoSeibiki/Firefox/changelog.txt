@@ -3,11 +3,12 @@
 	Initial release.
 	
 ## v1.5.0
-2016-06-TODO	Nathan Henninger	nathanhenninger@u.boisestate.edu
+2016-06-09	Nathan Henninger	nathanhenninger@u.boisestate.edu
 	Removed unnecessary BSU images.
   Removed non-functional and commented-out code.
   Use of .jpmignore to reduce file size.
   Enhanced parsing of Glosbe.com to include additional definitions.
   Enhanced parsing of Glosbe.com to enhance readability.
   Included Jisho.org functionality.
+  Updated Chrome version to equivalent functionality.
   Signed add-on.
