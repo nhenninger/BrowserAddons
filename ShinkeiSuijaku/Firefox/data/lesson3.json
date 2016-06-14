@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "一",
+  	  "on_yomi": "イチ、イッ",
+  	  "kun_yomi": "ひと",
+  	  "meaning": "one"
+  	},
+  	{
+  	  "character": "二",
+  	  "on_yomi": "ニ",
+  	  "kun_yomi": "ふた",
+  	  "meaning": "two"
+  	},
+  	{
+  	  "character": "三",
+  	  "on_yomi": "サン",
+  	  "kun_yomi": "みっ",
+  	  "meaning": "three"
+  	},
+  	{
+  	  "character": "四",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "よん、よ、よっ",
+  	  "meaning": "four"
+  	},
+  	{
+  	  "character": "五",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "いつ",
+  	  "meaning": "five"
+  	},
+  	{
+  	  "character": "六",
+  	  "on_yomi": "ロク、ロッ",
+  	  "kun_yomi": "むっ",
+  	  "meaning": "six"
+  	},
+  	{
+  	  "character": "七",
+  	  "on_yomi": "シチ",
+  	  "kun_yomi": "なな",
+  	  "meaning": "seven"
+  	},
+  	{
+  	  "character": "八",
+  	  "on_yomi": "ハチ、ハッ",
+  	  "kun_yomi": "やっ",
+  	  "meaning": "eight"
+  	},
+  	{
+  	  "character": "九",
+  	  "on_yomi": "キュウ、ク",
+  	  "kun_yomi": "ここの",
+  	  "meaning": "nine"
+  	},
+  	{
+  	  "character": "十",
+  	  "on_yomi": "ジュウ、ジュッ",
+  	  "kun_yomi": "とお",
+  	  "meaning": "ten"
+  	},
+  	{
+  	  "character": "百",
+  	  "on_yomi": "ヒャク、ビャク、ピャク",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "hundred"
+  	},
+  	{
+  	  "character": "千",
+  	  "on_yomi": "セン、ゼン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "thousand"
+  	},
+  	{
+  	  "character": "万",
+  	  "on_yomi": "マン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "ten thousand"
+  	},
+  	{
+  	  "character": "円",
+  	  "on_yomi": "エン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "yen; circle"
+  	},
+  	{
+  	  "character": "時",
+  	  "on_yomi": "ジ",
+  	  "kun_yomi": "とき",
+  	  "meaning": "time"
+  	}
+  ]
+}
