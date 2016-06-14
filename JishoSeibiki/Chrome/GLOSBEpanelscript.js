@@ -13,14 +13,14 @@ function extractMeanings(jsonObject) {
       for (j = 0; j < tuc[i].meanings.length; j++) {
         var newDefinition = tuc[i].meanings[j].text.toString();
         if (typeof(newDefinition) === "string") {
-          rval.push(decodeEntities(newDefinition));
+          rval.push(unescapeHTML(newDefinition));
         }
       }
     }
     if (tuc[i].phrase) {
       var newDefinition = tuc[i].phrase.text.toString();
       if (typeof(newDefinition) === "string") {
-        rval.push(decodeEntities(newDefinition));
+        rval.push(unescapeHTML(newDefinition));
       }
     }
   }
@@ -52,12 +52,20 @@ function makePretty(meaningsArray) {
   document.body.insertBefore(newDiv, currentDiv); 
 }
 
-// Necessary to turn HTML character encodings like &gt; into >
-function decodeEntities(encodedString) {
-    var textArea = document.createElement("textarea");
-    textArea.innerHTML = encodedString;
-    return textArea.value;
-}
+// https://stackoverflow.com/questions/22279231/using-js-jquery-how-can-i-unescape-html-and-put-quotes-back-in-the-str
+function unescapeHTML(str) {
+    return str
+         .replace(/&amp;/g, "&")
+         .replace(/&lt;/g, "<")
+         .replace(/&gt;/g, ">")
+         .replace(/&quot;/g, "\"")
+         .replace(/&lsquo;/g, "\‘")
+         .replace(/&rsquo;/g, "\’")
+         .replace(/&ldquo;/g, "\“")
+         .replace(/&rdquo;/g, "\”")
+         .replace(/&#39;/g, "\'")
+         .replace(/&#039;/g, "\'");
+ }
 
 // Execution starts here
 var query = getParameterByName("query");

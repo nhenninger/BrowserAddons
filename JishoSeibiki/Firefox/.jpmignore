@@ -2,3 +2,4 @@ changelog.txt
 *.xcf
 *.xpi
 *.md
+.jpmignore

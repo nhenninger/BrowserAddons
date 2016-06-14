@@ -12,3 +12,8 @@
   Included Jisho.org functionality.
   Updated Chrome version to equivalent functionality.
   Signed add-on.
+
+## v1.5.1
+2016-06-10  Nathan Henninger nathanhenninger@u.boisestate.edu
+  Replaced innerHTML security risk with str.replace chain for HTML character entity references.
+  Instructed .jpmignore to include itself.
