@@ -1,12 +1,12 @@
+var lessonNum = 1;
+var currCardSet = []; // A random subset from the lesson file
+var currBoard = []; // Twice size of currCardSet, objects have 3 parts: part1, part2, display
+var boardDimension = 4; // TODO: add a listener to update this
+
 function CardException(message) {
    this.message = message;
    this.name = "CardException";
 }
-
-var lessonNum = 1;
-var currCardSet = []; // A random subset from the lesson file
-var currBoard = []; // Twice size of currCardSet - one for each half of flash card
-var boardDimension = 4; // TODO: add a listener to update this
 
 // Populate currCardSet[] with random entries from the JSON file
 function loadLesson() {
@@ -58,15 +58,24 @@ function pickRandomIndices(len) {
   return rval;
 }
 
+// Generates a shuffled array of the playing cards.  Each card shares part1 and part2
+// with another but only displays one or the other.
 function prepCards() {
-  var randomCardLocations = [];
   for (i = 0; i < currCardSet.length; i++) {
     if (currCardSet[i].kana) {
       currBoard[i].part1 = currCardSet[i].kana;
+      currBoard[i].part2 = currCardSet[i].pronunciation;
+      currBoard[i].display = currBoard[i].part1;
+      currBoard[i + currCardSet.length].part1 = currCardSet[i].kana;
       currBoard[i + currCardSet.length].part2 = currCardSet[i].pronunciation;
+      currBoard[i + currCardSet.length].display = currBoard[i + currCardSet.length].part2;
     } else if (currCardSet[i].character) {
       currBoard[i].part1 = currCardSet[i].character;
+      currBoard[i].part2 = currCardSet[i].meaning;
+      currBoard[i].display = currBoard[i].part1;
+      currBoard[i + currCardSet.length].part1 = currCardSet[i].character;
       currBoard[i + currCardSet.length].part2 = currCardSet[i].meaning;
+      currBoard[i + currCardSet.length].display = currBoard[i + currCardSet.length].part2;
     } else {
       throw new CardException("InvalidCardSet");
     }
@@ -75,7 +84,25 @@ function prepCards() {
 }
 
 function drawBoard() {
-  for ()
+  var gameboard = document.getElementById("gameboard");
+  for (i = 0; i < boardDimension * boardDimension; i++) {
+    var newCardDiv = document.createElement("div");
+    newCardDiv.setAttribute("id", i);
+    newCardDiv.setAttribute("class", "card");
+    newCardDiv.setAttribute("onclick", "clickListener(" + i + ");");
+    gameboard.appendChild(newCardDiv);
+  }
+}
+
+function clickListener(selectedCard) {
+  for (i = 0; i < boardDimension * boardDimension; i++) {
+    if (i == selectedCard) {
+      continue;
+    }
+    if (currBoard[selectedCard].part1 === currBoard[i].part1) {
+      // we have a matched pair
+    }
+  }
 }
 
 function playGame() {
@@ -86,3 +113,4 @@ function playGame() {
 
 // https://jsfiddle.net/m1erickson/sAFku/
 //https://stackoverflow.com/questions/20060915/javascript-how-do-you-set-the-value-of-a-button-with-an-element-from-an-array
+// https://www.youtube.com/watch?v=c_ohDPWmsM0
