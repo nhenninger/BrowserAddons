@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "山",
+  	  "on_yomi": "サン",
+  	  "kun_yomi": "やま",
+  	  "meaning": "mountain"
+  	},
+  	{
+  	  "character": "川",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "かわ、がわ",
+  	  "meaning": "river"
+  	},
+  	{
+  	  "character": "元",
+  	  "on_yomi": "ゲン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "origin"
+  	},
+  	{
+  	  "character": "気",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "spirit"
+  	},
+  	{
+  	  "character": "天",
+  	  "on_yomi": "テン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "heaven"
+  	},
+  	{
+  	  "character": "私",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "わたし",
+  	  "meaning": "I; private"
+  	},
+  	{
+  	  "character": "今",
+  	  "on_yomi": "コン",
+  	  "kun_yomi": "いま",
+  	  "meaning": "now"
+  	},
+  	{
+  	  "character": "田",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "た、だ",
+  	  "meaning": "rice field"
+  	},
+  	{
+  	  "character": "女",
+  	  "on_yomi": "ジョ",
+  	  "kun_yomi": "おんな",
+  	  "meaning": "woman"
+  	},
+  	{
+  	  "character": "男",
+  	  "on_yomi": "ダン",
+  	  "kun_yomi": "おとこ",
+  	  "meaning": "man"
+  	},
+  	{
+  	  "character": "見",
+  	  "on_yomi": "ケン",
+  	  "kun_yomi": "み",
+  	  "meaning": "to see"
+  	},
+  	{
+  	  "character": "行",
+  	  "on_yomi": "コウ、ギョウ",
+  	  "kun_yomi": "い",
+  	  "meaning": "to go"
+  	},
+  	{
+  	  "character": "食",
+  	  "on_yomi": "ショク",
+  	  "kun_yomi": "た",
+  	  "meaning": "to eat"
+  	},
+  	{
+  	  "character": "飲",
+  	  "on_yomi": "イン",
+  	  "kun_yomi": "の",
+  	  "meaning": "to drink"
+  	}
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "東",
+  	  "on_yomi": "トウ",
+  	  "kun_yomi": "ひがし",
+  	  "meaning": "east"
+  	},
+  	{
+  	  "character": "西",
+  	  "on_yomi": "セイ、サイ",
+  	  "kun_yomi": "にし",
+  	  "meaning": "west"
+  	},
+  	{
+  	  "character": "南",
+  	  "on_yomi": "ナン",
+  	  "kun_yomi": "みなみ",
+  	  "meaning": "south"
+  	},
+  	{
+  	  "character": "北",
+  	  "on_yomi": "ホク、ホッ",
+  	  "kun_yomi": "きた",
+  	  "meaning": "north"
+  	},
+  	{
+  	  "character": "口",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "ぐち、くち",
+  	  "meaning": "mouth"
+  	},
+  	{
+  	  "character": "出",
+  	  "on_yomi": "シュッ、シュツ",
+  	  "kun_yomi": "で、だ",
+  	  "meaning": "to exit"
+  	},
+  	{
+  	  "character": "右",
+  	  "on_yomi": "ウ、ユウ",
+  	  "kun_yomi": "みぎ",
+  	  "meaning": "right"
+  	},
+  	{
+  	  "character": "左",
+  	  "on_yomi": "サ",
+  	  "kun_yomi": "ひだり",
+  	  "meaning": "left"
+  	},
+  	{
+  	  "character": "分",
+  	  "on_yomi": "フン、プン、ブン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "minute; to divide"
+  	},
+  	{
+  	  "character": "先",
+  	  "on_yomi": "セン",
+  	  "kun_yomi": "さき",
+  	  "meaning": "ahead"
+  	},
+  	{
+  	  "character": "生",
+  	  "on_yomi": "セイ、ショウ",
+  	  "kun_yomi": "う",
+  	  "meaning": "birth"
+  	},
+  	{
+  	  "character": "大",
+  	  "on_yomi": "ダイ、タイ",
+  	  "kun_yomi": "おお",
+  	  "meaning": "big"
+  	},
+  	{
+  	  "character": "学",
+  	  "on_yomi": "ガク、ガッ",
+  	  "kun_yomi": "まな",
+  	  "meaning": "learning"
+  	},
+  	{
+  	  "character": "外",
+  	  "on_yomi": "ガイ",
+  	  "kun_yomi": "そと",
+  	  "meaning": "outside"
+  	},
+  	{
+  	  "character": "国",
+  	  "on_yomi": "コク、ゴク",
+  	  "kun_yomi": "くに",
+  	  "meaning": "country"
+  	}
+  ]
+}

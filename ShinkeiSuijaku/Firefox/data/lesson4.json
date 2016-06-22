@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "日",
+  	  "on_yomi": "ニ、ニチ、ニッ",
+  	  "kun_yomi": "び、ひ",
+  	  "meaning": "day; sun"
+  	},
+  	{
+  	  "character": "本",
+  	  "on_yomi": "ホン",
+  	  "kun_yomi": "もと",
+  	  "meaning": "book; basis"
+  	},
+  	{
+  	  "character": "人",
+  	  "on_yomi": "ジン、ニン",
+  	  "kun_yomi": "ひと",
+  	  "meaning": "person"
+  	},
+  	{
+  	  "character": "月",
+  	  "on_yomi": "ゲツ、ガツ",
+  	  "kun_yomi": "つき",
+  	  "meaning": "moon; month"
+  	},
+  	{
+  	  "character": "火",
+  	  "on_yomi": "カ",
+  	  "kun_yomi": "ひ",
+  	  "meaning": "fire"
+  	},
+  	{
+  	  "character": "水",
+  	  "on_yomi": "スイ",
+  	  "kun_yomi": "みず",
+  	  "meaning": "water"
+  	},
+  	{
+  	  "character": "木",
+  	  "on_yomi": "モク",
+  	  "kun_yomi": "き",
+  	  "meaning": "tree"
+  	},
+  	{
+  	  "character": "金",
+  	  "on_yomi": "キン",
+  	  "kun_yomi": "かね",
+  	  "meaning": "gold; money"
+  	},
+  	{
+  	  "character": "土",
+  	  "on_yomi": "ド",
+  	  "kun_yomi": "つち",
+  	  "meaning": "soil"
+  	},
+  	{
+  	  "character": "曜",
+  	  "on_yomi": "ヨウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "weekday"
+  	},
+  	{
+  	  "character": "上",
+  	  "on_yomi": "うえ",
+  	  "kun_yomi": "ジョウ",
+  	  "meaning": "up"
+  	},
+  	{
+  	  "character": "下",
+  	  "on_yomi": "カ",
+  	  "kun_yomi": "した",
+  	  "meaning": "down"
+  	},
+  	{
+  	  "character": "中",
+  	  "on_yomi": "チュウ、ジュウ",
+  	  "kun_yomi": "なか",
+  	  "meaning": "middle"
+  	},
+  	{
+  	  "character": "半",
+  	  "on_yomi": "ハン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "half"
+  	}
+  ]
+}

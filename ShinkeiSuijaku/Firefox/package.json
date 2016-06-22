@@ -2,7 +2,7 @@
   "title": "ShinkeiSuijaku",
   "name": "shinkeisuijaku",
   "version": "1.0.0",
-  "description": "A memory game for Japanese kanji.",
+  "description": "A memory game for Japanese kana and kanji.",
   "main": "index.js",
   "author": "Nathan Henninger",
   "engines": {
