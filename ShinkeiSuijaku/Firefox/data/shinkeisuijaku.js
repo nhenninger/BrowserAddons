@@ -136,6 +136,8 @@ function newBoard(){  // TODO: change this and all calls to init()
                       // TODO: check listener for level selection
                       // TODO: finish creating JSON levels
                       // TODO: Do the funky chicken
+                      // TODO: Add checkbox to toggle display of meaning/romaji
+                      // TODO: Add card flipping effect
   var board = document.getElementById('memory_board');
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);

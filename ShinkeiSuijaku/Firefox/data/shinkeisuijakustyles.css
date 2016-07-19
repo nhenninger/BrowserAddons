@@ -7,6 +7,10 @@ h1 {
     margin-left: 20px;
 }
 
+div {
+  border-radius: 25px;
+}
+
 div#memory_board{
   background:#CCC;
   border:#999 1px solid;
@@ -18,6 +22,7 @@ div#memory_board{
 div#memory_board > div{
   background: url(tile_bg.jpg) no-repeat;
   border:#000 1px solid;
+  border-radius: 50px;
   width:71px;
   height:71px;
   float:left;
