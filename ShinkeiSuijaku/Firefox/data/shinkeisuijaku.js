@@ -2,7 +2,7 @@
 currCardSet = []; // A random subset from the lesson file
 var currBoard = []; // Twice size of currCardSet
 var boardDimension = 4; // TODO: add a listener to update this
-var latinTextIsOn = true;
+var latinTextIsOn;
 
 function CardException(message) {
    this.message = message;
@@ -132,8 +132,7 @@ function flip2Back(){
 }
 
 
-function newBoard(){  // TODO: change this and all calls to init()
-                      // TODO: add calls to reload from JSON files
+function init() {     // TODO: add calls to reload from JSON files
                       // TODO: check listener for level selection
                       // TODO: finish creating JSON levels
                       // TODO: Do the funky chicken
@@ -150,6 +149,7 @@ function newBoard(){  // TODO: change this and all calls to init()
   loadLesson();
   console.log("Lesson loaded.");
   // prepCards();
+  latinTextIsOn = document.getElementById("toggleLatinTextCheck").checked;
   tiles_flipped = 0;
   console.log("Just before loop, currCardSet length is " + currCardSet.length);
   for(var i = 0; i < currCardSet.length; i++){
@@ -187,6 +187,9 @@ function memoryFlipTile(tile,val){
     var latin_div = document.createElement("div");
     latin_div.appendChild(document.createTextNode(val.substring(1,val.length)));
     latin_div.setAttribute('class', 'latin_text');
+    if (!latinTextIsOn) {
+      latin_div.style.display = "none";
+    }
     tile.appendChild(latin_div);
     if(memory_values.length === 0){
       memory_values.push(val);
@@ -202,7 +205,7 @@ function memoryFlipTile(tile,val){
         // Check to see if the whole board is cleared
         if(tiles_flipped == currCardSet.length){
           alert("Board cleared... generating new board");
-          newBoard();
+          init();
         }
       } else {
         setTimeout(flip2Back, 700);
@@ -212,6 +215,7 @@ function memoryFlipTile(tile,val){
 }
 
 function toggleLatinText() {
+  latinTextIsOn = !latinTextIsOn;
   var latin_div_array = document.getElementsByClassName("latin_text");
   for (i = 0; i < latin_div_array.length; i++) {
     if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("display") === "block") {
