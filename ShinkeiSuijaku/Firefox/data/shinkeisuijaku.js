@@ -2,6 +2,7 @@
 currCardSet = []; // A random subset from the lesson file
 var currBoard = []; // Twice size of currCardSet
 var boardDimension = 4; // TODO: add a listener to update this
+var latinTextIsOn = true;
 
 function CardException(message) {
    this.message = message;
@@ -31,9 +32,9 @@ function loadLesson() {
     }
     // Duplicates the array
     currCardSet = currCardSet.concat(currCardSet);
-    console.log("currCardSet length before shuffle is " + currCardSet.length);
+    //console.log("currCardSet length before shuffle is " + currCardSet.length);
     currCardSet.memory_tile_shuffle();
-    console.log("currCardSet length after shuffle is " + currCardSet.length);
+    //console.log("currCardSet length after shuffle is " + currCardSet.length);
     // var randomIndices = pickRandomIndices(potentialCards.length);
     // if (potentialCards.length > boardDimension * boardDimension / 2) {
     //   boardDimension = Math.floor(Math.sqrt(potentialCards.length));
@@ -114,13 +115,13 @@ function flip2Back(){
   var tile_1 = document.getElementById(memory_tile_ids[0]);
   var tile_2 = document.getElementById(memory_tile_ids[1]);
   if (tile_1) {
-    tile_1.setAttribute('class', 'unflipped_card');
+    tile_1.setAttribute('class', 'card_front');
     while (tile_1.hasChildNodes()) {
       tile_1.removeChild(tile_1.firstChild);
     }
   }
   if (tile_2) {
-    tile_2.setAttribute('class', 'unflipped_card');
+    tile_2.setAttribute('class', 'card_front');
     while (tile_2.hasChildNodes()) {
         tile_2.removeChild(tile_2.firstChild);
     }
@@ -136,8 +137,9 @@ function newBoard(){  // TODO: change this and all calls to init()
                       // TODO: check listener for level selection
                       // TODO: finish creating JSON levels
                       // TODO: Do the funky chicken
-                      // TODO: Add checkbox to toggle display of meaning/romaji
                       // TODO: Add card flipping effect
+                      // TODO: add support for Anki cards (or some alternative?)
+                      // TODO: add support for audio cards?
   var board = document.getElementById('memory_board');
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
@@ -151,17 +153,17 @@ function newBoard(){  // TODO: change this and all calls to init()
   tiles_flipped = 0;
   console.log("Just before loop, currCardSet length is " + currCardSet.length);
   for(var i = 0; i < currCardSet.length; i++){
-    console.log("Creating new divs.  i = " + i);
+    //console.log("Creating new divs.  i = " + i);
     var tile = document.createElement("div");
     tile.setAttribute('id', 'tile_' + i);
     tile.setAttribute('onclick', 'memoryFlipTile(this,\'' + displayCardText(currCardSet[i]) + '\');');
-    tile.setAttribute('class', 'unflipped_card');
+    tile.setAttribute('class', 'card_front');
     document.getElementById('memory_board').appendChild(tile);
   }
 }
 
 function displayCardText(card) {
-  console.log("Now creating card display text.");
+  //console.log("Now creating card display text.");
   if (card.kana) {
     return card.kana
            + ''
@@ -179,11 +181,14 @@ function displayCardText(card) {
 
 function memoryFlipTile(tile,val){
   if(tile.childNodes.length === 0 && memory_values.length < 2){
-    tile.setAttribute("class", "flipped_card");
+    tile.setAttribute("class", "card_back");
     tile.appendChild(document.createTextNode(val[0]));
     tile.appendChild(document.createElement("br"));
-    tile.appendChild(document.createTextNode(val.substring(1,val.length)));
-    if(memory_values.length == 0){
+    var latin_div = document.createElement("div");
+    latin_div.appendChild(document.createTextNode(val.substring(1,val.length)));
+    latin_div.setAttribute('class', 'latin_text');
+    tile.appendChild(latin_div);
+    if(memory_values.length === 0){
       memory_values.push(val);
       memory_tile_ids.push(tile.id);
     } else if(memory_values.length == 1){
@@ -202,6 +207,17 @@ function memoryFlipTile(tile,val){
       } else {
         setTimeout(flip2Back, 700);
       }
+    }
+  }
+}
+
+function toggleLatinText() {
+  var latin_div_array = document.getElementsByClassName("latin_text");
+  for (i = 0; i < latin_div_array.length; i++) {
+    if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("display") === "block") {
+      latin_div_array[i].style.display = "none";
+    } else {
+      latin_div_array[i].style.display = "block";
     }
   }
 }

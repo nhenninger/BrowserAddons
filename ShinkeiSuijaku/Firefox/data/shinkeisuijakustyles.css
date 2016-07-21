@@ -28,15 +28,19 @@ div#memory_board > div{
   float:left;
   margin:10px;
   padding:20px;
-  font-size:32px;
+  font-size:36px;
   cursor:pointer;
   text-align:center;
 }
 
-div#memory_board > div.unflipped_card {
+div#memory_board > div > .latin_text{
+  font-size: 16px;
+}
+
+div#memory_board > div.card_front {
   background-color: #FFFFFF;
 }
 
-div#memory_board > div.flipped_card {
+div#memory_board > div.card_back {
   background-color: #F5F5DC;
 }
