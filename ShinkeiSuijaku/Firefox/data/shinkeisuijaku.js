@@ -24,16 +24,16 @@ function loadLesson() {
   request.onload = function () {
     var jsonResponse = JSON.parse(request.responseText);
     if (lessonNum > 2) {
-      currCardSet = jsonResponse["kanji"];
+      currCardSet = jsonResponse.kanji;
     } else if (lessonNum > 0) {
-      currCardSet = jsonResponse["syllabary"];
+      currCardSet = jsonResponse.syllabary;
     } else {
       throw new LessonException("InvalidLessonNumber");
     }
     // Duplicates the array
     currCardSet = currCardSet.concat(currCardSet);
     //console.log("currCardSet length before shuffle is " + currCardSet.length);
-    currCardSet.memory_tile_shuffle();
+    currCardSet.memory_card_shuffle();
     //console.log("currCardSet length after shuffle is " + currCardSet.length);
     // var randomIndices = pickRandomIndices(potentialCards.length);
     // if (potentialCards.length > boardDimension * boardDimension / 2) {
@@ -52,7 +52,7 @@ function loadLesson() {
 //   for (i = 0; i < len; i++) {
 //     rval[i] = i;
 //   }
-//   rval.memory_tile_shuffle;
+//   rval.memory_card_shuffle;
 //   return rval;
 // }
 
@@ -90,12 +90,12 @@ function loadLesson() {
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
 var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
+var memory_card_ids = [];
+var cards_flipped = 0;
 
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-Array.prototype.memory_tile_shuffle = function(){
+Array.prototype.memory_card_shuffle = function(){
   var i = this.length, randomIndex, tempVal;
   // While there remain elements to shuffle...
   while (i !== 0) {
@@ -107,28 +107,22 @@ Array.prototype.memory_tile_shuffle = function(){
     this[i] = this[randomIndex];
     this[randomIndex] = tempVal;
   }
-}
+};
 
 
 function flip2Back(){
-  // Flip the 2 tiles back over
-  var tile_1 = document.getElementById(memory_tile_ids[0]);
-  var tile_2 = document.getElementById(memory_tile_ids[1]);
-  if (tile_1) {
-    tile_1.setAttribute('class', 'card_front');
-    while (tile_1.hasChildNodes()) {
-      tile_1.removeChild(tile_1.firstChild);
-    }
+  // Flip the 2 cards back over
+  var card_1 = document.getElementById(memory_card_ids[0]);
+  var card_2 = document.getElementById(memory_card_ids[1]);
+  if (card_1) {
+    setFlipped(card_1);
   }
-  if (tile_2) {
-    tile_2.setAttribute('class', 'card_front');
-    while (tile_2.hasChildNodes()) {
-        tile_2.removeChild(tile_2.firstChild);
-    }
+  if (card_2) {
+    setFlipped(card_2);
   }
   // Clear both arrays
   memory_values = [];
-  memory_tile_ids = [];
+  memory_card_ids = [];
 }
 
 
@@ -139,6 +133,9 @@ function init() {     // TODO: add calls to reload from JSON files
                       // TODO: Add card flipping effect
                       // TODO: add support for Anki cards (or some alternative?)
                       // TODO: add support for audio cards?
+                      // TODO: move card creation logic from memoryFlipcard() to init();
+                      // TODO: Add reset button
+                      // TODO: Add toggle for flip animation
   var board = document.getElementById('memory_board');
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
@@ -150,28 +147,50 @@ function init() {     // TODO: add calls to reload from JSON files
   console.log("Lesson loaded.");
   // prepCards();
   latinTextIsOn = document.getElementById("toggleLatinTextCheck").checked;
-  tiles_flipped = 0;
-  console.log("Just before loop, currCardSet length is " + currCardSet.length);
+  cards_flipped = 0;
+  // animateFlipInit();
+  //console.log("Just before loop, currCardSet length is " + currCardSet.length);
   for(var i = 0; i < currCardSet.length; i++){
     //console.log("Creating new divs.  i = " + i);
-    var tile = document.createElement("div");
-    tile.setAttribute('id', 'tile_' + i);
-    tile.setAttribute('onclick', 'memoryFlipTile(this,\'' + displayCardText(currCardSet[i]) + '\');');
-    tile.setAttribute('class', 'card_front');
-    document.getElementById('memory_board').appendChild(tile);
+    var card = document.createElement("div");
+    card.setAttribute('id', 'card_' + i);
+    card.setAttribute('class', 'card');
+    var card_text = displayCardText(currCardSet[i]);
+    card.setAttribute('onclick', 'memoryFlipCard(this,\'' + card_text + '\');');
+    //card.setAttribute('class', 'card_front');
+    var card_container = document.createElement("div");
+    card_container.setAttribute('class', 'card_container');
+    var card_front = document.createElement("div");
+    card_front.setAttribute('class', 'card_front');
+    card_front.appendChild(document.createTextNode("foobs"));
+    var card_back = document.createElement("div");
+    card_back.setAttribute('class', 'card_back');
+    card_back.appendChild(document.createTextNode(card_text[0]));
+    card_back.appendChild(document.createElement("br"));
+    var card_back_latin = document.createElement("div");
+    card_back_latin.setAttribute('class', 'latin_text');
+    card_back_latin.appendChild(document.createTextNode(card_text.substring(1,card_text.length)));
+    if (!latinTextIsOn) {
+      card_back_latin.style.visibility = "hidden";
+    }
+    card_back.appendChild(card_back_latin);
+    card_container.appendChild(card_front);
+    card_container.appendChild(card_back);
+    card.appendChild(card_container);
+    document.getElementById('memory_board').appendChild(card);
   }
 }
 
 function displayCardText(card) {
   //console.log("Now creating card display text.");
   if (card.kana) {
-    return card.kana
-           + ''
-           + card.pronunciation;
+    return card.kana +
+           '' +
+           card.pronunciation;
   } else if (card.character) {
-    return card.character
-           + ''
-           + card.meaning;
+    return card.character +
+           '' +
+           card.meaning;
   } else {
     console.log("cardException displaying card text");
     throw new CardException("InvalidCardSet");
@@ -179,31 +198,33 @@ function displayCardText(card) {
 }
 
 
-function memoryFlipTile(tile,val){
-  if(tile.childNodes.length === 0 && memory_values.length < 2){
-    tile.setAttribute("class", "card_back");
-    tile.appendChild(document.createTextNode(val[0]));
-    tile.appendChild(document.createElement("br"));
-    var latin_div = document.createElement("div");
-    latin_div.appendChild(document.createTextNode(val.substring(1,val.length)));
-    latin_div.setAttribute('class', 'latin_text');
-    if (!latinTextIsOn) {
-      latin_div.style.display = "none";
-    }
-    tile.appendChild(latin_div);
+function memoryFlipCard(card,val){
+  // animateFlip(card);
+  if(!isFlipped(card) && memory_values.length < 2){
+    setFlipped(card);
+    // card.setAttribute("class", "card_back");
+    // card.appendChild(document.createTextNode(val[0]));
+    // card.appendChild(document.createElement("br"));
+    // var latin_div = document.createElement("div");
+    // latin_div.appendChild(document.createTextNode(val.substring(1,val.length)));
+    // latin_div.setAttribute('class', 'latin_text');
+    // if (!latinTextIsOn) {
+    //   latin_div.style.display = "none";
+    // }
+    // card.appendChild(latin_div);
     if(memory_values.length === 0){
       memory_values.push(val);
-      memory_tile_ids.push(tile.id);
+      memory_card_ids.push(card.id);
     } else if(memory_values.length == 1){
       memory_values.push(val);
-      memory_tile_ids.push(tile.id);
+      memory_card_ids.push(card.id);
       if(memory_values[0] == memory_values[1]){
-        tiles_flipped += 2;
+        cards_flipped += 2;
         // Clear both arrays
         memory_values = [];
-        memory_tile_ids = [];
+        memory_card_ids = [];
         // Check to see if the whole board is cleared
-        if(tiles_flipped == currCardSet.length){
+        if(cards_flipped == currCardSet.length){
           alert("Board cleared... generating new board");
           init();
         }
@@ -218,10 +239,44 @@ function toggleLatinText() {
   latinTextIsOn = !latinTextIsOn;
   var latin_div_array = document.getElementsByClassName("latin_text");
   for (i = 0; i < latin_div_array.length; i++) {
-    if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("display") === "block") {
-      latin_div_array[i].style.display = "none";
+    if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("visibility") === "visible") {
+      latin_div_array[i].style.visibility = "hidden";
     } else {
-      latin_div_array[i].style.display = "block";
+      latin_div_array[i].style.visibility = "visible";
     }
   }
 }
+
+// http://callmenick.com/post/css-transitions-transforms-animations-flipping-card
+function animateFlipInit() {
+  var cards = document.querySelectorAll(".card");
+  for ( var i  = 0, len = cards.length; i < len; i++ ) {
+    var card = cards[i];
+    clickListener( card );
+  }
+  }
+
+function isFlipped(card) {
+    // var c = card.classList;
+    if (card.classList.contains("flipped")) {
+      // c.remove("flipped");
+      return true;
+    } else {
+      // c.add("flipped");
+      return false;
+    }
+  }
+
+  function setFlipped(card){
+    if (isFlipped(card)) {
+      card.classList.remove("flipped");
+    } else {
+      card.classList.add("flipped");
+    }
+  }
+
+window.onload = function() {
+    document.getElementById('lesson_select').onchange = init;
+    document.getElementById('toggleLatinTextCheck').onchange = toggleLatinText;
+    init();
+};
