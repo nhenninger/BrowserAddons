@@ -32,63 +32,14 @@ function loadLesson() {
     }
     // Duplicates the array
     currCardSet = currCardSet.concat(currCardSet);
-    //console.log("currCardSet length before shuffle is " + currCardSet.length);
     currCardSet.memory_card_shuffle();
-    //console.log("currCardSet length after shuffle is " + currCardSet.length);
-    // var randomIndices = pickRandomIndices(potentialCards.length);
-    // if (potentialCards.length > boardDimension * boardDimension / 2) {
-    //   boardDimension = Math.floor(Math.sqrt(potentialCards.length));
-    // }
-    // for (i = 0; i < boardDimension * boardDimension / 2; i++) {
-    //   currCardSet[i] = potentialCards[randomIndices[i]];
-    // }
   };
   request.send(null);
 }
 
 
-// function pickRandomIndices(len) {
-//   var rval = [];
-//   for (i = 0; i < len; i++) {
-//     rval[i] = i;
-//   }
-//   rval.memory_card_shuffle;
-//   return rval;
-// }
-
-
-// Generates an array of the playing cards.  Each card shares part1 and part2
-// with another but only displays one or the other.
-// function prepCards() {
-//   for (i = 0; i < currCardSet.length; i++) {
-//     if (currCardSet[i].kana) {
-//       currBoard[i].part1 = currCardSet[i].kana;
-//       currBoard[i].part2 = currCardSet[i].pronunciation;
-//       currBoard[i].display = currBoard[i].part1;
-//       currBoard[i + currCardSet.length].part1 = currCardSet[i].kana;
-//       currBoard[i + currCardSet.length].part2 = currCardSet[i].pronunciation;
-//       currBoard[i + currCardSet.length].display = currBoard[i + currCardSet.length].part2;
-//     } else if (currCardSet[i].character) {
-//       currBoard[i].part1 = currCardSet[i].character;
-//       currBoard[i].part2 = currCardSet[i].meaning;
-//       currBoard[i].display = currBoard[i].part1;
-//       currBoard[i + currCardSet.length].part1 = currCardSet[i].character;
-//       currBoard[i + currCardSet.length].part2 = currCardSet[i].meaning;
-//       currBoard[i + currCardSet.length].display = currBoard[i + currCardSet.length].part2;
-//     } else {
-//       throw new CardException("InvalidCardSet");
-//     }
-//   }
-// }
-
-// https://jsfiddle.net/m1erickson/sAFku/
-//https://stackoverflow.com/questions/20060915/javascript-how-do-you-set-the-value-of-a-button-with-an-element-from-an-array
-// https://www.youtube.com/watch?v=c_ohDPWmsM0
-
-
-// Based on the script by Adam Khoury from the video tutorial:
+// With parts from the script by Adam Khoury from the video tutorial:
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
-var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 var memory_values = [];
 var memory_card_ids = [];
 var cards_flipped = 0;
@@ -130,10 +81,8 @@ function init() {     // TODO: add calls to reload from JSON files
                       // TODO: check listener for level selection
                       // TODO: finish creating JSON levels
                       // TODO: Do the funky chicken
-                      // TODO: Add card flipping effect
                       // TODO: add support for Anki cards (or some alternative?)
                       // TODO: add support for audio cards?
-                      // TODO: move card creation logic from memoryFlipcard() to init();
                       // TODO: Add reset button
                       // TODO: Add toggle for flip animation
   var board = document.getElementById('memory_board');
@@ -145,19 +94,14 @@ function init() {     // TODO: add calls to reload from JSON files
   console.log("Cards returned to original positions.");
   loadLesson();
   console.log("Lesson loaded.");
-  // prepCards();
   latinTextIsOn = document.getElementById("toggleLatinTextCheck").checked;
   cards_flipped = 0;
-  // animateFlipInit();
-  //console.log("Just before loop, currCardSet length is " + currCardSet.length);
   for(var i = 0; i < currCardSet.length; i++){
-    //console.log("Creating new divs.  i = " + i);
     var card = document.createElement("div");
     card.setAttribute('id', 'card_' + i);
     card.setAttribute('class', 'card');
     var card_text = displayCardText(currCardSet[i]);
     card.setAttribute('onclick', 'memoryFlipCard(this,\'' + card_text + '\');');
-    //card.setAttribute('class', 'card_front');
     var card_container = document.createElement("div");
     card_container.setAttribute('class', 'card_container');
     var card_front = document.createElement("div");
@@ -182,7 +126,6 @@ function init() {     // TODO: add calls to reload from JSON files
 }
 
 function displayCardText(card) {
-  //console.log("Now creating card display text.");
   if (card.kana) {
     return card.kana +
            '' +
@@ -199,19 +142,8 @@ function displayCardText(card) {
 
 
 function memoryFlipCard(card,val){
-  // animateFlip(card);
   if(!isFlipped(card) && memory_values.length < 2){
     setFlipped(card);
-    // card.setAttribute("class", "card_back");
-    // card.appendChild(document.createTextNode(val[0]));
-    // card.appendChild(document.createElement("br"));
-    // var latin_div = document.createElement("div");
-    // latin_div.appendChild(document.createTextNode(val.substring(1,val.length)));
-    // latin_div.setAttribute('class', 'latin_text');
-    // if (!latinTextIsOn) {
-    //   latin_div.style.display = "none";
-    // }
-    // card.appendChild(latin_div);
     if(memory_values.length === 0){
       memory_values.push(val);
       memory_card_ids.push(card.id);
@@ -247,22 +179,10 @@ function toggleLatinText() {
   }
 }
 
-// http://callmenick.com/post/css-transitions-transforms-animations-flipping-card
-function animateFlipInit() {
-  var cards = document.querySelectorAll(".card");
-  for ( var i  = 0, len = cards.length; i < len; i++ ) {
-    var card = cards[i];
-    clickListener( card );
-  }
-  }
-
 function isFlipped(card) {
-    // var c = card.classList;
     if (card.classList.contains("flipped")) {
-      // c.remove("flipped");
       return true;
     } else {
-      // c.add("flipped");
       return false;
     }
   }
