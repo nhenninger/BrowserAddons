@@ -3,6 +3,9 @@ currCardSet = []; // A random subset from the lesson file
 var currBoard = []; // Twice size of currCardSet
 var boardDimension = 4; // TODO: add a listener to update this
 var latinTextIsOn;
+var memory_values = [];
+var memory_card_ids = [];
+var cards_flipped = 0;
 
 function CardException(message) {
    this.message = message;
@@ -13,6 +16,20 @@ function LessonException(message) {
    this.name = "LessonException";
 }
 
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+Array.prototype.memory_card_shuffle = function(){
+  var i = this.length, randomIndex, tempVal;
+  // While there remain elements to shuffle...
+  while (i !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * i);
+    i--;
+    // And swap it with the current element.
+    tempVal = this[i];
+    this[i] = this[randomIndex];
+    this[randomIndex] = tempVal;
+  }
+};
 
 // Populate currCardSet[] with random entries from the JSON file
 function loadLesson() {
@@ -37,29 +54,21 @@ function loadLesson() {
   request.send(null);
 }
 
-
-// With parts from the script by Adam Khoury from the video tutorial:
-// http://www.youtube.com/watch?v=c_ohDPWmsM0
-var memory_values = [];
-var memory_card_ids = [];
-var cards_flipped = 0;
-
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-Array.prototype.memory_card_shuffle = function(){
-  var i = this.length, randomIndex, tempVal;
-  // While there remain elements to shuffle...
-  while (i !== 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * i);
-    i--;
-    // And swap it with the current element.
-    tempVal = this[i];
-    this[i] = this[randomIndex];
-    this[randomIndex] = tempVal;
+function isFlipped(card) {
+  if (card.classList.contains("flipped")) {
+    return true;
+  } else {
+    return false;
   }
-};
+}
 
+function setFlipped(card){
+  if (isFlipped(card)) {
+    card.classList.remove("flipped");
+  } else {
+    card.classList.add("flipped");
+  }
+}
 
 function flip2Back(){
   // Flip the 2 cards back over
@@ -76,7 +85,61 @@ function flip2Back(){
   memory_card_ids = [];
 }
 
+function displayCardText(card) {
+  if (card.kana) {
+    return card.kana +
+           '' +
+           card.pronunciation;
+  } else if (card.character) {
+    return card.character +
+           '' +
+           card.meaning;
+  } else {
+    console.log("cardException displaying card text");
+    throw new CardException("InvalidCardSet");
+  }
+}
 
+function memoryFlipCard(card,val){
+  if(!isFlipped(card) && memory_values.length < 2){
+    setFlipped(card);
+    if(memory_values.length === 0){
+      memory_values.push(val);
+      memory_card_ids.push(card.id);
+    } else if(memory_values.length == 1){
+      memory_values.push(val);
+      memory_card_ids.push(card.id);
+      if(memory_values[0] == memory_values[1]){
+        cards_flipped += 2;
+        // Clear both arrays
+        memory_values = [];
+        memory_card_ids = [];
+        // Check to see if the whole board is cleared
+        if(cards_flipped == currCardSet.length){
+          alert("Board cleared... generating new board");
+          init();
+        }
+      } else {
+        setTimeout(flip2Back, 700);
+      }
+    }
+  }
+}
+
+function toggleLatinText() {
+  latinTextIsOn = !latinTextIsOn;
+  var latin_div_array = document.getElementsByClassName("latin_text");
+  for (i = 0; i < latin_div_array.length; i++) {
+    if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("visibility") === "visible") {
+      latin_div_array[i].style.visibility = "hidden";
+    } else {
+      latin_div_array[i].style.visibility = "visible";
+    }
+  }
+}
+
+// With parts from the script by Adam Khoury from the video tutorial:
+// http://www.youtube.com/watch?v=c_ohDPWmsM0
 function init() {     // TODO: add calls to reload from JSON files
                       // TODO: check listener for level selection
                       // TODO: finish creating JSON levels
@@ -124,76 +187,6 @@ function init() {     // TODO: add calls to reload from JSON files
     document.getElementById('memory_board').appendChild(card);
   }
 }
-
-function displayCardText(card) {
-  if (card.kana) {
-    return card.kana +
-           '' +
-           card.pronunciation;
-  } else if (card.character) {
-    return card.character +
-           '' +
-           card.meaning;
-  } else {
-    console.log("cardException displaying card text");
-    throw new CardException("InvalidCardSet");
-  }
-}
-
-
-function memoryFlipCard(card,val){
-  if(!isFlipped(card) && memory_values.length < 2){
-    setFlipped(card);
-    if(memory_values.length === 0){
-      memory_values.push(val);
-      memory_card_ids.push(card.id);
-    } else if(memory_values.length == 1){
-      memory_values.push(val);
-      memory_card_ids.push(card.id);
-      if(memory_values[0] == memory_values[1]){
-        cards_flipped += 2;
-        // Clear both arrays
-        memory_values = [];
-        memory_card_ids = [];
-        // Check to see if the whole board is cleared
-        if(cards_flipped == currCardSet.length){
-          alert("Board cleared... generating new board");
-          init();
-        }
-      } else {
-        setTimeout(flip2Back, 700);
-      }
-    }
-  }
-}
-
-function toggleLatinText() {
-  latinTextIsOn = !latinTextIsOn;
-  var latin_div_array = document.getElementsByClassName("latin_text");
-  for (i = 0; i < latin_div_array.length; i++) {
-    if (window.getComputedStyle(latin_div_array[i], null).getPropertyValue("visibility") === "visible") {
-      latin_div_array[i].style.visibility = "hidden";
-    } else {
-      latin_div_array[i].style.visibility = "visible";
-    }
-  }
-}
-
-function isFlipped(card) {
-    if (card.classList.contains("flipped")) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function setFlipped(card){
-    if (isFlipped(card)) {
-      card.classList.remove("flipped");
-    } else {
-      card.classList.add("flipped");
-    }
-  }
 
 window.onload = function() {
     document.getElementById('lesson_select').onchange = init;
