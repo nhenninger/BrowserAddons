@@ -84,7 +84,7 @@ function init() {     // TODO: add calls to reload from JSON files
                       // TODO: add support for Anki cards (or some alternative?)
                       // TODO: add support for audio cards?
                       // TODO: Add reset button
-                      // TODO: Add toggle for flip animation
+                      // TODO: Add toggle for flip animation?
   var board = document.getElementById('memory_board');
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
