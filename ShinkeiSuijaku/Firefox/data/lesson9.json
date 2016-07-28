@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "午",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "noon"
+  	},
+    {
+      "character": "後",
+      "on_yomi": "ゴ",
+      "kun_yomi": "あと、うし",
+      "meaning": "after"
+    },
+    {
+      "character": "前",
+      "on_yomi": "ゼン",
+      "kun_yomi": "まえ",
+      "meaning": "before"
+    },
+    {
+      "character": "名",
+      "on_yomi": "メイ",
+      "kun_yomi": "な",
+      "meaning": "name"
+    },
+    {
+      "character": "白",
+      "on_yomi": "ハク",
+      "kun_yomi": "しろ",
+      "meaning": "white"
+    },
+    {
+      "character": "雨",
+      "on_yomi": "ウ",
+      "kun_yomi": "あめ",
+      "meaning": "rain"
+    },
+    {
+      "character": "書",
+      "on_yomi": "ショ",
+      "kun_yomi": "か",
+      "meaning": "to write"
+    },
+    {
+      "character": "友",
+      "on_yomi": "ユウ",
+      "kun_yomi": "とも",
+      "meaning": "friend"
+    },
+    {
+      "character": "間",
+      "on_yomi": "カン",
+      "kun_yomi": "あいだ",
+      "meaning": "between"
+    },
+    {
+      "character": "家",
+      "on_yomi": "カ",
+      "kun_yomi": "いえ",
+      "meaning": "house"
+    },
+    {
+      "character": "話",
+      "on_yomi": "フ",
+      "kun_yomi": "はな、はなし",
+      "meaning": "to speak"
+    },
+    {
+      "character": "少",
+      "on_yomi": "ショウ",
+      "kun_yomi": "すこ、すく",
+      "meaning": "little"
+    },
+    {
+      "character": "古",
+      "on_yomi": "コ",
+      "kun_yomi": "ふる",
+      "meaning": "old"
+    },
+    {
+      "character": "知",
+      "on_yomi": "チ",
+      "kun_yomi": "し",
+      "meaning": "to know"
+    },
+    {
+      "character": "来",
+      "on_yomi": "ライ",
+      "kun_yomi": "く、き、こ",
+      "meaning": "to come"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "京",
+  	  "on_yomi": "キョウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "capital"
+  	},
+    {
+  	  "character": "子",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "こ",
+  	  "meaning": "child"
+  	},
+    {
+  	  "character": "小",
+  	  "on_yomi": "ショウ",
+  	  "kun_yomi": "ちい",
+  	  "meaning": "small"
+  	},
+    {
+  	  "character": "会",
+  	  "on_yomi": "カイ",
+  	  "kun_yomi": "あ",
+  	  "meaning": "to meet"
+  	},
+    {
+  	  "character": "社",
+  	  "on_yomi": "シャ、ジャ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "company"
+  	},
+    {
+  	  "character": "父",
+  	  "on_yomi": "フ",
+  	  "kun_yomi": "ちち、とう",
+  	  "meaning": "father"
+  	},
+    {
+  	  "character": "母",
+  	  "on_yomi": "ボ",
+  	  "kun_yomi": "はは、かあ",
+  	  "meaning": "mother"
+  	},
+    {
+  	  "character": "高",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "たか",
+  	  "meaning": "high"
+  	},
+    {
+  	  "character": "校",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "school"
+  	},
+    {
+  	  "character": "毎",
+  	  "on_yomi": "マイ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "every"
+  	},
+    {
+  	  "character": "語",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "word"
+  	},
+    {
+  	  "character": "文",
+  	  "on_yomi": "ブン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "sentence"
+  	},
+    {
+  	  "character": "帰",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "かえ",
+  	  "meaning": "to return"
+  	},
+    {
+  	  "character": "入",
+  	  "on_yomi": "ニュウ",
+  	  "kun_yomi": "はい、いり、い",
+  	  "meaning": "to enter"
+  	}
+  ]
+}

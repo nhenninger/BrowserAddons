@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "住",
+  	  "on_yomi": "ジュウ",
+  	  "kun_yomi": "す",
+  	  "meaning": "to live"
+  	},
+    {
+      "character": "正",
+      "on_yomi": "ショウ",
+      "kun_yomi": "ただ",
+      "meaning": "right"
+    },
+    {
+      "character": "年",
+      "on_yomi": "ネン",
+      "kun_yomi": "とし",
+      "meaning": "year"
+    },
+    {
+      "character": "売",
+      "on_yomi": "バイ",
+      "kun_yomi": "う",
+      "meaning": "to sell"
+    },
+    {
+      "character": "買",
+      "on_yomi": "N/A",
+      "kun_yomi": "か",
+      "meaning": "to buy"
+    },
+    {
+      "character": "町",
+      "on_yomi": "チョウ",
+      "kun_yomi": "まち",
+      "meaning": "town"
+    },
+    {
+      "character": "長",
+      "on_yomi": "チョウ",
+      "kun_yomi": "なが",
+      "meaning": "long"
+    },
+    {
+      "character": "道",
+      "on_yomi": "ドウ",
+      "kun_yomi": "みち",
+      "meaning": "way"
+    },
+    {
+      "character": "雪",
+      "on_yomi": "セツ",
+      "kun_yomi": "ゆき",
+      "meaning": "snow"
+    },
+    {
+      "character": "立",
+      "on_yomi": "リツ",
+      "kun_yomi": "た",
+      "meaning": "to stand"
+    },
+    {
+      "character": "自",
+      "on_yomi": "ジ",
+      "kun_yomi": "N/A",
+      "meaning": "self"
+    },
+    {
+      "character": "夜",
+      "on_yomi": "ヤ",
+      "kun_yomi": "よる、よ",
+      "meaning": "night"
+    },
+    {
+      "character": "朝",
+      "on_yomi": "チョウ",
+      "kun_yomi": "あさ",
+      "meaning": "morning"
+    },
+    {
+      "character": "持",
+      "on_yomi": "ジ",
+      "kun_yomi": "も",
+      "meaning": "to hold"
+    }
+  ]
+}

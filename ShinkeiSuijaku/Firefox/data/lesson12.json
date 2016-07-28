@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "昔",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "むかし",
+  	  "meaning": "ancient times"
+  	},
+    {
+      "character": "々",
+      "on_yomi": "N/A",
+      "kun_yomi": "N/A",
+      "meaning": "symbol of a repetition of a kanji"
+    },
+    {
+      "character": "神",
+      "on_yomi": "ジン、シン",
+      "kun_yomi": "かみ",
+      "meaning": "God"
+    },
+    {
+      "character": "早",
+      "on_yomi": "ソウ",
+      "kun_yomi": "はや",
+      "meaning": "early"
+    },
+    {
+      "character": "起",
+      "on_yomi": "キ",
+      "kun_yomi": "お",
+      "meaning": "to get up"
+    },
+    {
+      "character": "牛",
+      "on_yomi": "ギュウ",
+      "kun_yomi": "うし",
+      "meaning": "cow"
+    },
+    {
+      "character": "使",
+      "on_yomi": "シ",
+      "kun_yomi": "つか",
+      "meaning": "to use"
+    },
+    {
+      "character": "働",
+      "on_yomi": "ドウ",
+      "kun_yomi": "はたら、ばたら",
+      "meaning": "to work"
+    },
+    {
+      "character": "連",
+      "on_yomi": "レン",
+      "kun_yomi": "つ",
+      "meaning": "to link"
+    },
+    {
+      "character": "別",
+      "on_yomi": "ベツ",
+      "kun_yomi": "わか",
+      "meaning": "to separate"
+    },
+    {
+      "character": "度",
+      "on_yomi": "ド",
+      "kun_yomi": "N/A",
+      "meaning": "time; degrees"
+    },
+    {
+      "character": "赤",
+      "on_yomi": "セキ",
+      "kun_yomi": "あか",
+      "meaning": "red"
+    },
+    {
+      "character": "青",
+      "on_yomi": "セイ",
+      "kun_yomi": "あお",
+      "meaning": "blue"
+    },
+    {
+      "character": "色",
+      "on_yomi": "シキ、ショク",
+      "kun_yomi": "いろ",
+      "meaning": "color"
+    }
+  ]
+}

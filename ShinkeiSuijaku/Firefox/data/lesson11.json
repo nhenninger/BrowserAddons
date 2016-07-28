@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "手",
+  	  "on_yomi": "シュ",
+  	  "kun_yomi": "て",
+  	  "meaning": "hand"
+  	},
+    {
+      "character": "紙",
+      "on_yomi": "シ",
+      "kun_yomi": "がみ、かみ",
+      "meaning": "paper"
+    },
+    {
+      "character": "好",
+      "on_yomi": "コウ",
+      "kun_yomi": "す、この",
+      "meaning": "favorite; to like"
+    },
+    {
+      "character": "近",
+      "on_yomi": "キン",
+      "kun_yomi": "ちか",
+      "meaning": "near"
+    },
+    {
+      "character": "明",
+      "on_yomi": "メイ",
+      "kun_yomi": "あか",
+      "meaning": "bright"
+    },
+    {
+      "character": "病",
+      "on_yomi": "ビョウ",
+      "kun_yomi": "N/A",
+      "meaning": "ill; sick"
+    },
+    {
+      "character": "院",
+      "on_yomi": "イン",
+      "kun_yomi": "N/A",
+      "meaning": "institution"
+    },
+    {
+      "character": "映",
+      "on_yomi": "エイ",
+      "kun_yomi": "うつ",
+      "meaning": "to reflect"
+    },
+    {
+      "character": "画",
+      "on_yomi": "ガ、カク",
+      "kun_yomi": "N/A",
+      "meaning": "picture"
+    },
+    {
+      "character": "歌",
+      "on_yomi": "カ",
+      "kun_yomi": "うた",
+      "meaning": "to sing"
+    },
+    {
+      "character": "市",
+      "on_yomi": "シ",
+      "kun_yomi": "いち",
+      "meaning": "city"
+    },
+    {
+      "character": "所",
+      "on_yomi": "ジョ、ショ",
+      "kun_yomi": "ところ、どころ",
+      "meaning": "place"
+    },
+    {
+      "character": "勉",
+      "on_yomi": "ベン",
+      "kun_yomi": "つと",
+      "meaning": "to make efforts"
+    },
+    {
+      "character": "強",
+      "on_yomi": "キョウ、ゴウ",
+      "kun_yomi": "つよ",
+      "meaning": "strong"
+    },
+    {
+      "character": "有",
+      "on_yomi": "ユウ",
+      "kun_yomi": "あ",
+      "meaning": "to exist"
+    },
+    {
+      "character": "旅",
+      "on_yomi": "リョ",
+      "kun_yomi": "たび",
+      "meaning": "travel"
+    }
+  ]
+}

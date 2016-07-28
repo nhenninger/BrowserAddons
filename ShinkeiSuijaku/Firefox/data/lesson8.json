@@ -1,0 +1,88 @@
+{
+  "kanji": [
+  	{
+  	  "character": "員",
+  	  "on_yomi": "イン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "member"
+  	},
+    {
+      "character": "新",
+      "on_yomi": "シン",
+      "kun_yomi": "あたら",
+      "meaning": "new"
+    },
+    {
+      "character": "聞",
+      "on_yomi": "ブン",
+      "kun_yomi": "き",
+      "meaning": "to listen"
+    },
+    {
+      "character": "作",
+      "on_yomi": "サク",
+      "kun_yomi": "つく",
+      "meaning": "to make"
+    },
+    {
+      "character": "仕",
+      "on_yomi": "シ",
+      "kun_yomi": "N/A",
+      "meaning": "to serve"
+    },
+    {
+      "character": "事",
+      "on_yomi": "ジ",
+      "kun_yomi": "ごと、こと",
+      "meaning": "thing"
+    },
+    {
+      "character": "電",
+      "on_yomi": "デン",
+      "kun_yomi": "N/A",
+      "meaning": "electricity"
+    },
+    {
+      "character": "車",
+      "on_yomi": "シャ",
+      "kun_yomi": "くるま",
+      "meaning": "car"
+    },
+    {
+      "character": "休",
+      "on_yomi": "キュウ",
+      "kun_yomi": "やす",
+      "meaning": "to rest"
+    },
+    {
+      "character": "言",
+      "on_yomi": "ゲン",
+      "kun_yomi": "い",
+      "meaning": "to say"
+    },
+    {
+      "character": "読書",
+      "on_yomi": "ドク",
+      "kun_yomi": "よ",
+      "meaning": "to read"
+    },
+    {
+      "character": "思",
+      "on_yomi": "シ",
+      "kun_yomi": "おも",
+      "meaning": "to think"
+    },
+    {
+      "character": "次",
+      "on_yomi": "ジ",
+      "kun_yomi": "つぎ",
+      "meaning": "next"
+    },
+    {
+      "character": "何",
+      "on_yomi": "N/A",
+      "kun_yomi": "なに、なん",
+      "meaning": "what"
+    }
+  ]
+}
