@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "供",
+  	  "on_yomi": "キョウ",
+  	  "kun_yomi": "ども、とも、そな",
+  	  "meaning": "companion; offer"
+  	},
+    {
+      "character": "世",
+      "on_yomi": "セ、セイ",
+      "kun_yomi": "よ",
+      "meaning": "world; generation;"
+    },
+    {
+      "character": "界",
+      "on_yomi": "カイ",
+      "kun_yomi": "N/A",
+      "meaning": "world"
+    },
+    {
+      "character": "全",
+      "on_yomi": "ゼン",
+      "kun_yomi": "まった",
+      "meaning": "all"
+    },
+    {
+      "character": "部",
+      "on_yomi": "ブ",
+      "kun_yomi": "へ",
+      "meaning": "part; section"
+    },
+    {
+      "character": "始",
+      "on_yomi": "シ",
+      "kun_yomi": "はじ",
+      "meaning": "to begin"
+    },
+    {
+      "character": "週",
+      "on_yomi": "シュウ",
+      "kun_yomi": "N/A",
+      "meaning": "week"
+    },
+    {
+      "character": "以",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "by means of; compared with"
+    },
+    {
+      "character": "考",
+      "on_yomi": "コウ",
+      "kun_yomi": "かんが",
+      "meaning": "to think; idea"
+    },
+    {
+      "character": "開",
+      "on_yomi": "カイ",
+      "kun_yomi": "あ、ひら",
+      "meaning": "to open"
+    },
+    {
+      "character": "屋",
+      "on_yomi": "オク",
+      "kun_yomi": "や",
+      "meaning": "shop; house"
+    },
+    {
+      "character": "方",
+      "on_yomi": "ホウ",
+      "kun_yomi": "かた、がた",
+      "meaning": "direction; person"
+    },
+    {
+      "character": "運",
+      "on_yomi": "ウン",
+      "kun_yomi": "はこ",
+      "meaning": "transport; luck"
+    },
+    {
+      "character": "動",
+      "on_yomi": "ドウ",
+      "kun_yomi": "うご",
+      "meaning": "to move"
+    },
+    {
+      "character": "教",
+      "on_yomi": "キョウ",
+      "kun_yomi": "おし",
+      "meaning": "to teach"
+    },
+    {
+      "character": "室",
+      "on_yomi": "シツ",
+      "kun_yomi": "N/A",
+      "meaning": "room"
+    }
+  ]
+}

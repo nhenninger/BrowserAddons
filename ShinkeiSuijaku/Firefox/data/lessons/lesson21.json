@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "信",
+  	  "on_yomi": "シン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "to trust; to believe in"
+  	},
+    {
+      "character": "経",
+      "on_yomi": "ケイ",
+      "kun_yomi": "N/A",
+      "meaning": "to pass through"
+    },
+    {
+      "character": "台",
+      "on_yomi": "タイ、ダイ",
+      "kun_yomi": "N/A",
+      "meaning": "stand"
+    },
+    {
+      "character": "風",
+      "on_yomi": "フウ",
+      "kun_yomi": "かぜ",
+      "meaning": "wind"
+    },
+    {
+      "character": "犬",
+      "on_yomi": "ケン",
+      "kun_yomi": "いぬ",
+      "meaning": "dog"
+    },
+    {
+      "character": "重",
+      "on_yomi": "ジュウ、チョウ",
+      "kun_yomi": "おも、かさ",
+      "meaning": "heavy; to pile up"
+    },
+    {
+      "character": "初",
+      "on_yomi": "ショ",
+      "kun_yomi": "はじ、はつ",
+      "meaning": "first"
+    },
+    {
+      "character": "若",
+      "on_yomi": "N/A",
+      "kun_yomi": "わか",
+      "meaning": "young"
+    },
+    {
+      "character": "送",
+      "on_yomi": "ソウ",
+      "kun_yomi": "おく",
+      "meaning": "to send"
+    },
+    {
+      "character": "幸",
+      "on_yomi": "コウ",
+      "kun_yomi": "しあわ、さいわ",
+      "meaning": "happiness"
+    },
+    {
+      "character": "計",
+      "on_yomi": "ケイ",
+      "kun_yomi": "はか",
+      "meaning": "to measure"
+    },
+    {
+      "character": "遅",
+      "on_yomi": "チ",
+      "kun_yomi": "おく、おそ",
+      "meaning": "late"
+    },
+    {
+      "character": "配",
+      "on_yomi": "パイ、ハイ",
+      "kun_yomi": "くば",
+      "meaning": "to deliver"
+    },
+    {
+      "character": "弟",
+      "on_yomi": "ダイ、デ",
+      "kun_yomi": "おとうと",
+      "meaning": "young brother"
+    },
+    {
+      "character": "妹",
+      "on_yomi": "マイ",
+      "kun_yomi": "いもうと",
+      "meaning": "young sister"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "歳",
+  	  "on_yomi": "サイ、セイ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "year; age"
+  	},
+    {
+      "character": "習",
+      "on_yomi": "シュウ",
+      "kun_yomi": "なら",
+      "meaning": "to learn"
+    },
+    {
+      "character": "主",
+      "on_yomi": "シュ",
+      "kun_yomi": "おも、ぬし",
+      "meaning": "main; lord"
+    },
+    {
+      "character": "結",
+      "on_yomi": "ケッ、ケツ",
+      "kun_yomi": "むす",
+      "meaning": "to tie; to join"
+    },
+    {
+      "character": "婚",
+      "on_yomi": "コン",
+      "kun_yomi": "N/A",
+      "meaning": "marriage"
+    },
+    {
+      "character": "集",
+      "on_yomi": "シュウ",
+      "kun_yomi": "あつ",
+      "meaning": "to gather"
+    },
+    {
+      "character": "発",
+      "on_yomi": "ハッ、ハツ、パツ",
+      "kun_yomi": "N/A",
+      "meaning": "to start; to reveal"
+    },
+    {
+      "character": "表",
+      "on_yomi": "ピョウ、ヒョウ",
+      "kun_yomi": "あらわ",
+      "meaning": "to express; surface"
+    },
+    {
+      "character": "品",
+      "on_yomi": "ヒン",
+      "kun_yomi": "しな",
+      "meaning": "goods; refinement"
+    },
+    {
+      "character": "字",
+      "on_yomi": "ジ",
+      "kun_yomi": "N/A",
+      "meaning": "character; letter"
+    },
+    {
+      "character": "活",
+      "on_yomi": "カツ、カッ",
+      "kun_yomi": "N/A",
+      "meaning": "lively"
+    },
+    {
+      "character": "写",
+      "on_yomi": "シャ",
+      "kun_yomi": "うつ",
+      "meaning": "to copy"
+    },
+    {
+      "character": "真",
+      "on_yomi": "シン",
+      "kun_yomi": "ま",
+      "meaning": "true; reality"
+    },
+    {
+      "character": "歩",
+      "on_yomi": "ホ、ポ",
+      "kun_yomi": "ある",
+      "meaning": "to walk"
+    },
+    {
+      "character": "野",
+      "on_yomi": "ヤ",
+      "kun_yomi": "の",
+      "meaning": "field"
+    }
+  ]
+}

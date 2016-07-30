@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "目",
+  	  "on_yomi": "モク",
+  	  "kun_yomi": "め",
+  	  "meaning": "eye"
+  	},
+    {
+      "character": "的",
+      "on_yomi": "テキ",
+      "kun_yomi": "まと",
+      "meaning": "target; -ish"
+    },
+    {
+      "character": "力",
+      "on_yomi": "リョク、リキ",
+      "kun_yomi": "ちから",
+      "meaning": "power"
+    },
+    {
+      "character": "洋",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "N/A",
+      "meaning": "ocean; overseas"
+    },
+    {
+      "character": "服",
+      "on_yomi": "フク",
+      "kun_yomi": "N/A",
+      "meaning": "clothes"
+    },
+    {
+      "character": "堂",
+      "on_yomi": "ドウ",
+      "kun_yomi": "N/A",
+      "meaning": "hall"
+    },
+    {
+      "character": "授",
+      "on_yomi": "ジュ",
+      "kun_yomi": "さずか",
+      "meaning": "to instruct"
+    },
+    {
+      "character": "業",
+      "on_yomi": "ギョウ",
+      "kun_yomi": "N/A",
+      "meaning": "business; vocation"
+    },
+    {
+      "character": "試",
+      "on_yomi": "シ",
+      "kun_yomi": "こころ",
+      "meaning": "test; to try"
+    },
+    {
+      "character": "験",
+      "on_yomi": "ケン",
+      "kun_yomi": "N/A",
+      "meaning": "to examine"
+    },
+    {
+      "character": "貸",
+      "on_yomi": "タイ",
+      "kun_yomi": "か",
+      "meaning": "to lend; loan"
+    },
+    {
+      "character": "図",
+      "on_yomi": "ト、ズ",
+      "kun_yomi": "はか",
+      "meaning": "drawing; to devise"
+    },
+    {
+      "character": "館",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "building; hall"
+    },
+    {
+      "character": "終",
+      "on_yomi": "シュウ",
+      "kun_yomi": "お",
+      "meaning": "end"
+    },
+    {
+      "character": "宿",
+      "on_yomi": "シュク",
+      "kun_yomi": "やど",
+      "meaning": "inn; to lodge in"
+    },
+    {
+      "character": "題",
+      "on_yomi": "ダイ",
+      "kun_yomi": "N/A",
+      "meaning": "title; topic"
+    }
+  ]
+}

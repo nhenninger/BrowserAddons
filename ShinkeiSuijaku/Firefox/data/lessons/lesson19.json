@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "春",
+  	  "on_yomi": "シュン",
+  	  "kun_yomi": "はる",
+  	  "meaning": "spring"
+  	},
+    {
+      "character": "秋",
+      "on_yomi": "シュウ",
+      "kun_yomi": "あき",
+      "meaning": "autumn"
+    },
+    {
+      "character": "冬",
+      "on_yomi": "トウ",
+      "kun_yomi": "ふゆ",
+      "meaning": "winter"
+    },
+    {
+      "character": "花",
+      "on_yomi": "カ",
+      "kun_yomi": "はな",
+      "meaning": "flower"
+    },
+    {
+      "character": "様",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "さま",
+      "meaning": "Mr.; Mrs.; condition"
+    },
+    {
+      "character": "不",
+      "on_yomi": "フ、ブ",
+      "kun_yomi": "N/A",
+      "meaning": "negative; non-"
+    },
+    {
+      "character": "姉",
+      "on_yomi": "シ",
+      "kun_yomi": "あね、ねえ",
+      "meaning": "older sister"
+    },
+    {
+      "character": "兄",
+      "on_yomi": "キョウ、ケイ",
+      "kun_yomi": "あに、にい",
+      "meaning": "older brother"
+    },
+    {
+      "character": "漢",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "China"
+    },
+    {
+      "character": "卒",
+      "on_yomi": "ソツ",
+      "kun_yomi": "N/A",
+      "meaning": "to graduate"
+    },
+    {
+      "character": "工",
+      "on_yomi": "コウ、ク",
+      "kun_yomi": "N/A",
+      "meaning": "craft; construction"
+    },
+    {
+      "character": "研",
+      "on_yomi": "ケン",
+      "kun_yomi": "と",
+      "meaning": "to polish; study"
+    },
+    {
+      "character": "究",
+      "on_yomi": "キュウ",
+      "kun_yomi": "きわ",
+      "meaning": "research"
+    },
+    {
+      "character": "質",
+      "on_yomi": "シツ、シチ",
+      "kun_yomi": "N/A",
+      "meaning": "quality; matter"
+    },
+    {
+      "character": "問",
+      "on_yomi": "モン",
+      "kun_yomi": "と",
+      "meaning": "question"
+    },
+    {
+      "character": "多",
+      "on_yomi": "タ",
+      "kun_yomi": "おお",
+      "meaning": "many; much"
+    }
+  ]
+}

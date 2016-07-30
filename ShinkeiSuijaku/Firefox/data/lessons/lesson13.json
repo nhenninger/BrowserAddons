@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "物",
+  	  "on_yomi": "ブツ",
+  	  "kun_yomi": "もの",
+  	  "meaning": "thing"
+  	},
+    {
+      "character": "鳥",
+      "on_yomi": "チョウ",
+      "kun_yomi": "とり",
+      "meaning": "bird"
+    },
+    {
+      "character": "料",
+      "on_yomi": "リョウ",
+      "kun_yomi": "N/A",
+      "meaning": "ingredients; fare"
+    },
+    {
+      "character": "理",
+      "on_yomi": "リ",
+      "kun_yomi": "N/A",
+      "meaning": "reason"
+    },
+    {
+      "character": "特",
+      "on_yomi": "トク、トッ",
+      "kun_yomi": "N/A",
+      "meaning": "special"
+    },
+    {
+      "character": "安",
+      "on_yomi": "アン",
+      "kun_yomi": "やす",
+      "meaning": "cheap; ease"
+    },
+    {
+      "character": "飯",
+      "on_yomi": "ハン",
+      "kun_yomi": "N/A",
+      "meaning": "food; cooked rice"
+    },
+    {
+      "character": "肉",
+      "on_yomi": "ニク",
+      "kun_yomi": "N/A",
+      "meaning": "meat"
+    },
+    {
+      "character": "悪",
+      "on_yomi": "アク",
+      "kun_yomi": "わる",
+      "meaning": "bad; wrong"
+    },
+    {
+      "character": "体",
+      "on_yomi": "タイ",
+      "kun_yomi": "からだ",
+      "meaning": "body"
+    },
+    {
+      "character": "空",
+      "on_yomi": "クウ",
+      "kun_yomi": "そら、あ、から",
+      "meaning": "sky; empty"
+    },
+    {
+      "character": "港",
+      "on_yomi": "コウ",
+      "kun_yomi": "みなと",
+      "meaning": "port; harbor"
+    },
+    {
+      "character": "着",
+      "on_yomi": "チャク",
+      "kun_yomi": "つ、き",
+      "meaning": "to reach; to wear"
+    },
+    {
+      "character": "同",
+      "on_yomi": "ドウ",
+      "kun_yomi": "おな",
+      "meaning": "same"
+    },
+    {
+      "character": "海",
+      "on_yomi": "カイ",
+      "kun_yomi": "うみ",
+      "meaning": "sea"
+    },
+    {
+      "character": "昼",
+      "on_yomi": "チュウ",
+      "kun_yomi": "ひる",
+      "meaning": "noon; daytime"
+    }
+  ]
+}

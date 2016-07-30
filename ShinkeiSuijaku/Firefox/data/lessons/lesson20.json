@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "皿",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "さら、ざら",
+  	  "meaning": "plate"
+  	},
+    {
+      "character": "声",
+      "on_yomi": "セイ",
+      "kun_yomi": "こえ",
+      "meaning": "voice"
+    },
+    {
+      "character": "茶",
+      "on_yomi": "チャ、サ",
+      "kun_yomi": "N/A",
+      "meaning": "tea"
+    },
+    {
+      "character": "止",
+      "on_yomi": "シ",
+      "kun_yomi": "と",
+      "meaning": "to stop"
+    },
+    {
+      "character": "枚",
+      "on_yomi": "マイ",
+      "kun_yomi": "N/A",
+      "meaning": "sheet of..."
+    },
+    {
+      "character": "両",
+      "on_yomi": "リョウ",
+      "kun_yomi": "N/A",
+      "meaning": "both"
+    },
+    {
+      "character": "無",
+      "on_yomi": "ム、ブ",
+      "kun_yomi": "な",
+      "meaning": "none"
+    },
+    {
+      "character": "払",
+      "on_yomi": "N/A",
+      "kun_yomi": "はら、ばら",
+      "meaning": "to pay"
+    },
+    {
+      "character": "心",
+      "on_yomi": "シン",
+      "kun_yomi": "こころ",
+      "meaning": "heart; mind"
+    },
+    {
+      "character": "笑",
+      "on_yomi": "ショウ",
+      "kun_yomi": "わら、え",
+      "meaning": "to laugh"
+    },
+    {
+      "character": "絶",
+      "on_yomi": "ゼッ、ゼツ",
+      "kun_yomi": "た",
+      "meaning": "to discontinue"
+    },
+    {
+      "character": "対",
+      "on_yomi": "タイ、ツイ",
+      "kun_yomi": "N/A",
+      "meaning": "opposite"
+    },
+    {
+      "character": "痛",
+      "on_yomi": "ツウ",
+      "kun_yomi": "いた",
+      "meaning": "pain"
+    },
+    {
+      "character": "最",
+      "on_yomi": "サイ",
+      "kun_yomi": "もっと",
+      "meaning": "utmost"
+    },
+    {
+      "character": "続",
+      "on_yomi": "ゾク",
+      "kun_yomi": "つづ",
+      "meaning": "to continue"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "kanji": [
+  	{
+  	  "character": "顔",
+  	  "on_yomi": "ガン",
+  	  "kun_yomi": "かお、がお",
+  	  "meaning": "face"
+  	},
+    {
+      "character": "情",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "なさ",
+      "meaning": "emotion; condition"
+    },
+    {
+      "character": "怒",
+      "on_yomi": "ド",
+      "kun_yomi": "おこ、いか",
+      "meaning": "to get angry"
+    },
+    {
+      "character": "変",
+      "on_yomi": "ヘン",
+      "kun_yomi": "か",
+      "meaning": "change; abnormal"
+    },
+    {
+      "character": "相",
+      "on_yomi": "ショウ、ソウ",
+      "kun_yomi": "あい",
+      "meaning": "mutual"
+    },
+    {
+      "character": "横",
+      "on_yomi": "オウ",
+      "kun_yomi": "よこ",
+      "meaning": "sideways"
+    },
+    {
+      "character": "比",
+      "on_yomi": "ヒ",
+      "kun_yomi": "くら",
+      "meaning": "to compare"
+    },
+    {
+      "character": "化",
+      "on_yomi": "カ、ケ",
+      "kun_yomi": "ば",
+      "meaning": "to change into"
+    },
+    {
+      "character": "違",
+      "on_yomi": "イ",
+      "kun_yomi": "ちが",
+      "meaning": "to differ"
+    },
+    {
+      "character": "悲",
+      "on_yomi": "ヒ",
+      "kun_yomi": "かな",
+      "meaning": "sad"
+    },
+    {
+      "character": "調",
+      "on_yomi": "チョウ",
+      "kun_yomi": "しら",
+      "meaning": "to investigate"
+    },
+    {
+      "character": "査",
+      "on_yomi": "サ",
+      "kun_yomi": "N/A",
+      "meaning": "to inspect"
+    },
+    {
+      "character": "果",
+      "on_yomi": "カ",
+      "kun_yomi": "は",
+      "meaning": "fruit; result"
+    },
+    {
+      "character": "感",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "to sense; to feel"
+    },
+    {
+      "character": "答",
+      "on_yomi": "トウ",
+      "kun_yomi": "こた、こたえ",
+      "meaning": "answer"
+    }
+  ]
+}

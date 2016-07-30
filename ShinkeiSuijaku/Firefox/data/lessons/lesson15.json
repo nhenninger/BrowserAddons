@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "死",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "し",
+  	  "meaning": "death; to die"
+  	},
+    {
+      "character": "意",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "mind; meaning"
+    },
+    {
+      "character": "味",
+      "on_yomi": "ミ",
+      "kun_yomi": "あじ",
+      "meaning": "flavor; taste"
+    },
+    {
+      "character": "注",
+      "on_yomi": "チュウ",
+      "kun_yomi": "そそ",
+      "meaning": "to pour; to shed"
+    },
+    {
+      "character": "夏",
+      "on_yomi": "カ",
+      "kun_yomi": "なつ",
+      "meaning": "summer"
+    },
+    {
+      "character": "魚",
+      "on_yomi": "ギョ",
+      "kun_yomi": "さかな、うお",
+      "meaning": "fish"
+    },
+    {
+      "character": "寺",
+      "on_yomi": "ジ",
+      "kun_yomi": "てら",
+      "meaning": "temple"
+    },
+    {
+      "character": "広",
+      "on_yomi": "コウ",
+      "kun_yomi": "ひろ",
+      "meaning": "spacious; wide"
+    },
+    {
+      "character": "転",
+      "on_yomi": "テン",
+      "kun_yomi": "ころ",
+      "meaning": "to roll over"
+    },
+    {
+      "character": "借",
+      "on_yomi": "シャク、シャッ",
+      "kun_yomi": "か",
+      "meaning": "to borrow"
+    },
+    {
+      "character": "走",
+      "on_yomi": "ソウ",
+      "kun_yomi": "はし",
+      "meaning": "to run"
+    },
+    {
+      "character": "建",
+      "on_yomi": "ケン",
+      "kun_yomi": "たて、た",
+      "meaning": "to build"
+    },
+    {
+      "character": "地",
+      "on_yomi": "チ、ジ",
+      "kun_yomi": "N/A",
+      "meaning": "ground"
+    },
+    {
+      "character": "場",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "ば",
+      "meaning": "place"
+    },
+    {
+      "character": "足",
+      "on_yomi": "ソク",
+      "kun_yomi": "あし、た",
+      "meaning": "foot; leg"
+    },
+    {
+      "character": "通",
+      "on_yomi": "ツウ",
+      "kun_yomi": "とお、かよ",
+      "meaning": "to pass; to commute"
+    }
+  ]
+}

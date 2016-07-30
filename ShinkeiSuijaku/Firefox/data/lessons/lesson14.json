@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "彼",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "かれ、かの",
+  	  "meaning": "he"
+  	},
+    {
+      "character": "代",
+      "on_yomi": "ダイ",
+      "kun_yomi": "か",
+      "meaning": "age; replace"
+    },
+    {
+      "character": "留",
+      "on_yomi": "リュウ、ル",
+      "kun_yomi": "と",
+      "meaning": "to stay; to keep"
+    },
+    {
+      "character": "族",
+      "on_yomi": "ゾク",
+      "kun_yomi": "N/A",
+      "meaning": "family; tribe"
+    },
+    {
+      "character": "親",
+      "on_yomi": "シン",
+      "kun_yomi": "おや、した",
+      "meaning": "parent; intimacy"
+    },
+    {
+      "character": "切",
+      "on_yomi": "セツ",
+      "kun_yomi": "き、きっ",
+      "meaning": "to cut"
+    },
+    {
+      "character": "英",
+      "on_yomi": "エイ",
+      "kun_yomi": "N/A",
+      "meaning": "English; excellent"
+    },
+    {
+      "character": "店",
+      "on_yomi": "テン",
+      "kun_yomi": "みせ",
+      "meaning": "shop"
+    },
+    {
+      "character": "去",
+      "on_yomi": "キョ、コ",
+      "kun_yomi": "さ",
+      "meaning": "past; to leave"
+    },
+    {
+      "character": "急",
+      "on_yomi": "キュウ",
+      "kun_yomi": "いそ",
+      "meaning": "to hurry; emergency"
+    },
+    {
+      "character": "乗",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "の",
+      "meaning": "to ride"
+    },
+    {
+      "character": "当",
+      "on_yomi": "トウ",
+      "kun_yomi": "あ",
+      "meaning": "to hit"
+    },
+    {
+      "character": "音",
+      "on_yomi": "オン",
+      "kun_yomi": "おと、ね",
+      "meaning": "sound"
+    },
+    {
+      "character": "楽",
+      "on_yomi": "ガク、ガッ、ラク",
+      "kun_yomi": "たの",
+      "meaning": "pleasure"
+    },
+    {
+      "character": "医",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "doctor; medicine"
+    },
+    {
+      "character": "者",
+      "on_yomi": "シャ",
+      "kun_yomi": "もの",
+      "meaning": "person"
+    }
+  ]
+}

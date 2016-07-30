@@ -1,0 +1,100 @@
+{
+  "kanji": [
+  	{
+  	  "character": "記",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "to write down"
+  	},
+    {
+      "character": "銀",
+      "on_yomi": "ギン",
+      "kun_yomi": "N/A",
+      "meaning": "silver"
+    },
+    {
+      "character": "回",
+      "on_yomi": "カイ",
+      "kun_yomi": "まわ",
+      "meaning": "...times; to turn"
+    },
+    {
+      "character": "夕",
+      "on_yomi": "N/A",
+      "kun_yomi": "ゆう",
+      "meaning": "evening"
+    },
+    {
+      "character": "黒",
+      "on_yomi": "コク",
+      "kun_yomi": "くろ",
+      "meaning": "black"
+    },
+    {
+      "character": "用",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "N/A",
+      "meaning": "task; to use"
+    },
+    {
+      "character": "守",
+      "on_yomi": "ス、シュ",
+      "kun_yomi": "まも",
+      "meaning": "to keep; to protect"
+    },
+    {
+      "character": "末",
+      "on_yomi": "マツ",
+      "kun_yomi": "すえ",
+      "meaning": "the end of"
+    },
+    {
+      "character": "待",
+      "on_yomi": "タイ",
+      "kun_yomi": "ま、まち",
+      "meaning": "to wait"
+    },
+    {
+      "character": "残",
+      "on_yomi": "ザン",
+      "kun_yomi": "のこ",
+      "meaning": "to remain"
+    },
+    {
+      "character": "番",
+      "on_yomi": "バン",
+      "kun_yomi": "N/A",
+      "meaning": "order; number"
+    },
+    {
+      "character": "駅",
+      "on_yomi": "エキ",
+      "kun_yomi": "N/A",
+      "meaning": "station"
+    },
+    {
+      "character": "説",
+      "on_yomi": "セツ、セッ",
+      "kun_yomi": "N/A",
+      "meaning": "theory; to explain"
+    },
+    {
+      "character": "案",
+      "on_yomi": "アン",
+      "kun_yomi": "N/A",
+      "meaning": "idea; proposal"
+    },
+    {
+      "character": "内",
+      "on_yomi": "ナイ",
+      "kun_yomi": "N/A",
+      "meaning": "inside; inner"
+    },
+    {
+      "character": "忘",
+      "on_yomi": "ボウ",
+      "kun_yomi": "わす",
+      "meaning": "to forget"
+    }
+  ]
+}
