@@ -1,4 +1,4 @@
-// var lessonNum = 1;
+/*jshint esversion: 6 */
 currCardSet = []; // A random subset from the lesson file
 var currBoard = []; // Twice size of currCardSet
 var boardDimension = 4; // TODO: add a listener to update this
@@ -6,6 +6,7 @@ var latinTextIsOn;
 var memory_values = [];
 var memory_card_ids = [];
 var cards_flipped = 0;
+const NUM_OF_LESSONS = 23;
 
 function CardException(message) {
    this.message = message;
@@ -31,11 +32,24 @@ Array.prototype.memory_card_shuffle = function(){
   }
 };
 
+function listLessons() {
+  var lesson_dropdown = document.getElementById("lesson_select");
+  for (var i = 1; i <= NUM_OF_LESSONS; i++) {
+    var newOption = document.createElement("option");
+    if (i == 1) {
+      newOption.setAttribute("selected", "selected");
+    }
+    newOption.setAttribute("value", i);
+    newOption.appendChild(document.createTextNode("Lesson " + i));
+    lesson_dropdown.appendChild(newOption);
+  }
+}
+
 // Populate currCardSet[] with random entries from the JSON file
 function loadLesson() {
   lessonNum = parseInt(document.getElementById("lesson_select").value);
   var request = new XMLHttpRequest();
-  var url = "lesson" + lessonNum + ".json";
+  var url = "lessons/lesson" + lessonNum + ".json";
   request.open("GET", url, false);
   request.overrideMimeType("application/json");
   request.onload = function () {
@@ -88,11 +102,11 @@ function flip2Back(){
 function displayCardText(card) {
   if (card.kana) {
     return card.kana +
-           '' +
+           "" +
            card.pronunciation;
   } else if (card.character) {
     return card.character +
-           '' +
+           "" +
            card.meaning;
   } else {
     console.log("cardException displaying card text");
@@ -142,13 +156,11 @@ function toggleLatinText() {
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
 function init() {     // TODO: add calls to reload from JSON files
                       // TODO: check listener for level selection
-                      // TODO: finish creating JSON levels
-                      // TODO: Do the funky chicken
                       // TODO: add support for Anki cards (or some alternative?)
                       // TODO: add support for audio cards?
                       // TODO: Add reset button
                       // TODO: Add toggle for flip animation?
-  var board = document.getElementById('memory_board');
+  var board = document.getElementById("memory_board");
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
   }
@@ -161,21 +173,21 @@ function init() {     // TODO: add calls to reload from JSON files
   cards_flipped = 0;
   for(var i = 0; i < currCardSet.length; i++){
     var card = document.createElement("div");
-    card.setAttribute('id', 'card_' + i);
-    card.setAttribute('class', 'card');
+    card.setAttribute("id", "card_" + i);
+    card.setAttribute("class", "card");
     var card_text = displayCardText(currCardSet[i]);
-    card.setAttribute('onclick', 'memoryFlipCard(this,\'' + card_text + '\');');
+    card.setAttribute("onclick", "memoryFlipCard(this,\"" + card_text + "\");");
     var card_container = document.createElement("div");
-    card_container.setAttribute('class', 'card_container');
+    card_container.setAttribute("class", "card_container");
     var card_front = document.createElement("div");
-    card_front.setAttribute('class', 'card_front');
+    card_front.setAttribute("class", "card_front");
     card_front.appendChild(document.createTextNode("foobs"));
     var card_back = document.createElement("div");
-    card_back.setAttribute('class', 'card_back');
+    card_back.setAttribute("class", "card_back");
     card_back.appendChild(document.createTextNode(card_text[0]));
     card_back.appendChild(document.createElement("br"));
     var card_back_latin = document.createElement("div");
-    card_back_latin.setAttribute('class', 'latin_text');
+    card_back_latin.setAttribute("class", "latin_text");
     card_back_latin.appendChild(document.createTextNode(card_text.substring(1,card_text.length)));
     if (!latinTextIsOn) {
       card_back_latin.style.visibility = "hidden";
@@ -184,12 +196,13 @@ function init() {     // TODO: add calls to reload from JSON files
     card_container.appendChild(card_front);
     card_container.appendChild(card_back);
     card.appendChild(card_container);
-    document.getElementById('memory_board').appendChild(card);
+    document.getElementById("memory_board").appendChild(card);
   }
 }
 
 window.onload = function() {
-    document.getElementById('lesson_select').onchange = init;
-    document.getElementById('toggleLatinTextCheck').onchange = toggleLatinText;
+    document.getElementById("lesson_select").onchange = init;
+    document.getElementById("toggleLatinTextCheck").onchange = toggleLatinText;
+    listLessons();
     init();
 };
