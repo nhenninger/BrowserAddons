@@ -1,7 +1,5 @@
 /*jshint esversion: 6 */
 currCardSet = []; // A random subset from the lesson file
-var currBoard = []; // Twice size of currCardSet
-var boardDimension = 4; // TODO: add a listener to update this
 var latinTextIsOn;
 var memory_values = [];
 var memory_card_ids = [];
@@ -114,15 +112,15 @@ function displayCardText(card) {
   }
 }
 
-function memoryFlipCard(card,val){
-  if(!isFlipped(card) && memory_values.length < 2){
-    setFlipped(card);
+function memoryFlipCard(){
+  if(!isFlipped(this) && memory_values.length < 2){
+    setFlipped(this);
     if(memory_values.length === 0){
-      memory_values.push(val);
-      memory_card_ids.push(card.id);
+      memory_values.push(this.textContent);
+      memory_card_ids.push(this.id);
     } else if(memory_values.length == 1){
-      memory_values.push(val);
-      memory_card_ids.push(card.id);
+      memory_values.push(this.textContent);
+      memory_card_ids.push(this.id);
       if(memory_values[0] == memory_values[1]){
         cards_flipped += 2;
         // Clear both arrays
@@ -169,7 +167,7 @@ function init() {     // TODO: add support for Anki cards (or some alternative?)
     card.setAttribute("id", "card_" + i);
     card.setAttribute("class", "card");
     var card_text = displayCardText(currCardSet[i]);
-    card.setAttribute("onclick", "memoryFlipCard(this,\"" + card_text + "\");");
+    card.addEventListener("click", memoryFlipCard);
     var card_container = document.createElement("div");
     card_container.setAttribute("class", "card_container");
     var card_front = document.createElement("div");
@@ -194,8 +192,8 @@ function init() {     // TODO: add support for Anki cards (or some alternative?)
 }
 
 window.onload = function() {
-    document.getElementById("lesson_select").onchange = init;
-    document.getElementById("toggleLatinTextCheck").onchange = toggleLatinText;
+    document.getElementById("lesson_select").addEventListener("change", init);
+    document.getElementById("toggleLatinTextCheck").addEventListener("change", toggleLatinText);
     listLessons();
     init();
 };
