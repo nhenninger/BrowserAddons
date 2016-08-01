@@ -174,7 +174,7 @@ function init() {     // TODO: add support for Anki cards (or some alternative?)
     card_container.setAttribute("class", "card_container");
     var card_front = document.createElement("div");
     card_front.setAttribute("class", "card_front");
-    card_front.appendChild(document.createTextNode("foobs"));
+    card_front.appendChild(document.createTextNode("集中"));
     var card_back = document.createElement("div");
     card_back.setAttribute("class", "card_back");
     card_back.appendChild(document.createTextNode(card_text[0]));
