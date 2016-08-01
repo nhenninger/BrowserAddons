@@ -154,21 +154,14 @@ function toggleLatinText() {
 
 // With parts from the script by Adam Khoury from the video tutorial:
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
-function init() {     // TODO: add calls to reload from JSON files
-                      // TODO: check listener for level selection
-                      // TODO: add support for Anki cards (or some alternative?)
+function init() {     // TODO: add support for Anki cards (or some alternative?)
                       // TODO: add support for audio cards?
-                      // TODO: Add reset button
-                      // TODO: Add toggle for flip animation?
   var board = document.getElementById("memory_board");
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
   }
-  console.log("Board cleared.");
   flip2Back();
-  console.log("Cards returned to original positions.");
   loadLesson();
-  console.log("Lesson loaded.");
   latinTextIsOn = document.getElementById("toggleLatinTextCheck").checked;
   cards_flipped = 0;
   for(var i = 0; i < currCardSet.length; i++){
