@@ -44,26 +44,35 @@ function listLessons() {
 }
 
 // Populate currCardSet[] with random entries from the JSON file
-function loadLesson() {
+// https://gist.github.com/thiagodebastos/08ea551b97892d585f17#file-main-js
+function loadJSON(callback) {
   lessonNum = parseInt(document.getElementById("lesson_select").value);
   var request = new XMLHttpRequest();
   var url = "lessons/lesson" + lessonNum + ".json";
-  request.open("GET", url, false);
   request.overrideMimeType("application/json");
-  request.onload = function () {
-    var jsonResponse = JSON.parse(request.responseText);
-    if (lessonNum > 2) {
-      currCardSet = jsonResponse.kanji;
-    } else if (lessonNum > 0) {
-      currCardSet = jsonResponse.syllabary;
-    } else {
-      throw new LessonException("InvalidLessonNumber");
+  request.open("GET", url, true);
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == "200") {
+      // .open will NOT return a value but simply returns undefined in async mode so use a callback
+      callback(request.responseText);
     }
-    // Duplicates the array
-    currCardSet = currCardSet.concat(currCardSet);
-    currCardSet.memory_card_shuffle();
   };
   request.send(null);
+}
+
+function loadLesson(response) {
+  var jsonResponse = JSON.parse(response);
+  if (lessonNum > 2) {
+    currCardSet = jsonResponse.kanji;
+  } else if (lessonNum > 0) {
+    currCardSet = jsonResponse.syllabary;
+  } else {
+    throw new LessonException("InvalidLessonNumber");
+  }
+  // Duplicates the array
+  currCardSet = currCardSet.concat(currCardSet);
+  currCardSet.memory_card_shuffle();
+  displayCards();
 }
 
 function isFlipped(card) {
@@ -129,7 +138,7 @@ function memoryFlipCard(){
         // Check to see if the whole board is cleared
         if(cards_flipped == currCardSet.length){
           alert("Board cleared... generating new board");
-          init();
+          loadJSON(loadLesson);
         }
       } else {
         setTimeout(flip2Back, 700);
@@ -150,16 +159,15 @@ function toggleLatinText() {
   }
 }
 
-// With parts from the script by Adam Khoury from the video tutorial:
+// With inspiration from the script by Adam Khoury from the video tutorial:
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
-function init() {     // TODO: add support for Anki cards (or some alternative?)
-                      // TODO: add support for audio cards?
+function displayCards() {     // TODO: add support for Anki cards (or some alternative?)
+                              // TODO: add support for audio cards?
   var board = document.getElementById("memory_board");
   while (board.hasChildNodes()) {
     board.removeChild(board.firstChild);
   }
   flip2Back();
-  loadLesson();
   latinTextIsOn = document.getElementById("toggleLatinTextCheck").checked;
   cards_flipped = 0;
   for(var i = 0; i < currCardSet.length; i++){
@@ -187,13 +195,13 @@ function init() {     // TODO: add support for Anki cards (or some alternative?)
     card_container.appendChild(card_front);
     card_container.appendChild(card_back);
     card.appendChild(card_container);
-    document.getElementById("memory_board").appendChild(card);
+    board.appendChild(card);
   }
 }
 
 window.onload = function() {
-    document.getElementById("lesson_select").addEventListener("change", init);
-    document.getElementById("toggleLatinTextCheck").addEventListener("change", toggleLatinText);
-    listLessons();
-    init();
+  document.getElementById("lesson_select").addEventListener("change", function () {loadJSON(loadLesson);});
+  document.getElementById("toggleLatinTextCheck").addEventListener("change", toggleLatinText);
+  listLessons();
+  loadJSON(loadLesson);
 };

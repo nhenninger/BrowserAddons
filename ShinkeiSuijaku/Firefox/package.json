@@ -1,7 +1,7 @@
 {
   "title": "ShinkeiSuijaku",
   "name": "shinkeisuijaku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A memory game for Japanese kana and kanji.",
   "main": "index.js",
   "author": "Nathan Henninger",
