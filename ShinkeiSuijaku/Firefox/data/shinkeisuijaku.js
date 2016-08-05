@@ -44,7 +44,6 @@ function listLessons() {
 }
 
 // Populate currCardSet[] with random entries from the JSON file
-// https://gist.github.com/thiagodebastos/08ea551b97892d585f17#file-main-js
 function loadJSON(callback) {
   lessonNum = parseInt(document.getElementById("lesson_select").value);
   var request = new XMLHttpRequest();

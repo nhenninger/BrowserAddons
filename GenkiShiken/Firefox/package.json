@@ -1,0 +1,16 @@
+{
+  "title": "GenkiShiken",
+  "name": "genkishiken",
+  "version": "1.0.0",
+  "description": "Japanese quizzes from the Genki textbooks.",
+  "main": "index.js",
+  "author": "Nathan Henninger",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
