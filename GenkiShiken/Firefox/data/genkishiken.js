@@ -9,35 +9,34 @@ function LessonException(message) {
    this.name = "LessonException";
 }
 
+function displayQuestions() {
+  numCorrect = 0;
+  $("#exam").empty();
+  characterArray.shuffle();
+
+}
+
 function loadJSON() {
   var lessonNum = $("#lesson_select").val();
-  // $.getJSON("lessons/lesson" + lessonNum + ".json", function(data) { // TODO: change folder back to symlink before publishing
-  //   var jsonResponse = JSON.parse(data);  // $.parseJSON deprecated as of jQuery 3.0
-  //   if (lessonNum > 2) {
-  //     characterArray = jsonResponse.kanji;
-  //   } else if (lessonNum > 0) {
-  //     characterArray = jsonResponse.syllabary;
-  //   } else {
-  //     throw new LessonException("InvalidLessonNumber");
-  //   }
-  //   characterArray.shuffle();
-  //   // console.log(JSON.stringify(characterArray));
-  // });
   $.ajax({
+    type: "GET",
+    beforeSend: function(xhr) { // https://stackoverflow.com/questions/2618959/not-well-formed-warning-when-loading-client-side-json-in-firefox-via-jquery-aj
+      if (xhr.overrideMimeType) {
+        xhr.overrideMimeType("application/json");
+      }
+    },
     dataType: "json",
-    url: "lessons/lesson" + lessonNum + ".json",
-    data: data,
-    success: function (data) {
-      var jsonResponse = JSON.parse(data);  // $.parseJSON deprecated as of jQuery 3.0
+    url: "lessons/lesson" + lessonNum + ".json",  // TODO: change folder back to symlink before publishing
+    success: function (response) {
       if (lessonNum > 2) {
-        characterArray = jsonResponse.kanji;
+        characterArray = response.kanji;
       } else if (lessonNum > 0) {
-        characterArray = jsonResponse.syllabary;
+        characterArray = response.syllabary;
       } else {
         throw new LessonException("InvalidLessonNumber");
       }
-      characterArray.shuffle();
       // console.log(JSON.stringify(characterArray));
+      displayQuestions();
     }
   });
 }
@@ -67,15 +66,15 @@ Array.prototype.shuffle = function(){
   }
 };
 
-function resetQuiz() {
-  numCorrect = 0;
-  characterArray.shuffle();
-  // Start quiz from beginning
-}
+// function resetQuiz() {
+//   numCorrect = 0;
+//   characterArray.shuffle();
+//   // Start quiz from beginning
+// }
 
 $(document).ready(function(){
   listLessons();
   $("#lesson_select").change(loadJSON);
-  $("input[type=radio][name=lessonFocus]").change(resetQuiz);
+  $("input[type=radio][name=lessonFocus]").change(displayQuestions);
   loadJSON();
 });
