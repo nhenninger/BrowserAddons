@@ -1,0 +1,60 @@
+#slides h2 {
+    margin-bottom:10px;
+    font-weight: 700;
+}
+/*=Slides
+----------------------------------------------- */
+#slides {
+
+}
+#exam_container {
+    overflow: hidden;
+    margin-bottom:60px;
+}
+#exam_container:last-child {
+    margin-bottom:0;
+}
+.slides_div {
+    visibility: hidden;
+}
+.slide {
+    float:left;
+    padding:30px;
+    border:solid 10px rgb(150,30,50);
+    background-color:rgb(200,80,100);
+}
+.slide h2,
+.slide p {
+    color:#fff;
+}
+/* prev next buttons */
+#navigation {
+    margin-bottom: 30px;
+    /*visibility: hidden;*/
+    text-align: right;
+}
+#prev_button,#next_button {
+    display:inline-block;
+    background: rgb(100,200,150);
+    color:#fff;
+    padding:10px 20px;
+
+    border-bottom:solid 5px rgb(50,150,100);
+
+    cursor: pointer;
+}
+#prev_button:hover,
+#next_button:hover {
+    background: rgb(75,175,125);
+}
+#prev_button.disabled:hover,
+#next_button.disabled:hover {
+    background: rgb(100,200,150);
+    cursor:  default;
+}
+.disabled {
+    opacity: 0.3;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+}
