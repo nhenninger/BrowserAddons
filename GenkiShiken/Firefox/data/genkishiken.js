@@ -1,5 +1,4 @@
 /*jshint esversion: 6 */
-var numCorrect = 0;
 var characterArray = [];
 var answerArray = [];
 const NUM_OF_LESSONS = 23;
@@ -15,14 +14,24 @@ function LessonException(message) {
 }
 
 function finalScore() {
+  var numCorrect = 0;
   for (var x = 0; x < characterArray.length; x++) {
     if ($("div#question" + x + " input[type=radio][name=question" + x + "]:checked").val() === answerArray[x]) {
       numCorrect++;
     }
   }
-  // TODO: wire a listener to when quiz is complete then populate resultDiv with score
   // TODO: Make the radio buttons pretty
-  console.log(numCorrect + " out of " + characterArray.length);
+  $("#resultH1").empty().append(numCorrect + " out of " + characterArray.length + ".");
+  $("#prev_button").addClass("disabled").off("click", recedeQuestion);
+  $("#next_button").addClass("disabled").off("click", advanceQuestion);
+  $("#finish_button").addClass("disabled").off("click", finalScore);
+  $("div.slide.active").removeClass("active");
+
+  var n = $("div.slide.last_question").index() + 1;
+  var slideLeft = "-" + n * 100 + "%";
+  $("#slides_container").animate({
+      marginLeft : slideLeft
+  },250);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -43,20 +52,17 @@ function shuffle(arr){
 
 function createQuestionChoices(typeChoice, questionIndex, indices) {
   for (var k = 0; k < indices.length; k++) {
-    $("#question" + questionIndex + " .questionChoices")
+    $("div#question" + questionIndex + " .questionChoices")
       .append(
-        $("<li/>")
+        $("<label/>", {"class" : "block"})
           .append(
-            $("<label/>")
-              .append(
-                $("<input/>", {
-                "type" : "radio",
-                "name": "question" + questionIndex,
-                "value" : characterArray[indices[k]][typeChoice]})
-                .bind("click", advanceQuestion)
-              )
-              .append(characterArray[indices[k]][typeChoice])
+            $("<input/>", {
+            "type" : "radio",
+            "name": "question" + questionIndex,
+            "value" : characterArray[indices[k]][typeChoice]})
+            .bind("click", advanceQuestion)
           )
+          .append(characterArray[indices[k]][typeChoice])
       );
   }
 }
@@ -84,12 +90,12 @@ function createQuestionText(index) {
   shuffle(choiceIndices);
   if (characterArray[0].kana) { // Syllabary
     $("input[type=radio][name=lessonFocus]").attr("disabled", true);
-    $("#question" + index + " h1").append(characterArray[index].kana);
+    $("div#question" + index + " h1").append(characterArray[index].kana);
     answerArray[index] = characterArray[index].pronunciation;
     createQuestionChoices("pronunciation", index, choiceIndices);
   } else if (characterArray[0].character) { // Kanji
     $("input[type=radio][name=lessonFocus]").attr("disabled", false);
-    $("#question" + index + " h1").append(characterArray[index].character);
+    $("div#question" + index + " h1").append(characterArray[index].character);
     if ($("input[type=radio][name=lessonFocus]:checked").val() === "meaning") {
       answerArray[index] = characterArray[index].meaning;
       createQuestionChoices("meaning", index, choiceIndices);
@@ -109,98 +115,89 @@ function createQuestionText(index) {
 
 // handle the next clicking functionality
 function advanceQuestion(){
-  var n = $(".slide.active").index() + 1;
+  var n = $("div.slide.active").index() + 1;
   var slideLeft = "-" + n * 100 + "%";
-  if (!$(".slide.active").hasClass("last")) {
-      $(".slide.active").removeClass("active").next(".slide").addClass("active");
-      $("#slides_div").animate({
+  if (!$("div.slide.active").hasClass("last_question")) {
+      $("div.slide.active").removeClass("active").next("div.slide").addClass("active");
+      $("#slides_container").animate({
           marginLeft : slideLeft
       },250);
-      if ($(".slide.active").hasClass("last")) {
+      if ($("div.slide.active").hasClass("last_question")) {
           $("#next_button").addClass("disabled");
-          // TODO: change next button to disable on final question and call finalScore()
-          // TODO: Wire finish_button to finalScore();
       }
   }
-  if ((!$(".slide.active").hasClass("first")) && $("#prev_button").hasClass("disabled")) {
+  if ((!$("div.slide.active").hasClass("first_question")) && $("#prev_button").hasClass("disabled")) {
       $("#prev_button").removeClass("disabled");
   }
 }
 
 // handle the prev clicking functionality
 function recedeQuestion(){
-  var n = $(".slide.active").index() - 1;
+  var n = $("div.slide.active").index() - 1;
   var slideRight = "-" + n * 100 + "%";
-  if (!$(".slide.active").hasClass("first")) {
-      $(".slide.active").removeClass("active").prev(".slide").addClass("active");
-      $("#slides_div").animate({
+  if (!$("div.slide.active").hasClass("first_question")) {
+      $("div.slide.active").removeClass("active").prev("div.slide").addClass("active");
+      $("#slides_container").animate({
           marginLeft : slideRight
       },250);
-      if ($(".slide.active").hasClass("first")) {
+      if ($("div.slide.active").hasClass("first_question")) {
           $("#prev_button").addClass("disabled");
       }
   }
-  if ((!$(".slide.active").hasClass("last")) && $("#next_button").hasClass("disabled")) {
+  if ((!$("div.slide.active").hasClass("last_question")) && $("#next_button").hasClass("disabled")) {
       $("#next_button").removeClass("disabled");
   }
 }
 
 // Based on http://callmenick.com/post/responsive-content-slider
 function contentSlide() {
-  var len = $(".slide").length;                // get number of slides
+  var len = $("div.slide").length;                // get number of slides
   // console.log("len is " + len + "\n");
   var slidesContainerWidth = len * 100 + "%";  // get width of the slide container
   var slideWidth = (100 / len) + "%";          // get width of the slides
 
   // Reset margins when changing quiz
-  $("#slides_div").animate({
+  $("#slides_container").animate({
       marginLeft : 0
-  },250);
-  $("#slides_div").animate({
+  },"slow");
+  $("#slides_container").animate({
       marginRight : 0
-  },250);
-
-  // Reset click listeners
-  $("#next_button").unbind("click");
-  $("#prev_button").unbind("click");
+  },"slow");
 
   // set slide container width
-  $("#slides_div").css({
+  $("#slides_container").css({
       width : slidesContainerWidth,
       visibility : "visible"
   });
   // set slide width
-  $(".slide").css({
+  $("div.slide").css({
       width : slideWidth
   });
 
   // add correct classes to first and last slide
-  $(".slide").first().addClass("first active");
-  console.log($(".slide").first().attr("id"));
-  $(".slide").last().addClass("last");
+  $("div.slide").first().addClass("first_question active");
+  $("div.slide").last().prev().addClass("last_question");
 
-  // initially disable the previous arrow cuz [sic] we start on the first slide
-  $("#prev_button").addClass("disabled");
-
-  $("#next_button").bind("click", advanceQuestion);
-  $("#prev_button").bind("click", recedeQuestion);
+  // Initialize navigation buttons
+  $("#prev_button").addClass("disabled").off().on("click", recedeQuestion);
+  $("#next_button").removeClass("disabled").off().on("click", advanceQuestion);
+  $("#finish_button").removeClass("disabled").off().on("click", finalScore);
 }
 
 /**
  *  Creates the basic question slides/divs and the results slide
  */
 function createSlides() {
-  numCorrect = 0;
-  var slides = $("#slides_div");
+  var slides = $("#slides_container");
   slides.empty();
-  // shuffle(characterArray);  TODO: uncomment...
+  shuffle(characterArray);
   for (var i = 0; i < characterArray.length; i++) {
     slides.append(
       $("<div/>", {"class": "slide", "id": "question" + i})
         .append(
           $("<h1/>", {"class": "questionChar"})
         ).append(
-          $("<ul>", {"class": "questionChoices"})
+          $("<div/>", {"class": "questionChoices"})
         )
     );
     createQuestionText(i);
@@ -210,7 +207,7 @@ function createSlides() {
       .append(
         $("<h1/>", {"class": "questionChar", "id": "resultH1"})
       ).append(
-        $("<input/>", {"type": "button", "value": "再", "id": "restartButton"})
+        $("<input/>", {"type": "button", "value": "再", "id": "restartButton", "title": "Restart Quiz"})
           .click(createSlides)
       )
   );
