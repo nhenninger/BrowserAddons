@@ -13,6 +13,11 @@ function LessonException(message) {
    this.name = "LessonException";
 }
 
+function setProgress(progress) {
+    //var progressBarWidth = progress * $("#progressBar_container").width() / 100;
+    $(".progressBar").animate({width: progress + "%" },300);
+}
+
 function finalScore() {
   var numCorrect = 0;
   for (var x = 0; x < characterArray.length; x++) {
@@ -32,6 +37,7 @@ function finalScore() {
   $("#slides_container").animate({
       marginLeft : slideLeft
   },250);
+  setProgress(100);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -81,11 +87,19 @@ function createQuestionText(index) {
   var rand;
   var choiceIndices = [];
   choiceIndices[0] = index;
-  for (var j = 1; j < NUM_OF_MULTI_CHOICE; j++) {
-    do {
-      rand = Math.floor(Math.random() * characterArray.length);
-    } while (rand == index);
-    choiceIndices[j] = rand;
+  while (choiceIndices.length < NUM_OF_MULTI_CHOICE) {
+    //https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
+    rand = Math.floor(Math.random() * characterArray.length);
+    var found = false;
+    for (var i = 0; i <= choiceIndices.length; i++) {
+      if (choiceIndices[i] == rand) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      choiceIndices[choiceIndices.length] = rand;
+    }
   }
   shuffle(choiceIndices);
   if (characterArray[0].kana) { // Syllabary
@@ -118,13 +132,14 @@ function advanceQuestion(){
   var n = $("div.slide.active").index() + 1;
   var slideLeft = "-" + n * 100 + "%";
   if (!$("div.slide.active").hasClass("last_question")) {
-      $("div.slide.active").removeClass("active").next("div.slide").addClass("active");
-      $("#slides_container").animate({
-          marginLeft : slideLeft
-      },250);
-      if ($("div.slide.active").hasClass("last_question")) {
-          $("#next_button").addClass("disabled");
-      }
+    $("div.slide.active").removeClass("active").next("div.slide").addClass("active");
+    $("#slides_container").animate({
+        marginLeft : slideLeft
+    },250);
+    if ($("div.slide.active").hasClass("last_question")) {
+        $("#next_button").addClass("disabled");
+    }
+    setProgress((n + 1) / characterArray.length * 100);
   }
   if ((!$("div.slide.active").hasClass("first_question")) && $("#prev_button").hasClass("disabled")) {
       $("#prev_button").removeClass("disabled");
@@ -136,13 +151,14 @@ function recedeQuestion(){
   var n = $("div.slide.active").index() - 1;
   var slideRight = "-" + n * 100 + "%";
   if (!$("div.slide.active").hasClass("first_question")) {
-      $("div.slide.active").removeClass("active").prev("div.slide").addClass("active");
-      $("#slides_container").animate({
-          marginLeft : slideRight
-      },250);
-      if ($("div.slide.active").hasClass("first_question")) {
-          $("#prev_button").addClass("disabled");
-      }
+    $("div.slide.active").removeClass("active").prev("div.slide").addClass("active");
+    $("#slides_container").animate({
+        marginLeft : slideRight
+    },250);
+    if ($("div.slide.active").hasClass("first_question")) {
+        $("#prev_button").addClass("disabled");
+    }
+    setProgress((n + 1) / characterArray.length * 100);
   }
   if ((!$("div.slide.active").hasClass("last_question")) && $("#next_button").hasClass("disabled")) {
       $("#next_button").removeClass("disabled");
@@ -178,10 +194,11 @@ function contentSlide() {
   $("div.slide").first().addClass("first_question active");
   $("div.slide").last().prev().addClass("last_question");
 
-  // Initialize navigation buttons
+  // Initialize navigation
   $("#prev_button").addClass("disabled").off().on("click", recedeQuestion);
   $("#next_button").removeClass("disabled").off().on("click", advanceQuestion);
   $("#finish_button").removeClass("disabled").off().on("click", finalScore);
+  setProgress(1 / characterArray.length * 100);
 }
 
 /**
@@ -236,7 +253,6 @@ function loadJSON() {
       } else {
         characterArray = response.syllabary;
       }
-      // console.log(JSON.stringify(characterArray));
       createSlides();
     }
   });

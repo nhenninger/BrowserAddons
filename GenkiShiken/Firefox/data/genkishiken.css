@@ -1,9 +1,8 @@
+body {
+  background-color: #F5F5DC;
+}
 #lesson_container {
   margin: 5px;
-}
-#slides h1 {
-  margin-bottom:10px;
-  font-weight: 700;
 }
 #exam_container {
   overflow: hidden;
@@ -26,6 +25,7 @@
   color:#fff;
   padding:10px 20px;
   border-bottom:solid 5px rgb(50,150,100);
+  border-radius: 10px;
   cursor: pointer;
 }
 #finish_button {
@@ -54,6 +54,7 @@
 .slides_div {
   visibility: hidden;
   position: relative;
+  margin: 10px;
 }
 .slide {
   float:left;
@@ -62,6 +63,7 @@
   flex-direction: column;
   align-items: baseline;
   border:solid 10px rgb(150,30,50);
+  border-radius: 10px;
   background-color:rgb(200,80,100);
 }
 .slide h1 {
@@ -75,4 +77,20 @@
 }
 *, *::before, *::after {
 	box-sizing: border-box;
+}
+#progressBar_container{
+  width: 50%;
+  height: 35px;
+  border: 3px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: auto;
+}
+.progressBar {
+  color: #fff;
+  text-align: right;
+  height: 100%;
+  width: 0;
+  background-color: #0ba1b5;
+  border-radius: 3px;
 }
