@@ -14,7 +14,6 @@ function LessonException(message) {
 }
 
 function setProgress(progress) {
-    //var progressBarWidth = progress * $("#progressBar_container").width() / 100;
     $(".progressBar").animate({width: progress + "%" },300);
 }
 
@@ -244,7 +243,7 @@ function loadJSON() {
       }
     },
     dataType: "json",
-    url: "lessons/lesson" + lessonNum + ".json",  // TODO: change folder back to symlink before publishing
+    url: "lessons/lesson" + lessonNum + ".json",
     success: function (response) {
       if (lessonNum < 0 || lessonNum > NUM_OF_LESSONS) {
         throw new LessonException("InvalidLessonNumber");

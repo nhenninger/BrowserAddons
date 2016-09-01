@@ -1,4 +1,5 @@
 body {
+  color: black;
   background-color: #F5F5DC;
 }
 #lesson_container {
@@ -81,7 +82,7 @@ body {
 #progressBar_container{
   width: 50%;
   height: 35px;
-  border: 3px solid #ddd;
+  border: 3px solid rgb(56, 103, 143);
   border-radius: 5px;
   overflow: hidden;
   margin: auto;
@@ -91,6 +92,6 @@ body {
   text-align: right;
   height: 100%;
   width: 0;
-  background-color: #0ba1b5;
-  border-radius: 3px;
+  background-color: rgb(70, 130, 180);
+  border-radius: 0px;
 }

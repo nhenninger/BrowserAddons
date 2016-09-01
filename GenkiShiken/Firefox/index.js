@@ -5,8 +5,8 @@ var panels = require("sdk/panel");
 var self = require("sdk/self");
 
 var button = ToggleButton({
-  id: "my-button",
-  label: "my button",
+  id: "genkishiken",
+  label: "GenkiShiken",
   icon: {
     "16": "./icon-16.png",
     "32": "./icon-32.png",
@@ -18,8 +18,8 @@ var button = ToggleButton({
 var panel = panels.Panel({
   contentURL: ("./genkishiken.html"),
   onHide: handleHide,
-  width: 500,
-  height: 500
+  width: 600,
+  height: 300
 });
 
 function handleChange(state) {

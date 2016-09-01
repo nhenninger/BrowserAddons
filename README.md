@@ -1,6 +1,12 @@
 # BrowserAddons
 
-A collection of browser addons developed primarily for the Firefox web browser.
+A collection of browser add-ons developed primarily for the Firefox web browser.
+
+## GenkiShiken
+
+(げんき試験 - "Genki [textbook] examination")
+
+A JavaScript and jQuery practice quiz.  Written as a study aid using the same lesson data as ShinkeiSuijaku.  Available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/genkishiken).
 
 ## JishoSeibiki
 
@@ -14,4 +20,4 @@ Allows searching [Jim Breen's WWWJDIC](http://nihongo.monash.edu/cgi-bin/wwwjdic
 
 (神経衰弱 - "concentration" [card game], "neurasthenia; nervous breakdown")
 
-A JavaScript concentration game written as a study aid for the Japanese kana and kanji from the 23 lessons in the Genki I and II textbooks.  Available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/shinkeisuijaku/).
+A JavaScript concentration game written as a study aid for the Japanese kana and kanji from the 23 lessons in the [Genki I and II textbooks](http://genki.japantimes.co.jp/index_en).  Available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/shinkeisuijaku/).
