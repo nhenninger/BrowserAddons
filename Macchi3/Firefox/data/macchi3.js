@@ -1,15 +1,11 @@
 /*jshint esversion: 6 */
 var colorGroupIsOn;
-const NUM_OF_LESSONS = 23;
-
-function QuestionException(message) {
-   this.message = message;
-   this.name = "QuestionException";
-}
-function LessonException(message) {
-   this.message = message;
-   this.name = "LessonException";
-}
+var currCharacterArray = [];
+var platforms;
+var cursors;
+var score = 0;
+var scoreText;
+const NUM_OF_TILE_GROUPS = 6;
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(arr){
@@ -27,62 +23,39 @@ function shuffle(arr){
   return arr;
 }
 
-function chooseYomi() {
-  return Math.random() <= 0.5 ? "on_yomi" : "kun_yomi";
+function preload () {
+  game.load.image('sky', 'assets/sky.png');
+  game.load.image('ground', 'assets/platform.png');
+  game.load.image('star', 'assets/star.png');
+  game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+  game.load.json('version', 'lessons.json');
 }
 
-/**
- *  Loads the selected lesson JSON file and populates the characterArray.
- */
- // TODO: change from memory game
-function loadJSON(callback) {
-  lessonNum = parseInt(document.getElementById("lesson_select").value);
-  var request = new XMLHttpRequest();
-  var url = "lessons/lesson" + lessonNum + ".json";
-  request.overrideMimeType("application/json");
-  request.open("GET", url, true);
-  request.onreadystatechange = function () {
-    if (request.readyState == 4 && request.status == "200") {
-      // .open will NOT return a value but simply returns undefined in async mode so use a callback
-      callback(request.responseText);
-    }
-  };
-  request.send(null);
+function create () {
+
+  game.stage.backgroundColor = '#0072bc';
+
+  var phaserJSON = game.cache.getJSON('version');
+
+  console.log(JSON.stringify(shuffle(phaserJSON.lesson1)));
+
+  var text2 = game.add.text(100, 200, "Name: " + phaserJSON.name, { fill: '#ffffff' });
+  text2.setShadow(2, 2, 'rgba(0,0,0,0.5)', 0);
+
+  var text3 = game.add.text(100, 300, "Released: " + phaserJSON.released, { fill: '#ffffff' });
+  text3.setShadow(2, 2, 'rgba(0,0,0,0.5)', 0);
 }
 
-// callback function for loadJSON()
-// TODO: change from memory game
-function loadLesson(response) {
-  var jsonResponse = JSON.parse(response);
-  if (lessonNum > 2) {
-    currCardSet = jsonResponse.kanji;
-  } else if (lessonNum > 0) {
-    currCardSet = jsonResponse.syllabary;
-  } else {
-    throw new LessonException("InvalidLessonNumber");
-  }
-  // Duplicates the array
-  currCardSet = currCardSet.concat(currCardSet);
-  currCardSet.memory_card_shuffle();
-  displayCards();
+function update() {
 }
 
-function listLessons() {
-  var lesson_dropdown = document.getElementById("lesson_select");
-  for (let i = 1; i <= NUM_OF_LESSONS; i++) {
-    var newOption = document.createElement("option");
-    if (i == 1) {
-      newOption.setAttribute("selected", "selected");
-    }
-    newOption.setAttribute("value", i);
-    newOption.appendChild(document.createTextNode("Lesson " + i));
-    lesson_dropdown.appendChild(newOption);
-  }
+function collectStar (player, star) {
+  // Removes the star from the screen
+  star.kill();
+
+  //  Add and update the score
+  score += 10;
+  scoreText.text = 'Score: ' + score;
 }
 
-window.onload = function() {
-  listLessons();
-  document.getElementById("lesson_select").addEventListener("change", function () {loadJSON(loadLesson);});
-  document.getElementById("toggleColorHintCheck").addEventListener("change", function () {loadJSON(loadLesson);});
-  loadJSON(loadLesson);
-};
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });

@@ -1,0 +1,2340 @@
+{
+  "lesson1": [
+    {
+      "kana": "あ",
+      "pronunciation": "a"
+    },
+    {
+      "kana": "い",
+      "pronunciation": "i"
+    },
+    {
+      "kana": "う",
+      "pronunciation": "u"
+    },
+    {
+      "kana": "え",
+      "pronunciation": "e"
+    },
+    {
+      "kana": "お",
+      "pronunciation": "o"
+    },
+    {
+      "kana": "か",
+      "pronunciation": "ka"
+    },
+    {
+      "kana": "き",
+      "pronunciation": "ki"
+    },
+    {
+      "kana": "く",
+      "pronunciation": "ku"
+    },
+    {
+      "kana": "け",
+      "pronunciation": "ke"
+    },
+    {
+      "kana": "こ",
+      "pronunciation": "ko"
+    },
+    {
+      "kana": "さ",
+      "pronunciation": "sa"
+    },
+    {
+      "kana": "し",
+      "pronunciation": "shi"
+    },
+    {
+      "kana": "す",
+      "pronunciation": "su"
+    },
+    {
+      "kana": "せ",
+      "pronunciation": "se"
+    },
+    {
+      "kana": "そ",
+      "pronunciation": "so"
+    },
+    {
+      "kana": "た",
+      "pronunciation": "ta"
+    },
+    {
+      "kana": "ち",
+      "pronunciation": "chi"
+    },
+    {
+      "kana": "つ",
+      "pronunciation": "tsu"
+    },
+    {
+      "kana": "て",
+      "pronunciation": "te"
+    },
+    {
+      "kana": "と",
+      "pronunciation": "to"
+    },
+    {
+      "kana": "な",
+      "pronunciation": "na"
+    },
+    {
+      "kana": "に",
+      "pronunciation": "ni"
+    },
+    {
+      "kana": "ぬ",
+      "pronunciation": "nu"
+    },
+    {
+      "kana": "ね",
+      "pronunciation": "ne"
+    },
+    {
+      "kana": "の",
+      "pronunciation": "no"
+    },
+    {
+      "kana": "は",
+      "pronunciation": "ha"
+    },
+    {
+      "kana": "ひ",
+      "pronunciation": "hi"
+    },
+    {
+      "kana": "ふ",
+      "pronunciation": "fu"
+    },
+    {
+      "kana": "へ",
+      "pronunciation": "he"
+    },
+    {
+      "kana": "ほ",
+      "pronunciation": "ho"
+    },
+    {
+      "kana": "ま",
+      "pronunciation": "ma"
+    },
+    {
+      "kana": "み",
+      "pronunciation": "mi"
+    },
+    {
+      "kana": "む",
+      "pronunciation": "mu"
+    },
+    {
+      "kana": "め",
+      "pronunciation": "me"
+    },
+    {
+      "kana": "も",
+      "pronunciation": "mo"
+    },
+    {
+      "kana": "や",
+      "pronunciation": "ya"
+    },
+    {
+      "kana": "ゆ",
+      "pronunciation": "yu"
+    },
+    {
+      "kana": "よ",
+      "pronunciation": "yo"
+    },
+    {
+      "kana": "ら",
+      "pronunciation": "ra"
+    },
+    {
+      "kana": "り",
+      "pronunciation": "ri"
+    },
+    {
+      "kana": "る",
+      "pronunciation": "ru"
+    },
+    {
+      "kana": "れ",
+      "pronunciation": "re"
+    },
+    {
+      "kana": "ろ",
+      "pronunciation": "ro"
+    },
+    {
+      "kana": "わ",
+      "pronunciation": "wa"
+    },
+    {
+      "kana": "を",
+      "pronunciation": "wo"
+    },
+    {
+      "kana": "ん",
+      "pronunciation": "n"
+    }
+  ]
+,
+  "lesson13": [
+  	{
+  	  "character": "物",
+  	  "on_yomi": "ブツ",
+  	  "kun_yomi": "もの",
+  	  "meaning": "thing"
+  	},
+    {
+      "character": "鳥",
+      "on_yomi": "チョウ",
+      "kun_yomi": "とり",
+      "meaning": "bird"
+    },
+    {
+      "character": "料",
+      "on_yomi": "リョウ",
+      "kun_yomi": "N/A",
+      "meaning": "ingredients; fare"
+    },
+    {
+      "character": "理",
+      "on_yomi": "リ",
+      "kun_yomi": "N/A",
+      "meaning": "reason"
+    },
+    {
+      "character": "特",
+      "on_yomi": "トク、トッ",
+      "kun_yomi": "N/A",
+      "meaning": "special"
+    },
+    {
+      "character": "安",
+      "on_yomi": "アン",
+      "kun_yomi": "やす",
+      "meaning": "cheap; ease"
+    },
+    {
+      "character": "飯",
+      "on_yomi": "ハン",
+      "kun_yomi": "N/A",
+      "meaning": "food; cooked rice"
+    },
+    {
+      "character": "肉",
+      "on_yomi": "ニク",
+      "kun_yomi": "N/A",
+      "meaning": "meat"
+    },
+    {
+      "character": "悪",
+      "on_yomi": "アク",
+      "kun_yomi": "わる",
+      "meaning": "bad; wrong"
+    },
+    {
+      "character": "体",
+      "on_yomi": "タイ",
+      "kun_yomi": "からだ",
+      "meaning": "body"
+    },
+    {
+      "character": "空",
+      "on_yomi": "クウ",
+      "kun_yomi": "そら、あ、から",
+      "meaning": "sky; empty"
+    },
+    {
+      "character": "港",
+      "on_yomi": "コウ",
+      "kun_yomi": "みなと",
+      "meaning": "port; harbor"
+    },
+    {
+      "character": "着",
+      "on_yomi": "チャク",
+      "kun_yomi": "つ、き",
+      "meaning": "to reach; to wear"
+    },
+    {
+      "character": "同",
+      "on_yomi": "ドウ",
+      "kun_yomi": "おな",
+      "meaning": "same"
+    },
+    {
+      "character": "海",
+      "on_yomi": "カイ",
+      "kun_yomi": "うみ",
+      "meaning": "sea"
+    },
+    {
+      "character": "昼",
+      "on_yomi": "チュウ",
+      "kun_yomi": "ひる",
+      "meaning": "noon; daytime"
+    }
+  ]
+,
+  "lesson14": [
+  	{
+  	  "character": "彼",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "かれ、かの",
+  	  "meaning": "he"
+  	},
+    {
+      "character": "代",
+      "on_yomi": "ダイ",
+      "kun_yomi": "か",
+      "meaning": "age; replace"
+    },
+    {
+      "character": "留",
+      "on_yomi": "リュウ、ル",
+      "kun_yomi": "と",
+      "meaning": "to stay; to keep"
+    },
+    {
+      "character": "族",
+      "on_yomi": "ゾク",
+      "kun_yomi": "N/A",
+      "meaning": "family; tribe"
+    },
+    {
+      "character": "親",
+      "on_yomi": "シン",
+      "kun_yomi": "おや、した",
+      "meaning": "parent; intimacy"
+    },
+    {
+      "character": "切",
+      "on_yomi": "セツ",
+      "kun_yomi": "き、きっ",
+      "meaning": "to cut"
+    },
+    {
+      "character": "英",
+      "on_yomi": "エイ",
+      "kun_yomi": "N/A",
+      "meaning": "English; excellent"
+    },
+    {
+      "character": "店",
+      "on_yomi": "テン",
+      "kun_yomi": "みせ",
+      "meaning": "shop"
+    },
+    {
+      "character": "去",
+      "on_yomi": "キョ、コ",
+      "kun_yomi": "さ",
+      "meaning": "past; to leave"
+    },
+    {
+      "character": "急",
+      "on_yomi": "キュウ",
+      "kun_yomi": "いそ",
+      "meaning": "to hurry; emergency"
+    },
+    {
+      "character": "乗",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "の",
+      "meaning": "to ride"
+    },
+    {
+      "character": "当",
+      "on_yomi": "トウ",
+      "kun_yomi": "あ",
+      "meaning": "to hit"
+    },
+    {
+      "character": "音",
+      "on_yomi": "オン",
+      "kun_yomi": "おと、ね",
+      "meaning": "sound"
+    },
+    {
+      "character": "楽",
+      "on_yomi": "ガク、ガッ、ラク",
+      "kun_yomi": "たの",
+      "meaning": "pleasure"
+    },
+    {
+      "character": "医",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "doctor; medicine"
+    },
+    {
+      "character": "者",
+      "on_yomi": "シャ",
+      "kun_yomi": "もの",
+      "meaning": "person"
+    }
+  ]
+,
+  "lesson10": [
+  	{
+  	  "character": "住",
+  	  "on_yomi": "ジュウ",
+  	  "kun_yomi": "す",
+  	  "meaning": "to live"
+  	},
+    {
+      "character": "正",
+      "on_yomi": "ショウ",
+      "kun_yomi": "ただ",
+      "meaning": "right"
+    },
+    {
+      "character": "年",
+      "on_yomi": "ネン",
+      "kun_yomi": "とし",
+      "meaning": "year"
+    },
+    {
+      "character": "売",
+      "on_yomi": "バイ",
+      "kun_yomi": "う",
+      "meaning": "to sell"
+    },
+    {
+      "character": "買",
+      "on_yomi": "N/A",
+      "kun_yomi": "か",
+      "meaning": "to buy"
+    },
+    {
+      "character": "町",
+      "on_yomi": "チョウ",
+      "kun_yomi": "まち",
+      "meaning": "town"
+    },
+    {
+      "character": "長",
+      "on_yomi": "チョウ",
+      "kun_yomi": "なが",
+      "meaning": "long"
+    },
+    {
+      "character": "道",
+      "on_yomi": "ドウ",
+      "kun_yomi": "みち",
+      "meaning": "way"
+    },
+    {
+      "character": "雪",
+      "on_yomi": "セツ",
+      "kun_yomi": "ゆき",
+      "meaning": "snow"
+    },
+    {
+      "character": "立",
+      "on_yomi": "リツ",
+      "kun_yomi": "た",
+      "meaning": "to stand"
+    },
+    {
+      "character": "自",
+      "on_yomi": "ジ",
+      "kun_yomi": "N/A",
+      "meaning": "self"
+    },
+    {
+      "character": "夜",
+      "on_yomi": "ヤ",
+      "kun_yomi": "よる、よ",
+      "meaning": "night"
+    },
+    {
+      "character": "朝",
+      "on_yomi": "チョウ",
+      "kun_yomi": "あさ",
+      "meaning": "morning"
+    },
+    {
+      "character": "持",
+      "on_yomi": "ジ",
+      "kun_yomi": "も",
+      "meaning": "to hold"
+    }
+  ]
+,
+  "lesson15": [
+  	{
+  	  "character": "死",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "し",
+  	  "meaning": "death; to die"
+  	},
+    {
+      "character": "意",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "mind; meaning"
+    },
+    {
+      "character": "味",
+      "on_yomi": "ミ",
+      "kun_yomi": "あじ",
+      "meaning": "flavor; taste"
+    },
+    {
+      "character": "注",
+      "on_yomi": "チュウ",
+      "kun_yomi": "そそ",
+      "meaning": "to pour; to shed"
+    },
+    {
+      "character": "夏",
+      "on_yomi": "カ",
+      "kun_yomi": "なつ",
+      "meaning": "summer"
+    },
+    {
+      "character": "魚",
+      "on_yomi": "ギョ",
+      "kun_yomi": "さかな、うお",
+      "meaning": "fish"
+    },
+    {
+      "character": "寺",
+      "on_yomi": "ジ",
+      "kun_yomi": "てら",
+      "meaning": "temple"
+    },
+    {
+      "character": "広",
+      "on_yomi": "コウ",
+      "kun_yomi": "ひろ",
+      "meaning": "spacious; wide"
+    },
+    {
+      "character": "転",
+      "on_yomi": "テン",
+      "kun_yomi": "ころ",
+      "meaning": "to roll over"
+    },
+    {
+      "character": "借",
+      "on_yomi": "シャク、シャッ",
+      "kun_yomi": "か",
+      "meaning": "to borrow"
+    },
+    {
+      "character": "走",
+      "on_yomi": "ソウ",
+      "kun_yomi": "はし",
+      "meaning": "to run"
+    },
+    {
+      "character": "建",
+      "on_yomi": "ケン",
+      "kun_yomi": "たて、た",
+      "meaning": "to build"
+    },
+    {
+      "character": "地",
+      "on_yomi": "チ、ジ",
+      "kun_yomi": "N/A",
+      "meaning": "ground"
+    },
+    {
+      "character": "場",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "ば",
+      "meaning": "place"
+    },
+    {
+      "character": "足",
+      "on_yomi": "ソク",
+      "kun_yomi": "あし、た",
+      "meaning": "foot; leg"
+    },
+    {
+      "character": "通",
+      "on_yomi": "ツウ",
+      "kun_yomi": "とお、かよ",
+      "meaning": "to pass; to commute"
+    }
+  ]
+,
+  "lesson17": [
+  	{
+  	  "character": "歳",
+  	  "on_yomi": "サイ、セイ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "year; age"
+  	},
+    {
+      "character": "習",
+      "on_yomi": "シュウ",
+      "kun_yomi": "なら",
+      "meaning": "to learn"
+    },
+    {
+      "character": "主",
+      "on_yomi": "シュ",
+      "kun_yomi": "おも、ぬし",
+      "meaning": "main; lord"
+    },
+    {
+      "character": "結",
+      "on_yomi": "ケッ、ケツ",
+      "kun_yomi": "むす",
+      "meaning": "to tie; to join"
+    },
+    {
+      "character": "婚",
+      "on_yomi": "コン",
+      "kun_yomi": "N/A",
+      "meaning": "marriage"
+    },
+    {
+      "character": "集",
+      "on_yomi": "シュウ",
+      "kun_yomi": "あつ",
+      "meaning": "to gather"
+    },
+    {
+      "character": "発",
+      "on_yomi": "ハッ、ハツ、パツ",
+      "kun_yomi": "N/A",
+      "meaning": "to start; to reveal"
+    },
+    {
+      "character": "表",
+      "on_yomi": "ピョウ、ヒョウ",
+      "kun_yomi": "あらわ",
+      "meaning": "to express; surface"
+    },
+    {
+      "character": "品",
+      "on_yomi": "ヒン",
+      "kun_yomi": "しな",
+      "meaning": "goods; refinement"
+    },
+    {
+      "character": "字",
+      "on_yomi": "ジ",
+      "kun_yomi": "N/A",
+      "meaning": "character; letter"
+    },
+    {
+      "character": "活",
+      "on_yomi": "カツ、カッ",
+      "kun_yomi": "N/A",
+      "meaning": "lively"
+    },
+    {
+      "character": "写",
+      "on_yomi": "シャ",
+      "kun_yomi": "うつ",
+      "meaning": "to copy"
+    },
+    {
+      "character": "真",
+      "on_yomi": "シン",
+      "kun_yomi": "ま",
+      "meaning": "true; reality"
+    },
+    {
+      "character": "歩",
+      "on_yomi": "ホ、ポ",
+      "kun_yomi": "ある",
+      "meaning": "to walk"
+    },
+    {
+      "character": "野",
+      "on_yomi": "ヤ",
+      "kun_yomi": "の",
+      "meaning": "field"
+    }
+  ]
+,
+  "lesson11": [
+  	{
+  	  "character": "手",
+  	  "on_yomi": "シュ",
+  	  "kun_yomi": "て",
+  	  "meaning": "hand"
+  	},
+    {
+      "character": "紙",
+      "on_yomi": "シ",
+      "kun_yomi": "がみ、かみ",
+      "meaning": "paper"
+    },
+    {
+      "character": "好",
+      "on_yomi": "コウ",
+      "kun_yomi": "す、この",
+      "meaning": "favorite; to like"
+    },
+    {
+      "character": "近",
+      "on_yomi": "キン",
+      "kun_yomi": "ちか",
+      "meaning": "near"
+    },
+    {
+      "character": "明",
+      "on_yomi": "メイ",
+      "kun_yomi": "あか",
+      "meaning": "bright"
+    },
+    {
+      "character": "病",
+      "on_yomi": "ビョウ",
+      "kun_yomi": "N/A",
+      "meaning": "ill; sick"
+    },
+    {
+      "character": "院",
+      "on_yomi": "イン",
+      "kun_yomi": "N/A",
+      "meaning": "institution"
+    },
+    {
+      "character": "映",
+      "on_yomi": "エイ",
+      "kun_yomi": "うつ",
+      "meaning": "to reflect"
+    },
+    {
+      "character": "画",
+      "on_yomi": "ガ、カク",
+      "kun_yomi": "N/A",
+      "meaning": "picture"
+    },
+    {
+      "character": "歌",
+      "on_yomi": "カ",
+      "kun_yomi": "うた",
+      "meaning": "to sing"
+    },
+    {
+      "character": "市",
+      "on_yomi": "シ",
+      "kun_yomi": "いち",
+      "meaning": "city"
+    },
+    {
+      "character": "所",
+      "on_yomi": "ジョ、ショ",
+      "kun_yomi": "ところ、どころ",
+      "meaning": "place"
+    },
+    {
+      "character": "勉",
+      "on_yomi": "ベン",
+      "kun_yomi": "つと",
+      "meaning": "to make efforts"
+    },
+    {
+      "character": "強",
+      "on_yomi": "キョウ、ゴウ",
+      "kun_yomi": "つよ",
+      "meaning": "strong"
+    },
+    {
+      "character": "有",
+      "on_yomi": "ユウ",
+      "kun_yomi": "あ",
+      "meaning": "to exist"
+    },
+    {
+      "character": "旅",
+      "on_yomi": "リョ",
+      "kun_yomi": "たび",
+      "meaning": "travel"
+    }
+  ]
+,
+  "lesson18": [
+  	{
+  	  "character": "目",
+  	  "on_yomi": "モク",
+  	  "kun_yomi": "め",
+  	  "meaning": "eye"
+  	},
+    {
+      "character": "的",
+      "on_yomi": "テキ",
+      "kun_yomi": "まと",
+      "meaning": "target; -ish"
+    },
+    {
+      "character": "力",
+      "on_yomi": "リョク、リキ",
+      "kun_yomi": "ちから",
+      "meaning": "power"
+    },
+    {
+      "character": "洋",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "N/A",
+      "meaning": "ocean; overseas"
+    },
+    {
+      "character": "服",
+      "on_yomi": "フク",
+      "kun_yomi": "N/A",
+      "meaning": "clothes"
+    },
+    {
+      "character": "堂",
+      "on_yomi": "ドウ",
+      "kun_yomi": "N/A",
+      "meaning": "hall"
+    },
+    {
+      "character": "授",
+      "on_yomi": "ジュ",
+      "kun_yomi": "さずか",
+      "meaning": "to instruct"
+    },
+    {
+      "character": "業",
+      "on_yomi": "ギョウ",
+      "kun_yomi": "N/A",
+      "meaning": "business; vocation"
+    },
+    {
+      "character": "試",
+      "on_yomi": "シ",
+      "kun_yomi": "こころ",
+      "meaning": "test; to try"
+    },
+    {
+      "character": "験",
+      "on_yomi": "ケン",
+      "kun_yomi": "N/A",
+      "meaning": "to examine"
+    },
+    {
+      "character": "貸",
+      "on_yomi": "タイ",
+      "kun_yomi": "か",
+      "meaning": "to lend; loan"
+    },
+    {
+      "character": "図",
+      "on_yomi": "ト、ズ",
+      "kun_yomi": "はか",
+      "meaning": "drawing; to devise"
+    },
+    {
+      "character": "館",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "building; hall"
+    },
+    {
+      "character": "終",
+      "on_yomi": "シュウ",
+      "kun_yomi": "お",
+      "meaning": "end"
+    },
+    {
+      "character": "宿",
+      "on_yomi": "シュク",
+      "kun_yomi": "やど",
+      "meaning": "inn; to lodge in"
+    },
+    {
+      "character": "題",
+      "on_yomi": "ダイ",
+      "kun_yomi": "N/A",
+      "meaning": "title; topic"
+    }
+  ]
+,
+  "lesson16": [
+  	{
+  	  "character": "供",
+  	  "on_yomi": "キョウ",
+  	  "kun_yomi": "ども、とも、そな",
+  	  "meaning": "companion; offer"
+  	},
+    {
+      "character": "世",
+      "on_yomi": "セ、セイ",
+      "kun_yomi": "よ",
+      "meaning": "world; generation;"
+    },
+    {
+      "character": "界",
+      "on_yomi": "カイ",
+      "kun_yomi": "N/A",
+      "meaning": "world"
+    },
+    {
+      "character": "全",
+      "on_yomi": "ゼン",
+      "kun_yomi": "まった",
+      "meaning": "all"
+    },
+    {
+      "character": "部",
+      "on_yomi": "ブ",
+      "kun_yomi": "へ",
+      "meaning": "part; section"
+    },
+    {
+      "character": "始",
+      "on_yomi": "シ",
+      "kun_yomi": "はじ",
+      "meaning": "to begin"
+    },
+    {
+      "character": "週",
+      "on_yomi": "シュウ",
+      "kun_yomi": "N/A",
+      "meaning": "week"
+    },
+    {
+      "character": "以",
+      "on_yomi": "イ",
+      "kun_yomi": "N/A",
+      "meaning": "by means of; compared with"
+    },
+    {
+      "character": "考",
+      "on_yomi": "コウ",
+      "kun_yomi": "かんが",
+      "meaning": "to think; idea"
+    },
+    {
+      "character": "開",
+      "on_yomi": "カイ",
+      "kun_yomi": "あ、ひら",
+      "meaning": "to open"
+    },
+    {
+      "character": "屋",
+      "on_yomi": "オク",
+      "kun_yomi": "や",
+      "meaning": "shop; house"
+    },
+    {
+      "character": "方",
+      "on_yomi": "ホウ",
+      "kun_yomi": "かた、がた",
+      "meaning": "direction; person"
+    },
+    {
+      "character": "運",
+      "on_yomi": "ウン",
+      "kun_yomi": "はこ",
+      "meaning": "transport; luck"
+    },
+    {
+      "character": "動",
+      "on_yomi": "ドウ",
+      "kun_yomi": "うご",
+      "meaning": "to move"
+    },
+    {
+      "character": "教",
+      "on_yomi": "キョウ",
+      "kun_yomi": "おし",
+      "meaning": "to teach"
+    },
+    {
+      "character": "室",
+      "on_yomi": "シツ",
+      "kun_yomi": "N/A",
+      "meaning": "room"
+    }
+  ]
+,
+  "lesson2": [
+    {
+      "kana": "ア",
+      "pronunciation": "a"
+    },
+    {
+      "kana": "イ",
+      "pronunciation": "i"
+    },
+    {
+      "kana": "ウ",
+      "pronunciation": "u"
+    },
+    {
+      "kana": "エ",
+      "pronunciation": "e"
+    },
+    {
+      "kana": "オ",
+      "pronunciation": "o"
+    },
+    {
+      "kana": "カ",
+      "pronunciation": "ka"
+    },
+    {
+      "kana": "キ",
+      "pronunciation": "ki"
+    },
+    {
+      "kana": "ク",
+      "pronunciation": "ku"
+    },
+    {
+      "kana": "ケ",
+      "pronunciation": "ke"
+    },
+    {
+      "kana": "コ",
+      "pronunciation": "ko"
+    },
+    {
+      "kana": "サ",
+      "pronunciation": "sa"
+    },
+    {
+      "kana": "シ",
+      "pronunciation": "shi"
+    },
+    {
+      "kana": "ス",
+      "pronunciation": "su"
+    },
+    {
+      "kana": "セ",
+      "pronunciation": "se"
+    },
+    {
+      "kana": "ソ",
+      "pronunciation": "so"
+    },
+    {
+      "kana": "タ",
+      "pronunciation": "ta"
+    },
+    {
+      "kana": "チ",
+      "pronunciation": "chi"
+    },
+    {
+      "kana": "ツ",
+      "pronunciation": "tsu"
+    },
+    {
+      "kana": "テ",
+      "pronunciation": "te"
+    },
+    {
+      "kana": "ト",
+      "pronunciation": "to"
+    },
+    {
+      "kana": "ナ",
+      "pronunciation": "na"
+    },
+    {
+      "kana": "ニ",
+      "pronunciation": "ni"
+    },
+    {
+      "kana": "ヌ",
+      "pronunciation": "nu"
+    },
+    {
+      "kana": "ネ",
+      "pronunciation": "ne"
+    },
+    {
+      "kana": "ノ",
+      "pronunciation": "no"
+    },
+    {
+      "kana": "ハ",
+      "pronunciation": "ha"
+    },
+    {
+      "kana": "ヒ",
+      "pronunciation": "hi"
+    },
+    {
+      "kana": "フ",
+      "pronunciation": "fu"
+    },
+    {
+      "kana": "ヘ",
+      "pronunciation": "he"
+    },
+    {
+      "kana": "ホ",
+      "pronunciation": "ho"
+    },
+    {
+      "kana": "マ",
+      "pronunciation": "ma"
+    },
+    {
+      "kana": "ミ",
+      "pronunciation": "mi"
+    },
+    {
+      "kana": "ム",
+      "pronunciation": "mu"
+    },
+    {
+      "kana": "メ",
+      "pronunciation": "me"
+    },
+    {
+      "kana": "モ",
+      "pronunciation": "mo"
+    },
+    {
+      "kana": "ヤ",
+      "pronunciation": "ya"
+    },
+    {
+      "kana": "ユ",
+      "pronunciation": "yu"
+    },
+    {
+      "kana": "ヨ",
+      "pronunciation": "yo"
+    },
+    {
+      "kana": "ラ",
+      "pronunciation": "ra"
+    },
+    {
+      "kana": "リ",
+      "pronunciation": "ri"
+    },
+    {
+      "kana": "ル",
+      "pronunciation": "ru"
+    },
+    {
+      "kana": "レ",
+      "pronunciation": "re"
+    },
+    {
+      "kana": "ロ",
+      "pronunciation": "ro"
+    },
+    {
+      "kana": "ワ",
+      "pronunciation": "wa"
+    },
+    {
+      "kana": "ヲ",
+      "pronunciation": "wo"
+    },
+    {
+      "kana": "ン",
+      "pronunciation": "n"
+    }
+  ]
+,
+  "lesson12": [
+  	{
+  	  "character": "昔",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "むかし",
+  	  "meaning": "ancient times"
+  	},
+    {
+      "character": "々",
+      "on_yomi": "N/A",
+      "kun_yomi": "N/A",
+      "meaning": "symbol of a repetition of a kanji"
+    },
+    {
+      "character": "神",
+      "on_yomi": "ジン、シン",
+      "kun_yomi": "かみ",
+      "meaning": "God"
+    },
+    {
+      "character": "早",
+      "on_yomi": "ソウ",
+      "kun_yomi": "はや",
+      "meaning": "early"
+    },
+    {
+      "character": "起",
+      "on_yomi": "キ",
+      "kun_yomi": "お",
+      "meaning": "to get up"
+    },
+    {
+      "character": "牛",
+      "on_yomi": "ギュウ",
+      "kun_yomi": "うし",
+      "meaning": "cow"
+    },
+    {
+      "character": "使",
+      "on_yomi": "シ",
+      "kun_yomi": "つか",
+      "meaning": "to use"
+    },
+    {
+      "character": "働",
+      "on_yomi": "ドウ",
+      "kun_yomi": "はたら、ばたら",
+      "meaning": "to work"
+    },
+    {
+      "character": "連",
+      "on_yomi": "レン",
+      "kun_yomi": "つ",
+      "meaning": "to link"
+    },
+    {
+      "character": "別",
+      "on_yomi": "ベツ",
+      "kun_yomi": "わか",
+      "meaning": "to separate"
+    },
+    {
+      "character": "度",
+      "on_yomi": "ド",
+      "kun_yomi": "N/A",
+      "meaning": "time; degrees"
+    },
+    {
+      "character": "赤",
+      "on_yomi": "セキ",
+      "kun_yomi": "あか",
+      "meaning": "red"
+    },
+    {
+      "character": "青",
+      "on_yomi": "セイ",
+      "kun_yomi": "あお",
+      "meaning": "blue"
+    },
+    {
+      "character": "色",
+      "on_yomi": "シキ、ショク",
+      "kun_yomi": "いろ",
+      "meaning": "color"
+    }
+  ]
+,
+  "lesson20": [
+  	{
+  	  "character": "皿",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "さら、ざら",
+  	  "meaning": "plate"
+  	},
+    {
+      "character": "声",
+      "on_yomi": "セイ",
+      "kun_yomi": "こえ",
+      "meaning": "voice"
+    },
+    {
+      "character": "茶",
+      "on_yomi": "チャ、サ",
+      "kun_yomi": "N/A",
+      "meaning": "tea"
+    },
+    {
+      "character": "止",
+      "on_yomi": "シ",
+      "kun_yomi": "と",
+      "meaning": "to stop"
+    },
+    {
+      "character": "枚",
+      "on_yomi": "マイ",
+      "kun_yomi": "N/A",
+      "meaning": "sheet of..."
+    },
+    {
+      "character": "両",
+      "on_yomi": "リョウ",
+      "kun_yomi": "N/A",
+      "meaning": "both"
+    },
+    {
+      "character": "無",
+      "on_yomi": "ム、ブ",
+      "kun_yomi": "な",
+      "meaning": "none"
+    },
+    {
+      "character": "払",
+      "on_yomi": "N/A",
+      "kun_yomi": "はら、ばら",
+      "meaning": "to pay"
+    },
+    {
+      "character": "心",
+      "on_yomi": "シン",
+      "kun_yomi": "こころ",
+      "meaning": "heart; mind"
+    },
+    {
+      "character": "笑",
+      "on_yomi": "ショウ",
+      "kun_yomi": "わら、え",
+      "meaning": "to laugh"
+    },
+    {
+      "character": "絶",
+      "on_yomi": "ゼッ、ゼツ",
+      "kun_yomi": "た",
+      "meaning": "to discontinue"
+    },
+    {
+      "character": "対",
+      "on_yomi": "タイ、ツイ",
+      "kun_yomi": "N/A",
+      "meaning": "opposite"
+    },
+    {
+      "character": "痛",
+      "on_yomi": "ツウ",
+      "kun_yomi": "いた",
+      "meaning": "pain"
+    },
+    {
+      "character": "最",
+      "on_yomi": "サイ",
+      "kun_yomi": "もっと",
+      "meaning": "utmost"
+    },
+    {
+      "character": "続",
+      "on_yomi": "ゾク",
+      "kun_yomi": "つづ",
+      "meaning": "to continue"
+    }
+  ]
+,
+  "lesson21": [
+  	{
+  	  "character": "信",
+  	  "on_yomi": "シン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "to trust; to believe in"
+  	},
+    {
+      "character": "経",
+      "on_yomi": "ケイ",
+      "kun_yomi": "N/A",
+      "meaning": "to pass through"
+    },
+    {
+      "character": "台",
+      "on_yomi": "タイ、ダイ",
+      "kun_yomi": "N/A",
+      "meaning": "stand"
+    },
+    {
+      "character": "風",
+      "on_yomi": "フウ",
+      "kun_yomi": "かぜ",
+      "meaning": "wind"
+    },
+    {
+      "character": "犬",
+      "on_yomi": "ケン",
+      "kun_yomi": "いぬ",
+      "meaning": "dog"
+    },
+    {
+      "character": "重",
+      "on_yomi": "ジュウ、チョウ",
+      "kun_yomi": "おも、かさ",
+      "meaning": "heavy; to pile up"
+    },
+    {
+      "character": "初",
+      "on_yomi": "ショ",
+      "kun_yomi": "はじ、はつ",
+      "meaning": "first"
+    },
+    {
+      "character": "若",
+      "on_yomi": "N/A",
+      "kun_yomi": "わか",
+      "meaning": "young"
+    },
+    {
+      "character": "送",
+      "on_yomi": "ソウ",
+      "kun_yomi": "おく",
+      "meaning": "to send"
+    },
+    {
+      "character": "幸",
+      "on_yomi": "コウ",
+      "kun_yomi": "しあわ、さいわ",
+      "meaning": "happiness"
+    },
+    {
+      "character": "計",
+      "on_yomi": "ケイ",
+      "kun_yomi": "はか",
+      "meaning": "to measure"
+    },
+    {
+      "character": "遅",
+      "on_yomi": "チ",
+      "kun_yomi": "おく、おそ",
+      "meaning": "late"
+    },
+    {
+      "character": "配",
+      "on_yomi": "パイ、ハイ",
+      "kun_yomi": "くば",
+      "meaning": "to deliver"
+    },
+    {
+      "character": "弟",
+      "on_yomi": "ダイ、デ",
+      "kun_yomi": "おとうと",
+      "meaning": "young brother"
+    },
+    {
+      "character": "妹",
+      "on_yomi": "マイ",
+      "kun_yomi": "いもうと",
+      "meaning": "young sister"
+    }
+  ]
+,
+  "lesson19": [
+  	{
+  	  "character": "春",
+  	  "on_yomi": "シュン",
+  	  "kun_yomi": "はる",
+  	  "meaning": "spring"
+  	},
+    {
+      "character": "秋",
+      "on_yomi": "シュウ",
+      "kun_yomi": "あき",
+      "meaning": "autumn"
+    },
+    {
+      "character": "冬",
+      "on_yomi": "トウ",
+      "kun_yomi": "ふゆ",
+      "meaning": "winter"
+    },
+    {
+      "character": "花",
+      "on_yomi": "カ",
+      "kun_yomi": "はな",
+      "meaning": "flower"
+    },
+    {
+      "character": "様",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "さま",
+      "meaning": "Mr.; Mrs.; condition"
+    },
+    {
+      "character": "不",
+      "on_yomi": "フ、ブ",
+      "kun_yomi": "N/A",
+      "meaning": "negative; non-"
+    },
+    {
+      "character": "姉",
+      "on_yomi": "シ",
+      "kun_yomi": "あね、ねえ",
+      "meaning": "older sister"
+    },
+    {
+      "character": "兄",
+      "on_yomi": "キョウ、ケイ",
+      "kun_yomi": "あに、にい",
+      "meaning": "older brother"
+    },
+    {
+      "character": "漢",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "China"
+    },
+    {
+      "character": "卒",
+      "on_yomi": "ソツ",
+      "kun_yomi": "N/A",
+      "meaning": "to graduate"
+    },
+    {
+      "character": "工",
+      "on_yomi": "コウ、ク",
+      "kun_yomi": "N/A",
+      "meaning": "craft; construction"
+    },
+    {
+      "character": "研",
+      "on_yomi": "ケン",
+      "kun_yomi": "と",
+      "meaning": "to polish; study"
+    },
+    {
+      "character": "究",
+      "on_yomi": "キュウ",
+      "kun_yomi": "きわ",
+      "meaning": "research"
+    },
+    {
+      "character": "質",
+      "on_yomi": "シツ、シチ",
+      "kun_yomi": "N/A",
+      "meaning": "quality; matter"
+    },
+    {
+      "character": "問",
+      "on_yomi": "モン",
+      "kun_yomi": "と",
+      "meaning": "question"
+    },
+    {
+      "character": "多",
+      "on_yomi": "タ",
+      "kun_yomi": "おお",
+      "meaning": "many; much"
+    }
+  ]
+,
+  "lesson22": [
+  	{
+  	  "character": "記",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "to write down"
+  	},
+    {
+      "character": "銀",
+      "on_yomi": "ギン",
+      "kun_yomi": "N/A",
+      "meaning": "silver"
+    },
+    {
+      "character": "回",
+      "on_yomi": "カイ",
+      "kun_yomi": "まわ",
+      "meaning": "...times; to turn"
+    },
+    {
+      "character": "夕",
+      "on_yomi": "N/A",
+      "kun_yomi": "ゆう",
+      "meaning": "evening"
+    },
+    {
+      "character": "黒",
+      "on_yomi": "コク",
+      "kun_yomi": "くろ",
+      "meaning": "black"
+    },
+    {
+      "character": "用",
+      "on_yomi": "ヨウ",
+      "kun_yomi": "N/A",
+      "meaning": "task; to use"
+    },
+    {
+      "character": "守",
+      "on_yomi": "ス、シュ",
+      "kun_yomi": "まも",
+      "meaning": "to keep; to protect"
+    },
+    {
+      "character": "末",
+      "on_yomi": "マツ",
+      "kun_yomi": "すえ",
+      "meaning": "the end of"
+    },
+    {
+      "character": "待",
+      "on_yomi": "タイ",
+      "kun_yomi": "ま、まち",
+      "meaning": "to wait"
+    },
+    {
+      "character": "残",
+      "on_yomi": "ザン",
+      "kun_yomi": "のこ",
+      "meaning": "to remain"
+    },
+    {
+      "character": "番",
+      "on_yomi": "バン",
+      "kun_yomi": "N/A",
+      "meaning": "order; number"
+    },
+    {
+      "character": "駅",
+      "on_yomi": "エキ",
+      "kun_yomi": "N/A",
+      "meaning": "station"
+    },
+    {
+      "character": "説",
+      "on_yomi": "セツ、セッ",
+      "kun_yomi": "N/A",
+      "meaning": "theory; to explain"
+    },
+    {
+      "character": "案",
+      "on_yomi": "アン",
+      "kun_yomi": "N/A",
+      "meaning": "idea; proposal"
+    },
+    {
+      "character": "内",
+      "on_yomi": "ナイ",
+      "kun_yomi": "N/A",
+      "meaning": "inside; inner"
+    },
+    {
+      "character": "忘",
+      "on_yomi": "ボウ",
+      "kun_yomi": "わす",
+      "meaning": "to forget"
+    }
+  ]
+,
+  "lesson3": [
+  	{
+  	  "character": "一",
+  	  "on_yomi": "イチ、イッ",
+  	  "kun_yomi": "ひと",
+  	  "meaning": "one"
+  	},
+  	{
+  	  "character": "二",
+  	  "on_yomi": "ニ",
+  	  "kun_yomi": "ふた",
+  	  "meaning": "two"
+  	},
+  	{
+  	  "character": "三",
+  	  "on_yomi": "サン",
+  	  "kun_yomi": "みっ",
+  	  "meaning": "three"
+  	},
+  	{
+  	  "character": "四",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "よん、よ、よっ",
+  	  "meaning": "four"
+  	},
+  	{
+  	  "character": "五",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "いつ",
+  	  "meaning": "five"
+  	},
+  	{
+  	  "character": "六",
+  	  "on_yomi": "ロク、ロッ",
+  	  "kun_yomi": "むっ",
+  	  "meaning": "six"
+  	},
+  	{
+  	  "character": "七",
+  	  "on_yomi": "シチ",
+  	  "kun_yomi": "なな",
+  	  "meaning": "seven"
+  	},
+  	{
+  	  "character": "八",
+  	  "on_yomi": "ハチ、ハッ",
+  	  "kun_yomi": "やっ",
+  	  "meaning": "eight"
+  	},
+  	{
+  	  "character": "九",
+  	  "on_yomi": "キュウ、ク",
+  	  "kun_yomi": "ここの",
+  	  "meaning": "nine"
+  	},
+  	{
+  	  "character": "十",
+  	  "on_yomi": "ジュウ、ジュッ",
+  	  "kun_yomi": "とお",
+  	  "meaning": "ten"
+  	},
+  	{
+  	  "character": "百",
+  	  "on_yomi": "ヒャク、ビャク、ピャク",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "hundred"
+  	},
+  	{
+  	  "character": "千",
+  	  "on_yomi": "セン、ゼン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "thousand"
+  	},
+  	{
+  	  "character": "万",
+  	  "on_yomi": "マン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "ten thousand"
+  	},
+  	{
+  	  "character": "円",
+  	  "on_yomi": "エン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "yen; circle"
+  	},
+  	{
+  	  "character": "時",
+  	  "on_yomi": "ジ",
+  	  "kun_yomi": "とき",
+  	  "meaning": "time"
+  	}
+  ]
+,
+  "lesson4": [
+  	{
+  	  "character": "日",
+  	  "on_yomi": "ニ、ニチ、ニッ",
+  	  "kun_yomi": "び、ひ",
+  	  "meaning": "day; sun"
+  	},
+  	{
+  	  "character": "本",
+  	  "on_yomi": "ホン",
+  	  "kun_yomi": "もと",
+  	  "meaning": "book; basis"
+  	},
+  	{
+  	  "character": "人",
+  	  "on_yomi": "ジン、ニン",
+  	  "kun_yomi": "ひと",
+  	  "meaning": "person"
+  	},
+  	{
+  	  "character": "月",
+  	  "on_yomi": "ゲツ、ガツ",
+  	  "kun_yomi": "つき",
+  	  "meaning": "moon; month"
+  	},
+  	{
+  	  "character": "火",
+  	  "on_yomi": "カ",
+  	  "kun_yomi": "ひ",
+  	  "meaning": "fire"
+  	},
+  	{
+  	  "character": "水",
+  	  "on_yomi": "スイ",
+  	  "kun_yomi": "みず",
+  	  "meaning": "water"
+  	},
+  	{
+  	  "character": "木",
+  	  "on_yomi": "モク",
+  	  "kun_yomi": "き",
+  	  "meaning": "tree"
+  	},
+  	{
+  	  "character": "金",
+  	  "on_yomi": "キン",
+  	  "kun_yomi": "かね",
+  	  "meaning": "gold; money"
+  	},
+  	{
+  	  "character": "土",
+  	  "on_yomi": "ド",
+  	  "kun_yomi": "つち",
+  	  "meaning": "soil"
+  	},
+  	{
+  	  "character": "曜",
+  	  "on_yomi": "ヨウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "weekday"
+  	},
+  	{
+  	  "character": "上",
+  	  "on_yomi": "うえ",
+  	  "kun_yomi": "ジョウ",
+  	  "meaning": "up"
+  	},
+  	{
+  	  "character": "下",
+  	  "on_yomi": "カ",
+  	  "kun_yomi": "した",
+  	  "meaning": "down"
+  	},
+  	{
+  	  "character": "中",
+  	  "on_yomi": "チュウ、ジュウ",
+  	  "kun_yomi": "なか",
+  	  "meaning": "middle"
+  	},
+  	{
+  	  "character": "半",
+  	  "on_yomi": "ハン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "half"
+  	}
+  ]
+,
+  "lesson5": [
+  	{
+  	  "character": "山",
+  	  "on_yomi": "サン",
+  	  "kun_yomi": "やま",
+  	  "meaning": "mountain"
+  	},
+  	{
+  	  "character": "川",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "かわ、がわ",
+  	  "meaning": "river"
+  	},
+  	{
+  	  "character": "元",
+  	  "on_yomi": "ゲン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "origin"
+  	},
+  	{
+  	  "character": "気",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "spirit"
+  	},
+  	{
+  	  "character": "天",
+  	  "on_yomi": "テン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "heaven"
+  	},
+  	{
+  	  "character": "私",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "わたし",
+  	  "meaning": "I; private"
+  	},
+  	{
+  	  "character": "今",
+  	  "on_yomi": "コン",
+  	  "kun_yomi": "いま",
+  	  "meaning": "now"
+  	},
+  	{
+  	  "character": "田",
+  	  "on_yomi": "N/A",
+  	  "kun_yomi": "た、だ",
+  	  "meaning": "rice field"
+  	},
+  	{
+  	  "character": "女",
+  	  "on_yomi": "ジョ",
+  	  "kun_yomi": "おんな",
+  	  "meaning": "woman"
+  	},
+  	{
+  	  "character": "男",
+  	  "on_yomi": "ダン",
+  	  "kun_yomi": "おとこ",
+  	  "meaning": "man"
+  	},
+  	{
+  	  "character": "見",
+  	  "on_yomi": "ケン",
+  	  "kun_yomi": "み",
+  	  "meaning": "to see"
+  	},
+  	{
+  	  "character": "行",
+  	  "on_yomi": "コウ、ギョウ",
+  	  "kun_yomi": "い",
+  	  "meaning": "to go"
+  	},
+  	{
+  	  "character": "食",
+  	  "on_yomi": "ショク",
+  	  "kun_yomi": "た",
+  	  "meaning": "to eat"
+  	},
+  	{
+  	  "character": "飲",
+  	  "on_yomi": "イン",
+  	  "kun_yomi": "の",
+  	  "meaning": "to drink"
+  	}
+  ]
+,
+  "lesson23": [
+  	{
+  	  "character": "顔",
+  	  "on_yomi": "ガン",
+  	  "kun_yomi": "かお、がお",
+  	  "meaning": "face"
+  	},
+    {
+      "character": "情",
+      "on_yomi": "ジョウ",
+      "kun_yomi": "なさ",
+      "meaning": "emotion; condition"
+    },
+    {
+      "character": "怒",
+      "on_yomi": "ド",
+      "kun_yomi": "おこ、いか",
+      "meaning": "to get angry"
+    },
+    {
+      "character": "変",
+      "on_yomi": "ヘン",
+      "kun_yomi": "か",
+      "meaning": "change; abnormal"
+    },
+    {
+      "character": "相",
+      "on_yomi": "ショウ、ソウ",
+      "kun_yomi": "あい",
+      "meaning": "mutual"
+    },
+    {
+      "character": "横",
+      "on_yomi": "オウ",
+      "kun_yomi": "よこ",
+      "meaning": "sideways"
+    },
+    {
+      "character": "比",
+      "on_yomi": "ヒ",
+      "kun_yomi": "くら",
+      "meaning": "to compare"
+    },
+    {
+      "character": "化",
+      "on_yomi": "カ、ケ",
+      "kun_yomi": "ば",
+      "meaning": "to change into"
+    },
+    {
+      "character": "違",
+      "on_yomi": "イ",
+      "kun_yomi": "ちが",
+      "meaning": "to differ"
+    },
+    {
+      "character": "悲",
+      "on_yomi": "ヒ",
+      "kun_yomi": "かな",
+      "meaning": "sad"
+    },
+    {
+      "character": "調",
+      "on_yomi": "チョウ",
+      "kun_yomi": "しら",
+      "meaning": "to investigate"
+    },
+    {
+      "character": "査",
+      "on_yomi": "サ",
+      "kun_yomi": "N/A",
+      "meaning": "to inspect"
+    },
+    {
+      "character": "果",
+      "on_yomi": "カ",
+      "kun_yomi": "は",
+      "meaning": "fruit; result"
+    },
+    {
+      "character": "感",
+      "on_yomi": "カン",
+      "kun_yomi": "N/A",
+      "meaning": "to sense; to feel"
+    },
+    {
+      "character": "答",
+      "on_yomi": "トウ",
+      "kun_yomi": "こた、こたえ",
+      "meaning": "answer"
+    }
+  ]
+,
+  "lesson6": [
+  	{
+  	  "character": "東",
+  	  "on_yomi": "トウ",
+  	  "kun_yomi": "ひがし",
+  	  "meaning": "east"
+  	},
+  	{
+  	  "character": "西",
+  	  "on_yomi": "セイ、サイ",
+  	  "kun_yomi": "にし",
+  	  "meaning": "west"
+  	},
+  	{
+  	  "character": "南",
+  	  "on_yomi": "ナン",
+  	  "kun_yomi": "みなみ",
+  	  "meaning": "south"
+  	},
+  	{
+  	  "character": "北",
+  	  "on_yomi": "ホク、ホッ",
+  	  "kun_yomi": "きた",
+  	  "meaning": "north"
+  	},
+  	{
+  	  "character": "口",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "ぐち、くち",
+  	  "meaning": "mouth"
+  	},
+  	{
+  	  "character": "出",
+  	  "on_yomi": "シュッ、シュツ",
+  	  "kun_yomi": "で、だ",
+  	  "meaning": "to exit"
+  	},
+  	{
+  	  "character": "右",
+  	  "on_yomi": "ウ、ユウ",
+  	  "kun_yomi": "みぎ",
+  	  "meaning": "right"
+  	},
+  	{
+  	  "character": "左",
+  	  "on_yomi": "サ",
+  	  "kun_yomi": "ひだり",
+  	  "meaning": "left"
+  	},
+  	{
+  	  "character": "分",
+  	  "on_yomi": "フン、プン、ブン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "minute; to divide"
+  	},
+  	{
+  	  "character": "先",
+  	  "on_yomi": "セン",
+  	  "kun_yomi": "さき",
+  	  "meaning": "ahead"
+  	},
+  	{
+  	  "character": "生",
+  	  "on_yomi": "セイ、ショウ",
+  	  "kun_yomi": "う",
+  	  "meaning": "birth"
+  	},
+  	{
+  	  "character": "大",
+  	  "on_yomi": "ダイ、タイ",
+  	  "kun_yomi": "おお",
+  	  "meaning": "big"
+  	},
+  	{
+  	  "character": "学",
+  	  "on_yomi": "ガク、ガッ",
+  	  "kun_yomi": "まな",
+  	  "meaning": "learning"
+  	},
+  	{
+  	  "character": "外",
+  	  "on_yomi": "ガイ",
+  	  "kun_yomi": "そと",
+  	  "meaning": "outside"
+  	},
+  	{
+  	  "character": "国",
+  	  "on_yomi": "コク、ゴク",
+  	  "kun_yomi": "くに",
+  	  "meaning": "country"
+  	}
+  ]
+,
+  "lesson7": [
+  	{
+  	  "character": "京",
+  	  "on_yomi": "キョウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "capital"
+  	},
+    {
+  	  "character": "子",
+  	  "on_yomi": "シ",
+  	  "kun_yomi": "こ",
+  	  "meaning": "child"
+  	},
+    {
+  	  "character": "小",
+  	  "on_yomi": "ショウ",
+  	  "kun_yomi": "ちい",
+  	  "meaning": "small"
+  	},
+    {
+  	  "character": "会",
+  	  "on_yomi": "カイ",
+  	  "kun_yomi": "あ",
+  	  "meaning": "to meet"
+  	},
+    {
+  	  "character": "社",
+  	  "on_yomi": "シャ、ジャ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "company"
+  	},
+    {
+  	  "character": "父",
+  	  "on_yomi": "フ",
+  	  "kun_yomi": "ちち、とう",
+  	  "meaning": "father"
+  	},
+    {
+  	  "character": "母",
+  	  "on_yomi": "ボ",
+  	  "kun_yomi": "はは、かあ",
+  	  "meaning": "mother"
+  	},
+    {
+  	  "character": "高",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "たか",
+  	  "meaning": "high"
+  	},
+    {
+  	  "character": "校",
+  	  "on_yomi": "コウ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "school"
+  	},
+    {
+  	  "character": "毎",
+  	  "on_yomi": "マイ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "every"
+  	},
+    {
+  	  "character": "語",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "word"
+  	},
+    {
+  	  "character": "文",
+  	  "on_yomi": "ブン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "sentence"
+  	},
+    {
+  	  "character": "帰",
+  	  "on_yomi": "キ",
+  	  "kun_yomi": "かえ",
+  	  "meaning": "to return"
+  	},
+    {
+  	  "character": "入",
+  	  "on_yomi": "ニュウ",
+  	  "kun_yomi": "はい、いり、い",
+  	  "meaning": "to enter"
+  	}
+  ]
+,
+  "lesson9": [
+  	{
+  	  "character": "午",
+  	  "on_yomi": "ゴ",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "noon"
+  	},
+    {
+      "character": "後",
+      "on_yomi": "ゴ",
+      "kun_yomi": "あと、うし",
+      "meaning": "after"
+    },
+    {
+      "character": "前",
+      "on_yomi": "ゼン",
+      "kun_yomi": "まえ",
+      "meaning": "before"
+    },
+    {
+      "character": "名",
+      "on_yomi": "メイ",
+      "kun_yomi": "な",
+      "meaning": "name"
+    },
+    {
+      "character": "白",
+      "on_yomi": "ハク",
+      "kun_yomi": "しろ",
+      "meaning": "white"
+    },
+    {
+      "character": "雨",
+      "on_yomi": "ウ",
+      "kun_yomi": "あめ",
+      "meaning": "rain"
+    },
+    {
+      "character": "書",
+      "on_yomi": "ショ",
+      "kun_yomi": "か",
+      "meaning": "to write"
+    },
+    {
+      "character": "友",
+      "on_yomi": "ユウ",
+      "kun_yomi": "とも",
+      "meaning": "friend"
+    },
+    {
+      "character": "間",
+      "on_yomi": "カン",
+      "kun_yomi": "あいだ",
+      "meaning": "between"
+    },
+    {
+      "character": "家",
+      "on_yomi": "カ",
+      "kun_yomi": "いえ",
+      "meaning": "house"
+    },
+    {
+      "character": "話",
+      "on_yomi": "フ",
+      "kun_yomi": "はな、はなし",
+      "meaning": "to speak"
+    },
+    {
+      "character": "少",
+      "on_yomi": "ショウ",
+      "kun_yomi": "すこ、すく",
+      "meaning": "little"
+    },
+    {
+      "character": "古",
+      "on_yomi": "コ",
+      "kun_yomi": "ふる",
+      "meaning": "old"
+    },
+    {
+      "character": "知",
+      "on_yomi": "チ",
+      "kun_yomi": "し",
+      "meaning": "to know"
+    },
+    {
+      "character": "来",
+      "on_yomi": "ライ",
+      "kun_yomi": "く、き、こ",
+      "meaning": "to come"
+    }
+  ]
+,
+  "lesson8": [
+  	{
+  	  "character": "員",
+  	  "on_yomi": "イン",
+  	  "kun_yomi": "N/A",
+  	  "meaning": "member"
+  	},
+    {
+      "character": "新",
+      "on_yomi": "シン",
+      "kun_yomi": "あたら",
+      "meaning": "new"
+    },
+    {
+      "character": "聞",
+      "on_yomi": "ブン",
+      "kun_yomi": "き",
+      "meaning": "to listen"
+    },
+    {
+      "character": "作",
+      "on_yomi": "サク",
+      "kun_yomi": "つく",
+      "meaning": "to make"
+    },
+    {
+      "character": "仕",
+      "on_yomi": "シ",
+      "kun_yomi": "N/A",
+      "meaning": "to serve"
+    },
+    {
+      "character": "事",
+      "on_yomi": "ジ",
+      "kun_yomi": "ごと、こと",
+      "meaning": "thing"
+    },
+    {
+      "character": "電",
+      "on_yomi": "デン",
+      "kun_yomi": "N/A",
+      "meaning": "electricity"
+    },
+    {
+      "character": "車",
+      "on_yomi": "シャ",
+      "kun_yomi": "くるま",
+      "meaning": "car"
+    },
+    {
+      "character": "休",
+      "on_yomi": "キュウ",
+      "kun_yomi": "やす",
+      "meaning": "to rest"
+    },
+    {
+      "character": "言",
+      "on_yomi": "ゲン",
+      "kun_yomi": "い",
+      "meaning": "to say"
+    },
+    {
+      "character": "読書",
+      "on_yomi": "ドク",
+      "kun_yomi": "よ",
+      "meaning": "to read"
+    },
+    {
+      "character": "思",
+      "on_yomi": "シ",
+      "kun_yomi": "おも",
+      "meaning": "to think"
+    },
+    {
+      "character": "次",
+      "on_yomi": "ジ",
+      "kun_yomi": "つぎ",
+      "meaning": "next"
+    },
+    {
+      "character": "何",
+      "on_yomi": "N/A",
+      "kun_yomi": "なに、なん",
+      "meaning": "what"
+    }
+  ]
+}
