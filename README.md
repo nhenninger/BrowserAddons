@@ -8,6 +8,12 @@ A collection of browser add-ons developed primarily for the Firefox web browser.
 
 A JavaScript and jQuery practice quiz.  Written as a study aid using the same lesson data as ShinkeiSuijaku.  Available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/genkishiken).
 
+## Macchi3
+
+(マッチ3 - Match 3)
+
+A basic match 3 study game using the same lesson data as GenkiShiken and ShinkeiSuijaku.  In development.
+
 ## JishoSeibiki
 
 (辞書正引き - "dictionary lookup") [Apologies if this is grammatically incorrect.  Please PR, and I will fix it!]

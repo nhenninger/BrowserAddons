@@ -1,4 +1,6 @@
 /*jshint esversion: 6 */
+/* With thanks to http://www.emanueleferonato.com/2016/05/17/match-3-bejeweled-html5-prototype-made-with-phaser/ */
+
 var colorGroupIsOn;
 var currCharacterArray = [];
 var platforms;
@@ -6,6 +8,8 @@ var cursors;
 var score = 0;
 var scoreText;
 const NUM_OF_TILE_GROUPS = 6;
+const BOARD_DIMENSION = 8;
+const TILE_DIMENSION = 100;
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(arr){
@@ -24,10 +28,7 @@ function shuffle(arr){
 }
 
 function preload () {
-  game.load.image('sky', 'assets/sky.png');
-  game.load.image('ground', 'assets/platform.png');
-  game.load.image('star', 'assets/star.png');
-  game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+  game.load.spritesheet('gems', 'assets/gems2.png', TODO, TODO); // TODO: write CC-BY attribution in extension description and in a license file
   game.load.json('version', 'lessons.json');
 }
 
@@ -58,4 +59,4 @@ function collectStar (player, star) {
   scoreText.text = 'Score: ' + score;
 }
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });
+game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });
