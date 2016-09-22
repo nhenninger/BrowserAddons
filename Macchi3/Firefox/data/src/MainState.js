@@ -29,8 +29,6 @@ function shuffle(arr){
 // TODO: switch architecture to states
 // TODO: add game music
 function preload () {
-  game.load.spritesheet('gems', 'assets/gems.png', GEM_DIMENSION, GEM_DIMENSION); // TODO: write CC-BY attribution in extension description and in a license file
-  game.load.json('lessons', 'lessons.json');
 }
 
 function create () {
@@ -51,15 +49,12 @@ function create () {
 function update() {
 }
 
-function collectStar (player, star) {
-  // Removes the star from the screen
-  star.kill();
-
-  //  Add and update the score
-  score += 10;
-  scoreText.text = 'Score: ' + score;
-}
-
 window.onload = function() {
-  game = new Phaser.Game(BOARD_DIMENSION * GEM_DIMENSION, BOARD_DIMENSION * GEM_DIMENSION, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });
+  var game = new Phaser.Game(BOARD_DIMENSION * GEM_DIMENSION, BOARD_DIMENSION * GEM_DIMENSION, Phaser.AUTO, "game_div");
+  game.state.add("boot", bootState);
+  game.state.add("preload", preloadState);
+  game.state.add("menu", menuState);
+  game.state.add("game", gameState);
+  game.state.add("gameOver", gameOverState);
+  game.state.start("boot");
 };
