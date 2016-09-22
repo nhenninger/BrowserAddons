@@ -4,3 +4,4 @@ changelog.txt
 *.xpi
 *.md
 .jpmignore
+.jshintrc

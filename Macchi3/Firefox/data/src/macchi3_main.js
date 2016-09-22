@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /* With thanks to http://www.emanueleferonato.com/2016/05/17/match-3-bejeweled-html5-prototype-made-with-phaser/ */
 
 var colorGroupIsOn;
@@ -7,9 +6,9 @@ var platforms;
 var cursors;
 var score = 0;
 var scoreText;
-const NUM_OF_TILE_GROUPS = 6;
+const NUM_OF_GEM_GROUPS = 6;
 const BOARD_DIMENSION = 8;
-const TILE_DIMENSION = 100;
+const GEM_DIMENSION = 100;
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(arr){
@@ -27,9 +26,11 @@ function shuffle(arr){
   return arr;
 }
 
+// TODO: switch architecture to states
+// TODO: add game music
 function preload () {
-  game.load.spritesheet('gems', 'assets/gems2.png', TODO, TODO); // TODO: write CC-BY attribution in extension description and in a license file
-  game.load.json('version', 'lessons.json');
+  game.load.spritesheet('gems', 'assets/gems.png', GEM_DIMENSION, GEM_DIMENSION); // TODO: write CC-BY attribution in extension description and in a license file
+  game.load.json('lessons', 'lessons.json');
 }
 
 function create () {
@@ -59,4 +60,6 @@ function collectStar (player, star) {
   scoreText.text = 'Score: ' + score;
 }
 
-game = new Phaser.Game(800, 600, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });
+window.onload = function() {
+  game = new Phaser.Game(BOARD_DIMENSION * GEM_DIMENSION, BOARD_DIMENSION * GEM_DIMENSION, Phaser.AUTO, 'game_div', { preload: preload, create: create, update: update });
+};
