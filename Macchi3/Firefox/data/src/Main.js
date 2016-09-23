@@ -26,35 +26,12 @@ function shuffle(arr){
   return arr;
 }
 
-// TODO: switch architecture to states
-// TODO: add game music
-function preload () {
-}
-
-function create () {
-
-  game.stage.backgroundColor = '#0072bc';
-
-  var phaserJSON = game.cache.getJSON('version');
-
-  console.log(JSON.stringify(shuffle(phaserJSON.lesson1)));
-
-  var text2 = game.add.text(100, 200, "Name: " + phaserJSON.name, { fill: '#ffffff' });
-  text2.setShadow(2, 2, 'rgba(0,0,0,0.5)', 0);
-
-  var text3 = game.add.text(100, 300, "Released: " + phaserJSON.released, { fill: '#ffffff' });
-  text3.setShadow(2, 2, 'rgba(0,0,0,0.5)', 0);
-}
-
-function update() {
-}
-
 window.onload = function() {
   var game = new Phaser.Game(BOARD_DIMENSION * GEM_DIMENSION, BOARD_DIMENSION * GEM_DIMENSION, Phaser.AUTO, "game_div");
-  game.state.add("boot", bootState);
-  game.state.add("preload", preloadState);
-  game.state.add("menu", menuState);
-  game.state.add("game", gameState);
-  game.state.add("gameOver", gameOverState);
-  game.state.start("boot");
+  game.state.add("BootState", Macchi3.BootState);
+  game.state.add("PreloadState", Macchi3.PreloadState);
+  game.state.add("MenuState", Macchi3.MenuState);
+  game.state.add("GameState", Macchi3.GameState);
+  game.state.add("GameoverState", Macchi3.GameoverState);
+  game.state.start("BootState");
 };
