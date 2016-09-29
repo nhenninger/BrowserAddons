@@ -1,4 +1,4 @@
-Macchi3.GameoverState = function(game) {
+Macchi3.GameoverState = function() {
 
 };
 
@@ -7,6 +7,6 @@ Macchi3.GameoverState.prototype = {
   },
 
   restart: function() {
-    this.state.start("MenuState");
+    Macchi3.game.state.start("MenuState");
   }
 };

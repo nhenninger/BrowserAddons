@@ -1,3 +1,10 @@
 {
-  "extends": "eslint-config-google"
+  "env": {
+  	"browser": true
+  },
+  "extends": "eslint-config-google",
+  "globals": {
+  	"Macchi3": true,
+  	"Phaser": false
+  }
 }

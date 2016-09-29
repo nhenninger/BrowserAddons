@@ -1,28 +1,14 @@
 /* With thanks to http://www.emanueleferonato.com/2016/05/17/match-3-bejeweled-html5-prototype-made-with-phaser/ */
 
-Macchi3.GameState = function(game) {
-  this.colorGroupIsOn = true;
-  this.currCharacterArray = [];
-  this.gameArray = [];
-  this.removeMap = [];
-  this.orbGroup = {};
-  this.selectedOrb = {};
-  this.canSelect = false;
-  this.score = 0;
-  this.scoreText = "";
-  this.NUM_GEM_GROUPS = 6;
-  this.SWAP_SPEED = 200;
-  this.FALL_SPEED = 1000;
-  this.DESTROY_SPEED = 500;
-  this.FAST_FALL = true;
+Macchi3.GameState = function() {
 };
 
 Macchi3.GameState.prototype = {
   create: function() {
     this.drawField();
-    this.canSelect = true;
-    this.input.onDown.add(this.orbSelect.bind(this));
-    this.input.onUp.add(this.orbDeselect.bind(this));
+    Macchi3.canSelect = true;
+    Macchi3.game.input.onDown.add(this.orbSelect.bind(this));
+    Macchi3.game.input.onUp.add(this.orbDeselect.bind(this));
   },
 
   update: function() {
@@ -30,11 +16,11 @@ Macchi3.GameState.prototype = {
 
   // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   shuffle: function(arr) {
-    var currentIndex = arr.length
+    var currentIndex = arr.length;
     var temporaryValue;
     var randomIndex;
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    while (currentIndex !== 0) {
      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
@@ -47,59 +33,59 @@ Macchi3.GameState.prototype = {
   },
 
   win: function() {
-    this.state.start("GameoverState");
+    Macchi3.game.state.start("GameoverState");
   },
 
   drawField: function() {
-    this.orbGroup = this.add.group();
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
-      this.gameArray[i] = [];
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
-        var orb = this.add.sprite(
-          GEM_DIMENSION * j + GEM_DIMENSION / 2,
-          GEM_DIMENSION * i + GEM_DIMENSION / 2,
+    // console.log(this);
+    Macchi3.orbGroup = Macchi3.game.add.group();
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
+      Macchi3.gameArray[i] = [];
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
+        var orb = Macchi3.game.add.sprite(
+          Macchi3.GEM_DIMENSION * j + Macchi3.GEM_DIMENSION / 2,
+          Macchi3.GEM_DIMENSION * i + Macchi3.GEM_DIMENSION / 2,
           "gems_spritesheet");
         orb.anchor.set(0.5);
-        this.orbGroup.add(orb);
+        Macchi3.orbGroup.add(orb);
         do {
-          var randomColor = this.rnd.between(0, this.NUM_GEM_GROUPS - 1);
+          var randomColor = Macchi3.game.rnd.between(
+            0,
+            Macchi3.NUM_GEM_GROUPS - 1);
           orb.frame = randomColor;
-          this.gameArray[i][j] = {
+          Macchi3.gameArray[i][j] = {
             orbColor: randomColor,
             orbSprite: orb
           };
         } while (this.isMatch(i, j));
       }
     }
-    this.selectedOrb = null;
+    Macchi3.selectedOrb = null;
   },
 
   orbSelect: function(e) {
-    if (this.canSelect) {
-      var row = Math.floor(e.clientY / GEM_DIMENSION);
-      var col = Math.floor(e.clientX / GEM_DIMENSION);
+    console.log(Macchi3.canSelect);
+    if (Macchi3.canSelect) {
+      var row = Math.floor(e.clientY / Macchi3.GEM_DIMENSION);
+      var col = Math.floor(e.clientX / Macchi3.GEM_DIMENSION);
       var pickedOrb = this.gemAt(row, col);
-      if (pickedOrb != -1) {
-        if (!this.selectedOrb) {
+      if (pickedOrb !== -1) {
+        if (Macchi3.selectedOrb === null) {
           pickedOrb.orbSprite.scale.setTo(1.2);
           pickedOrb.orbSprite.bringToTop();
-          this.selectedOrb = pickedOrb;
-          // this.input.addMoveCallback(this.orbMove.bind(this));
+          Macchi3.selectedOrb = pickedOrb;
+          // Macchi3.game.input.addMoveCallback(this.orbMove.bind(this));
+        } else if (this.areTheSame(pickedOrb, Macchi3.selectedOrb)) {
+          Macchi3.selectedOrb.orbSprite.scale.setTo(1);
+          Macchi3.selectedOrb = null;
+        } else if (this.areNext(pickedOrb, Macchi3.selectedOrb)) {
+          Macchi3.selectedOrb.orbSprite.scale.setTo(1);
+          this.swapOrbs(Macchi3.selectedOrb, pickedOrb, true);
         } else {
-          if (this.areTheSame(pickedOrb, this.selectedOrb)) {
-            this.selectedOrb.orbSprite.scale.setTo(1);
-            this.selectedOrb = null;
-          } else {
-            if (this.areNext(pickedOrb, this.selectedOrb)) {
-              this.selectedOrb.orbSprite.scale.setTo(1);
-              this.swapOrbs(this.selectedOrb, pickedOrb, true);
-            } else {
-              this.selectedOrb.orbSprite.scale.setTo(1);
-              pickedOrb.orbSprite.scale.setTo(1.2);
-              this.selectedOrb = pickedOrb;
-              // this.input.addMoveCallback(this.orbMove.bind(this));
-            }
-          }
+          Macchi3.selectedOrb.orbSprite.scale.setTo(1);
+          pickedOrb.orbSprite.scale.setTo(1.2);
+          Macchi3.selectedOrb = pickedOrb;
+          // Macchi3.game.input.addMoveCallback(this.orbMove.bind(this));
         }
       }
     }
@@ -107,77 +93,79 @@ Macchi3.GameState.prototype = {
 
   orbDeselect: function(e) {
     // console.log(this);
-    // this.input.deleteMoveCallback(this.orbMove.bind(this));
+    // Macchi3.game.input.deleteMoveCallback(this.orbMove.bind(this));
   },
 
   orbMove: function(event, pX, pY) {
     if (event.id === 0) {
-      var distX = pX - this.selectedOrb.orbSprite.x;
-      var distY = pY - this.selectedOrb.orbSprite.y;
+      var distX = pX - Macchi3.selectedOrb.orbSprite.x;
+      var distY = pY - Macchi3.selectedOrb.orbSprite.y;
       var deltaRow = 0;
       var deltaCol = 0;
-      if (Math.abs(distX) > GEM_DIMENSION / 2) {
+      if (Math.abs(distX) > Macchi3.GEM_DIMENSION / 2) {
         if (distX > 0) {
           deltaCol = 1;
         } else {
           deltaCol = -1;
         }
-      } else {
-        if (Math.abs(distY) > GEM_DIMENSION / 2) {
-          if (distY > 0) {
-            deltaRow = 1;
-          } else {
-            deltaRow = -1;
-          }
+      } else if (Math.abs(distY) > Macchi3.GEM_DIMENSION / 2) {
+        if (distY > 0) {
+          deltaRow = 1;
+        } else {
+          deltaRow = -1;
         }
       }
       if (deltaRow + deltaCol !== 0) {
         var pickedOrb = this.gemAt(
-          this.getOrbRow(this.selectedOrb) + deltaRow,
-          this.getOrbCol(this.selectedOrb) + deltaCol);
-        if (pickedOrb != -1) {
-          this.selectedOrb.orbSprite.scale.setTo(1);
-          this.swapOrbs(this.selectedOrb, pickedOrb, true);
-          // this.input.deleteMoveCallback(this.orbMove.bind(this));
+          this.getOrbRow(Macchi3.selectedOrb) + deltaRow,
+          this.getOrbCol(Macchi3.selectedOrb) + deltaCol);
+        if (pickedOrb !== -1) {
+          Macchi3.selectedOrb.orbSprite.scale.setTo(1);
+          this.swapOrbs(Macchi3.selectedOrb, pickedOrb, true);
+          // Macchi3.game.input.deleteMoveCallback(this.orbMove.bind(this));
         }
       }
     }
   },
 
   swapOrbs: function(orb1, orb2, swapBack) {
-    this.canSelect = false;
+    Macchi3.canSelect = false;
     var fromColor = orb1.orbColor;
     var fromSprite = orb1.orbSprite;
     var toColor = orb2.orbColor;
     var toSprite = orb2.orbSprite;
-    this.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)]
+    Macchi3.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)]
       .orbColor = toColor;
-    this.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)]
+    Macchi3.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)]
       .orbSprite = toSprite;
-    this.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)]
+    Macchi3.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)]
       .orbColor = fromColor;
-    this.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)]
+    Macchi3.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)]
       .orbSprite = fromSprite;
-    var orb1Tween = this.add.tween(
-      this.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)].orbSprite).to({
-        x: this.getOrbCol(orb1) * GEM_DIMENSION + GEM_DIMENSION / 2,
-        y: this.getOrbRow(orb1) * GEM_DIMENSION + GEM_DIMENSION / 2
-      }, this.SWAP_SPEED, Phaser.Easing.Linear.None, true);
-    var orb2Tween = this.add.tween(
-      this.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)].orbSprite).to({
-        x: this.getOrbCol(orb2) * GEM_DIMENSION + GEM_DIMENSION / 2,
-        y: this.getOrbRow(orb2) * GEM_DIMENSION + GEM_DIMENSION / 2
-      }, this.SWAP_SPEED, Phaser.Easing.Linear.None, true);
+    var orb1Tween = Macchi3.game.add.tween(
+      Macchi3.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)].orbSprite)
+        .to({
+          x: this.getOrbCol(orb1) * Macchi3.GEM_DIMENSION +
+            Macchi3.GEM_DIMENSION / 2,
+          y: this.getOrbRow(orb1) * Macchi3.GEM_DIMENSION +
+            Macchi3.GEM_DIMENSION / 2
+        }, Macchi3.SWAP_SPEED, Phaser.Easing.Linear.None, true);
+    var orb2Tween = Macchi3.game.add.tween(
+      Macchi3.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)].orbSprite)
+        .to({
+          x: this.getOrbCol(orb2) * Macchi3.GEM_DIMENSION +
+            Macchi3.GEM_DIMENSION / 2,
+          y: this.getOrbRow(orb2) * Macchi3.GEM_DIMENSION +
+            Macchi3.GEM_DIMENSION / 2
+        }, Macchi3.SWAP_SPEED, Phaser.Easing.Linear.None, true);
     orb2Tween.onComplete.add(function() {
       if (!this.matchInBoard() && swapBack) {
         this.swapOrbs(orb1, orb2, false);
+      } else if (this.matchInBoard()) {
+        this.handleMatches();
       } else {
-        if (this.matchInBoard()) {
-          this.handleMatches();
-        } else {
-          this.canSelect = true;
-          this.selectedOrb = null;
-        }
+        Macchi3.canSelect = true;
+        Macchi3.selectedOrb = null;
       }
     }.bind(this));
   },
@@ -194,52 +182,42 @@ Macchi3.GameState.prototype = {
   },
 
   gemAt: function(row, col) {
-    if (row < 0 || row >= BOARD_DIMENSION ||
-      col < 0 || col >= BOARD_DIMENSION) {
+    if (row < 0 || row >= Macchi3.BOARD_DIMENSION ||
+      col < 0 || col >= Macchi3.BOARD_DIMENSION) {
       return -1;
     }
-
-    // console.log(window.Macchi3);
-    if (!this.gameArray) {
-      console.log(this);
-      console.trace();
-      return this.prototype.gameArray[row][col];
-    } else {
-      // console.log(this);
-      return this.gameArray[row][col];
-    }
+    return Macchi3.gameArray[row][col];
   },
 
   getOrbRow: function(orb) {
-    return Math.floor(orb.orbSprite.y / GEM_DIMENSION);
+    return Math.floor(orb.orbSprite.y / Macchi3.GEM_DIMENSION);
   },
 
   getOrbCol: function(orb) {
-    return Math.floor(orb.orbSprite.x / GEM_DIMENSION);
+    return Math.floor(orb.orbSprite.x / Macchi3.GEM_DIMENSION);
   },
 
   isHorizontalMatch: function(row, col) {
     return (this.gemAt(row, col).orbColor ===
-    this.gemAt(row, col - 1).orbColor) &&
-    (this.gemAt(row, col).orbColor ===
-    this.gemAt(row, col - 2).orbColor);
+      this.gemAt(row, col - 1).orbColor) &&
+      (this.gemAt(row, col).orbColor ===
+      this.gemAt(row, col - 2).orbColor);
   },
 
   isVerticalMatch: function(row, col) {
     return (this.gemAt(row, col).orbColor ===
-    this.gemAt(row - 1, col).orbColor) &&
-    (this.gemAt(row, col).orbColor ===
-    this.gemAt(row - 2, col).orbColor);
+      this.gemAt(row - 1, col).orbColor) &&
+      (this.gemAt(row, col).orbColor ===
+      this.gemAt(row - 2, col).orbColor);
   },
 
   isMatch: function(row, col) {
-    return this.isHorizontalMatch(row, col) ||
-    this.isVerticalMatch(row, col);
+    return this.isHorizontalMatch(row, col) || this.isVerticalMatch(row, col);
   },
 
   matchInBoard: function() {
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
         if (this.isMatch(i, j)) {
           return true;
         }
@@ -250,11 +228,11 @@ Macchi3.GameState.prototype = {
 
   handleMatches: function() {
     // console.trace();
-    this.removeMap = [];
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
-      this.removeMap[i] = [];
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
-        this.removeMap[i].push(0);
+    Macchi3.removeMap = [];
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
+      Macchi3.removeMap[i] = [];
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
+        Macchi3.removeMap[i].push(0);
       }
     }
     // console.log(Macchi3.GameState);
@@ -272,22 +250,22 @@ Macchi3.GameState.prototype = {
   },
 
   handleVerticalMatches: function() {
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       var colorStreak = 1;
       var currentColor = -1;
       var startStreak = 0;
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
         if (this.gemAt(j, i).orbColor === currentColor) {
           colorStreak++;
         }
         if (this.gemAt(j, i).orbColor !== currentColor ||
-          j === BOARD_DIMENSION - 1) {
+          j === Macchi3.BOARD_DIMENSION - 1) {
           if (colorStreak >= 3) {
             console.log("VERTICAL :: Length = " + colorStreak +
               " :: Start = (" + startStreak +
               "," + i + ") :: Color = " + currentColor);
             for (let k = 0; k < colorStreak; k++) {
-              this.removeMap[startStreak + k][i]++;
+              Macchi3.removeMap[startStreak + k][i]++;
             }
           }
           startStreak = j;
@@ -299,22 +277,22 @@ Macchi3.GameState.prototype = {
   },
 
   handleHorizontalMatches: function() {
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       var colorStreak = 1;
       var currentColor = -1;
       var startStreak = 0;
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
         if (this.gemAt(i, j).orbColor === currentColor) {
           colorStreak++;
         }
         if (this.gemAt(i, j).orbColor !== currentColor ||
-          j === BOARD_DIMENSION - 1) {
+          j === Macchi3.BOARD_DIMENSION - 1) {
           if (colorStreak >= 3) {
             console.log("HORIZONTAL :: Length = " + colorStreak +
             " :: Start = (" + i + "," + startStreak +
             ") :: Color = " + currentColor);
             for (let k = 0; k < colorStreak; k++) {
-              this.removeMap[i][startStreak + k]++;
+              Macchi3.removeMap[i][startStreak + k]++;
             }
           }
           startStreak = j;
@@ -326,25 +304,27 @@ Macchi3.GameState.prototype = {
   },
 
   destroyOrbs: function() {
+    console.log(this);
     var destroyed = 0;
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
-        if (this.removeMap[i][j] > 0) {
-          var destroyTween = this.add.tween(this.gameArray[i][j].orbSprite).to({
-            alpha: 0
-          }, this.DESTROY_SPEED, Phaser.Easing.Linear.None, true);
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
+        if (Macchi3.removeMap[i][j] > 0) {
+          var destroyTween = Macchi3.game.add.tween(
+            Macchi3.gameArray[i][j].orbSprite).to({
+              alpha: 0
+            }, Macchi3.DESTROY_SPEED, Phaser.Easing.Linear.None, true);
           destroyed++;
           destroyTween.onComplete.add(function(orb) {
             orb.destroy();
             destroyed--;
             if (destroyed === 0) {
               this.makeOrbsFall();
-              if (this.FAST_FALL) {
+              if (Macchi3.FAST_FALL) {
                 this.replenishField();
               }
             }
           }.bind(this));
-          this.gameArray[i][j] = null;
+          Macchi3.gameArray[i][j] = null;
         }
       }
     }
@@ -353,36 +333,36 @@ Macchi3.GameState.prototype = {
   makeOrbsFall: function() {
     var fallen = 0;
     var restart = false;
-    for (let i = BOARD_DIMENSION - 2; i >= 0; i--) {
-      for (let j = 0; j < BOARD_DIMENSION; j++) {
-        if (this.gameArray[i][j]) {
+    for (let i = Macchi3.BOARD_DIMENSION - 2; i >= 0; i--) {
+      for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
+        if (Macchi3.gameArray[i][j]) {
           var fallTiles = this.holesBelow(i, j);
           if (fallTiles > 0) {
-            if (!this.FAST_FALL && fallTiles > 1) {
+            if (!Macchi3.FAST_FALL && fallTiles > 1) {
               fallTiles = 1;
               restart = true;
             }
-            var orb2Tween = this.add.tween(this.gameArray[i][j].orbSprite).to({
-              y: this.gameArray[i][j].orbSprite.y + fallTiles * GEM_DIMENSION
-            }, this.FALL_SPEED, Phaser.Easing.Linear.None, true);
+            var orb2Tween = Macchi3.game.add.tween(
+              Macchi3.gameArray[i][j].orbSprite).to({
+                y: Macchi3.gameArray[i][j].orbSprite.y +
+                  fallTiles * Macchi3.GEM_DIMENSION
+              }, Macchi3.FALL_SPEED, Phaser.Easing.Linear.None, true);
             fallen++;
             orb2Tween.onComplete.add(function() {
               fallen--;
               if (fallen === 0) {
                 if (restart) {
                   this.makeOrbsFall();
-                } else {
-                  if (!this.FAST_FALL) {
-                    this.replenishField();
-                  }
+                } else if (!Macchi3.FAST_FALL) {
+                  this.replenishField();
                 }
               }
             }.bind(this));
-            this.gameArray[i + fallTiles][j] = {
-              orbSprite: this.gameArray[i][j].orbSprite,
-              orbColor: this.gameArray[i][j].orbColor
+            Macchi3.gameArray[i + fallTiles][j] = {
+              orbSprite: Macchi3.gameArray[i][j].orbSprite,
+              orbColor: Macchi3.gameArray[i][j].orbColor
             };
-            this.gameArray[i][j] = null;
+            Macchi3.gameArray[i][j] = null;
           }
         }
       }
@@ -395,44 +375,44 @@ Macchi3.GameState.prototype = {
   replenishField: function() {
     var replenished = 0;
     var restart = false;
-    for (let j = 0; j < BOARD_DIMENSION; j++) {
+    for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
       var emptySpots = this.holesInCol(j);
       if (emptySpots > 0) {
-        if (!this.FAST_FALL && emptySpots > 1) {
+        if (!Macchi3.FAST_FALL && emptySpots > 1) {
           emptySpots = 1;
           restart = true;
         }
         for (let i = 0; i < emptySpots; i++) {
-          var orb = this.add.sprite(
-            GEM_DIMENSION * j + GEM_DIMENSION / 2,
-            -(GEM_DIMENSION * (emptySpots - 1 - i) + GEM_DIMENSION / 2),
+          var orb = Macchi3.game.add.sprite(
+            Macchi3.GEM_DIMENSION * j + Macchi3.GEM_DIMENSION / 2,
+            -(Macchi3.GEM_DIMENSION * (emptySpots - 1 - i) +
+            Macchi3.GEM_DIMENSION / 2),
             "gems_spritesheet");
           orb.anchor.set(0.5);
-          this.orbGroup.add(orb);
-          var randomColor = this.rnd.between(0, this.NUM_GEM_GROUPS - 1);
+          Macchi3.orbGroup.add(orb);
+          var randomColor = Macchi3.game.rnd.between(
+            0,
+            Macchi3.NUM_GEM_GROUPS - 1);
           orb.frame = randomColor;
-          this.gameArray[i][j] = {
+          Macchi3.gameArray[i][j] = {
             orbColor: randomColor,
             orbSprite: orb
           };
-          var orb2Tween = this.add.tween(this.gameArray[i][j].orbSprite).to({
-            y: GEM_DIMENSION * i + GEM_DIMENSION / 2
-          }, this.FALL_SPEED, Phaser.Easing.Linear.None, true);
+          var orb2Tween = Macchi3.game.add.tween(
+            Macchi3.gameArray[i][j].orbSprite).to({
+              y: Macchi3.GEM_DIMENSION * i + Macchi3.GEM_DIMENSION / 2
+            }, Macchi3.FALL_SPEED, Phaser.Easing.Linear.None, true);
           replenished++;
           orb2Tween.onComplete.add(function() {
             replenished--;
             if (replenished === 0) {
               if (restart) {
                 this.makeOrbsFall();
-              }
-              else {
-                if (this.matchInBoard()) {
-                  this.time.events.add(250, this.handleMatches);
-                }
-                else {
-                  this.canSelect = true;
-                  this.selectedOrb = null;
-                }
+              } else if (this.matchInBoard()) {
+                Macchi3.game.time.events.add(250, this.handleMatches);
+              } else {
+                Macchi3.canSelect = true;
+                Macchi3.selectedOrb = null;
               }
             }
           }.bind(this));
@@ -443,8 +423,8 @@ Macchi3.GameState.prototype = {
 
   holesBelow: function(row, col) {
     var result = 0;
-    for (let i = row + 1; i < BOARD_DIMENSION; i++) {
-      if (!this.gameArray[i][col]) {
+    for (let i = row + 1; i < Macchi3.BOARD_DIMENSION; i++) {
+      if (!Macchi3.gameArray[i][col]) {
         result++;
       }
     }
@@ -453,8 +433,8 @@ Macchi3.GameState.prototype = {
 
   holesInCol: function(col) {
     var result = 0;
-    for (let i = 0; i < BOARD_DIMENSION; i++) {
-      if (!this.gameArray[i][col]) {
+    for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
+      if (!Macchi3.gameArray[i][col]) {
         result++;
       }
     }

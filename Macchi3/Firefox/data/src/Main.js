@@ -1,10 +1,7 @@
-const BOARD_DIMENSION = 8;
-const GEM_DIMENSION = 100;
-
 window.onload = function() {
   var game = new Phaser.Game(
-    BOARD_DIMENSION * GEM_DIMENSION,
-    BOARD_DIMENSION * GEM_DIMENSION,
+    Macchi3.BOARD_DIMENSION * Macchi3.GEM_DIMENSION,
+    Macchi3.BOARD_DIMENSION * Macchi3.GEM_DIMENSION,
     Phaser.AUTO,
     "game_div");
   game.state.add("BootState", Macchi3.BootState);
