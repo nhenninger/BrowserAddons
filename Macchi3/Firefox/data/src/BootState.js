@@ -6,6 +6,7 @@ var Macchi3 = {
   FALL_SPEED: 1000,
   DESTROY_SPEED: 500,
   FAST_FALL: true,
+  lessonNum: 0,
   score: 0,
   scoreText: "",
   gameArray: [],

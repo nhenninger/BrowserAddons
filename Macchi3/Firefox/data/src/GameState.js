@@ -5,6 +5,12 @@ Macchi3.GameState = function() {
 
 Macchi3.GameState.prototype = {
   create: function() {
+    Macchi3.game.add.image(
+      Macchi3.game.world.centerX,
+      Macchi3.game.world.centerY,
+      "backgroundPicture").anchor.set(0.5);
+    var qKey = Macchi3.game.input.keyboard.addKey(Phaser.Keyboard.Q);
+    qKey.onDown.addOnce(this.quit, this);
     this.drawField();
     Macchi3.canSelect = true;
     Macchi3.game.input.onDown.add(this.orbSelect.bind(this));
@@ -32,8 +38,8 @@ Macchi3.GameState.prototype = {
     return arr;
   },
 
-  win: function() {
-    Macchi3.game.state.start("GameoverState");
+  quit: function() {
+    Macchi3.game.state.start("MenuState");
   },
 
   drawField: function() {
