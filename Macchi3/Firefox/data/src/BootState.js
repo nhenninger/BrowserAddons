@@ -1,11 +1,19 @@
-var Macchi3 = {};
+var Macchi3 = Macchi3 || {};
 
-Macchi3.bootState = function(game) {
+Macchi3.BootState = function(game) {};
+
+Macchi3.BootState.prototype = {
   preload: function() {
-    this.game.load.image("loading","assets/loading.png");
-	},
-  create: function () {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.state.start("preload");
+  },
+
+  create: function() {
+    // this.input.maxPointers = 1;
+    // this.stage.disableVisibilityChange = false;
+    // this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    // this.scale.pageAlignHorizontally = true;
+    // this.scale.pageAlignVertically = true;
+    // this.input.addPointer();
+    // this.physics.startSystem(Phaser.Physics.ARCADE);
+    this.state.start("PreloadState");
   }
 };
