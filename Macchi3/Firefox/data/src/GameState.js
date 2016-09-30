@@ -9,12 +9,15 @@ Macchi3.GameState.prototype = {
       Macchi3.game.world.centerX,
       Macchi3.game.world.centerY,
       "backgroundPicture").anchor.set(0.5);
-    var qKey = Macchi3.game.input.keyboard.addKey(Phaser.Keyboard.Q);
-    qKey.onDown.addOnce(this.quit, this);
-    this.drawField();
     Macchi3.canSelect = true;
     Macchi3.game.input.onDown.add(this.orbSelect.bind(this));
     Macchi3.game.input.onUp.add(this.orbDeselect.bind(this));
+    var qKey = Macchi3.game.input.keyboard.addKey(Phaser.Keyboard.Q);
+    qKey.onDown.addOnce(this.quit, this);
+    var phaserJSON = Macchi3.game.cache.getJSON("lessons");
+    Macchi3.currCharacterArray = phaserJSON["lesson" + Macchi3.lessonNum];
+    Macchi3.currCharacterArray = this.shuffle(Macchi3.currCharacterArray);
+    this.drawField();
   },
 
   update: function() {
@@ -42,8 +45,34 @@ Macchi3.GameState.prototype = {
     Macchi3.game.state.start("MenuState");
   },
 
+  // TODO: adjust font for meanings and readings
+  getText: function(index) {
+    if (Macchi3.lessonNum < 3) { // Syllabary
+      return Macchi3.game.rnd.frac() <= 0.5 ?
+        Macchi3.currCharacterArray[index].kana :
+        Macchi3.currCharacterArray[index].pronunciation;
+    }
+    // else Kanji - ESLint didn't like the explicit else clause
+    var rand = Macchi3.game.rnd.between(0, 3);
+    switch (rand) {
+      case 0:
+        return Macchi3.currCharacterArray[index].character;
+      case 1:
+        return Macchi3.currCharacterArray[index].on_yomi === "N/A" ?
+        Macchi3.currCharacterArray[index].kun_yomi :
+        Macchi3.currCharacterArray[index].on_yomi;
+      case 2:
+        return Macchi3.currCharacterArray[index].kun_yomi === "N/A" ?
+        Macchi3.currCharacterArray[index].on_yomi :
+        Macchi3.currCharacterArray[index].kun_yomi;
+      case 3:
+        return Macchi3.currCharacterArray[index].meaning;
+      default:
+        return;
+    }
+  },
+
   drawField: function() {
-    // console.log(this);
     Macchi3.orbGroup = Macchi3.game.add.group();
     for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       Macchi3.gameArray[i] = [];
@@ -53,7 +82,8 @@ Macchi3.GameState.prototype = {
           Macchi3.GEM_DIMENSION * i + Macchi3.GEM_DIMENSION / 2,
           "gems_spritesheet");
         orb.anchor.set(0.5);
-        Macchi3.orbGroup.add(orb);
+        orb.alpha = 0.1;
+        Macchi3.game.add.tween(orb).to({alpha: 1}, 1000, "Linear", true);
         do {
           var randomColor = Macchi3.game.rnd.between(
             0,
@@ -64,13 +94,24 @@ Macchi3.GameState.prototype = {
             orbSprite: orb
           };
         } while (this.isMatch(i, j));
+        // console.log(orb.frame);
+        var text = Macchi3.game.add.text(
+          0,
+          0,
+          this.getText(orb.frame),
+          {font:
+            "50px Arial",
+            fill: "#fff",
+            strokeThickness: 5});
+        text.anchor.set(0.5);
+        orb.addChild(text);
+        Macchi3.orbGroup.add(orb);
       }
     }
     Macchi3.selectedOrb = null;
   },
 
   orbSelect: function(e) {
-    console.log(Macchi3.canSelect);
     if (Macchi3.canSelect) {
       var row = Math.floor(e.clientY / Macchi3.GEM_DIMENSION);
       var col = Math.floor(e.clientX / Macchi3.GEM_DIMENSION);
@@ -98,7 +139,6 @@ Macchi3.GameState.prototype = {
   },
 
   orbDeselect: function(e) {
-    // console.log(this);
     // Macchi3.game.input.deleteMoveCallback(this.orbMove.bind(this));
   },
 
@@ -148,7 +188,7 @@ Macchi3.GameState.prototype = {
       .orbColor = fromColor;
     Macchi3.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)]
       .orbSprite = fromSprite;
-    var orb1Tween = Macchi3.game.add.tween(
+    Macchi3.game.add.tween(
       Macchi3.gameArray[this.getOrbRow(orb1)][this.getOrbCol(orb1)].orbSprite)
         .to({
           x: this.getOrbCol(orb1) * Macchi3.GEM_DIMENSION +
@@ -156,7 +196,7 @@ Macchi3.GameState.prototype = {
           y: this.getOrbRow(orb1) * Macchi3.GEM_DIMENSION +
             Macchi3.GEM_DIMENSION / 2
         }, Macchi3.SWAP_SPEED, Phaser.Easing.Linear.None, true);
-    var orb2Tween = Macchi3.game.add.tween(
+    var orb2SpriteTween = Macchi3.game.add.tween(
       Macchi3.gameArray[this.getOrbRow(orb2)][this.getOrbCol(orb2)].orbSprite)
         .to({
           x: this.getOrbCol(orb2) * Macchi3.GEM_DIMENSION +
@@ -164,7 +204,7 @@ Macchi3.GameState.prototype = {
           y: this.getOrbRow(orb2) * Macchi3.GEM_DIMENSION +
             Macchi3.GEM_DIMENSION / 2
         }, Macchi3.SWAP_SPEED, Phaser.Easing.Linear.None, true);
-    orb2Tween.onComplete.add(function() {
+    orb2SpriteTween.onComplete.add(function() {
       if (!this.matchInBoard() && swapBack) {
         this.swapOrbs(orb1, orb2, false);
       } else if (this.matchInBoard()) {
@@ -233,7 +273,6 @@ Macchi3.GameState.prototype = {
   },
 
   handleMatches: function() {
-    // console.trace();
     Macchi3.removeMap = [];
     for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       Macchi3.removeMap[i] = [];
@@ -241,18 +280,9 @@ Macchi3.GameState.prototype = {
         Macchi3.removeMap[i].push(0);
       }
     }
-    // console.log(Macchi3.GameState);
-    if (this.handleHorizontalMatches === undefined) {
-      console.log("I hate you");
-      Macchi3.GameState.prototype.handleHorizontalMatches();
-      Macchi3.GameState.prototype.handleVerticalMatches();
-      Macchi3.GameState.prototype.destroyOrbs();
-    } else {
-      this.handleHorizontalMatches();
-      this.handleVerticalMatches();
-      this.destroyOrbs();
-      console.log("<3");
-    }
+    Macchi3.GameState.prototype.handleHorizontalMatches();
+    Macchi3.GameState.prototype.handleVerticalMatches();
+    Macchi3.GameState.prototype.destroyOrbs();
   },
 
   handleVerticalMatches: function() {
@@ -310,7 +340,7 @@ Macchi3.GameState.prototype = {
   },
 
   destroyOrbs: function() {
-    console.log(this);
+    // console.log(this);
     var destroyed = 0;
     for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
@@ -404,6 +434,16 @@ Macchi3.GameState.prototype = {
             orbColor: randomColor,
             orbSprite: orb
           };
+          var text = Macchi3.game.add.text(
+            0,
+            0,
+            this.getText(orb.frame),
+            {font:
+              "50px Arial",
+              fill: "#fff",
+              strokeThickness: 5});
+          text.anchor.set(0.5);
+          orb.addChild(text);
           var orb2Tween = Macchi3.game.add.tween(
             Macchi3.gameArray[i][j].orbSprite).to({
               y: Macchi3.GEM_DIMENSION * i + Macchi3.GEM_DIMENSION / 2
