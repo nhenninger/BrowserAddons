@@ -59,14 +59,20 @@ Macchi3.GameState.prototype = {
         return Macchi3.currCharacterArray[index].character;
       case 1:
         return Macchi3.currCharacterArray[index].on_yomi === "N/A" ?
-        Macchi3.currCharacterArray[index].kun_yomi :
-        Macchi3.currCharacterArray[index].on_yomi;
+        Macchi3.currCharacterArray[index].kun_yomi
+          .split(/、/).join("\n") :
+        Macchi3.currCharacterArray[index].on_yomi
+          .split(/、/).join("\n");
       case 2:
         return Macchi3.currCharacterArray[index].kun_yomi === "N/A" ?
-        Macchi3.currCharacterArray[index].on_yomi :
-        Macchi3.currCharacterArray[index].kun_yomi;
+        Macchi3.currCharacterArray[index].on_yomi
+          .split(/、/).join("\n") :
+        Macchi3.currCharacterArray[index].kun_yomi
+          .split(/、/).join("\n");
       case 3:
-        return Macchi3.currCharacterArray[index].meaning;
+        return Macchi3.currCharacterArray[index].meaning
+          .split(/\s/).join("\n")
+          .split(/;\s/).join(";\n");
       default:
         return;
     }
@@ -95,14 +101,23 @@ Macchi3.GameState.prototype = {
           };
         } while (this.isMatch(i, j));
         // console.log(orb.frame);
+        var prelimText = this.getText(orb.frame);
         var text = Macchi3.game.add.text(
           0,
           0,
-          this.getText(orb.frame),
+          prelimText,
           {font:
             "50px Arial",
             fill: "#fff",
-            strokeThickness: 5});
+            strokeThickness: 5,
+            align: "center"});
+        if (prelimText.length > 2) {
+          text.setStyle(
+            {font: "20px Arial",
+            fill: "#fff",
+            strokeThickness: 5,
+            align: "center"});
+        }
         text.anchor.set(0.5);
         orb.addChild(text);
         Macchi3.orbGroup.add(orb);
@@ -434,14 +449,23 @@ Macchi3.GameState.prototype = {
             orbColor: randomColor,
             orbSprite: orb
           };
+          var prelimText = this.getText(orb.frame);
           var text = Macchi3.game.add.text(
             0,
             0,
-            this.getText(orb.frame),
+            prelimText,
             {font:
               "50px Arial",
               fill: "#fff",
-              strokeThickness: 5});
+              strokeThickness: 5,
+              align: "center"});
+          if (prelimText.length > 2) {
+            text.setStyle(
+              {font: "20px Arial",
+              fill: "#fff",
+              strokeThickness: 5,
+              align: "center"});
+          }
           text.anchor.set(0.5);
           orb.addChild(text);
           var orb2Tween = Macchi3.game.add.tween(
