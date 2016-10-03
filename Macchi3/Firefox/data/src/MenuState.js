@@ -46,13 +46,8 @@ Macchi3.MenuState.prototype = {
       Macchi3.game.height - 80,
       "Press 'Q' during the game to return to menu.",
       {font: "25px Arial", fill: "#fff", strokeThickness: 3}).anchor.set(0.5);
-    // var startLabel = Macchi3.game.add.text(80, Macchi3.game.world.height - 80, "Press the 'w' key to start", {font: "25px Times New Roman", fill: "#fff"});
 
     // TODO: add gem images raining down screen on menu.  Or make buttons wiggle.  See http://www.emanueleferonato.com/2014/10/07/how-to-bring-your-html5-games-title-screen-to-life-in-a-minute-with-phaser/
-
-    //
-    // var wkey = Macchi3.game.input.keyboard.addKey(Phaser.keyboard.W);
-    // wkey.onDown.addOnce(Macchi3.game.start, this);
   },
 
   start: function(button) {

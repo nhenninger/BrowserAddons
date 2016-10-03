@@ -45,7 +45,7 @@ Macchi3.GameState.prototype = {
     Macchi3.game.state.start("MenuState");
   },
 
-  // TODO: adjust font for meanings and readings
+  // TODO: fix font loading problem
   getText: function(index) {
     if (Macchi3.lessonNum < 3) { // Syllabary
       return Macchi3.game.rnd.frac() <= 0.5 ?
@@ -111,7 +111,7 @@ Macchi3.GameState.prototype = {
             fill: "#fff",
             strokeThickness: 5,
             align: "center"});
-        if (prelimText.length > 2) {
+        if (prelimText.length > 3) {
           text.setStyle(
             {font: "20px Arial",
             fill: "#fff",
@@ -459,7 +459,7 @@ Macchi3.GameState.prototype = {
               fill: "#fff",
               strokeThickness: 5,
               align: "center"});
-          if (prelimText.length > 2) {
+          if (prelimText.length > 3) {
             text.setStyle(
               {font: "20px Arial",
               fill: "#fff",

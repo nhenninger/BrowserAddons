@@ -19,13 +19,12 @@ Macchi3.PreloadState.prototype = {
       "gems_spritesheet",
       "assets/gems.png",
       Macchi3.GEM_DIMENSION,
-      Macchi3.GEM_DIMENSION); // TODO: write CC-BY attribution in extension description and in a license file
+      Macchi3.GEM_DIMENSION);
     Macchi3.game.load.image("backgroundPicture", "assets/back_cave.png");
     Macchi3.game.load.image("startButton", "assets/start_button.png");
   },
 
   create: function() {
-    // Macchi3.game.add.image(Macchi3.game.world.centerX, Macchi3.game.world.centerY, "backgroundPicture").anchor.set(0.5, 0.5);
   },
 
   update: function() {
