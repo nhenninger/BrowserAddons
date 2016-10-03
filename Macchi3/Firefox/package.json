@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "A match 3 game for Japanese kana and kanji.",
   "main": "index.js",
+  "icon": "icon.png",
   "author": "Nathan Henninger",
   "engines": {
     "firefox": ">=38.0a1",
