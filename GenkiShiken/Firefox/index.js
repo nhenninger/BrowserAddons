@@ -1,8 +1,5 @@
-/*jshint esversion: 6 */
-
-var { ToggleButton } = require('sdk/ui/button/toggle');
+var {ToggleButton} = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
-var self = require("sdk/self");
 
 var button = ToggleButton({
   id: "genkishiken",
@@ -33,11 +30,3 @@ function handleChange(state) {
 function handleHide() {
   button.state('window', {checked: false});
 }
-
-// a dummy function, to show how tests work.
-// to see how to test this function, look at test/test-index.js
-function dummy(text, callback) {
-  callback(text);
-}
-
-exports.dummy = dummy;

@@ -1,6 +1,8 @@
 Screenshots/
+test/
 changelog.txt
 *.xcf
 *.xpi
 *.md
 .jpmignore
+.eslintrc

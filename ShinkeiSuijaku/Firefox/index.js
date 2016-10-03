@@ -1,4 +1,3 @@
-var self = require("sdk/self");
 var windows = require("sdk/windows").browserWindows;
 var buttons = require('sdk/ui/button/action');
 

@@ -1,9 +1,10 @@
 {
   "title": "GenkiShiken",
   "name": "genkishiken",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Japanese quizzes from the Genki textbooks.",
   "main": "index.js",
+  "icon": "data/icon-48.png",
   "author": "Nathan Henninger",
   "engines": {
     "firefox": ">=38.0a1",

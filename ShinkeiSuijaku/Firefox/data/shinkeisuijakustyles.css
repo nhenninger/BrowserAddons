@@ -1,5 +1,6 @@
 body {
     background-color: lightblue;
+    font-size: 16px;
 }
 
 h1 {
@@ -44,7 +45,7 @@ div#memory_board > div > div.card_container {
   /*perspective: 700px;*/
 }
 
-.card_front, .card_back {
+.cardFront, .cardBack {
   backface-visibility: hidden;
   border:#000 1px solid;
   transition: transform 0.3s;
@@ -58,23 +59,23 @@ div#memory_board > div > div.card_container {
   justify-content: center;
 }
 
-div.card_front {
+div.cardFront {
   background-color: #FFFFFF;
     color: rgba(0, 0, 0, 0.3);
 }
 
-div.card_back {
+div.cardBack {
   background-color: #F5F5DC;
   transform: rotateY(180deg);
   flex-flow: column;
 }
 
 /* click effect */
-.card.flipped .card_front {
+.card.flipped .cardFront {
   transform: rotateY(-180deg);
 }
 
-.card.flipped .card_back {
+.card.flipped .cardBack {
   transform: rotateY(0);
 }
 

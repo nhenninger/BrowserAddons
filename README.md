@@ -12,7 +12,7 @@ A JavaScript and jQuery practice quiz.  Written as a study aid using the same le
 
 (マッチ3 - Match 3)
 
-A basic match 3 study game using the same lesson data as GenkiShiken and ShinkeiSuijaku.  In development.
+A basic match 3 study game using the same lesson data as GenkiShiken and ShinkeiSuijaku.    Available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/macchi3).
 
 ## JishoSeibiki
 
