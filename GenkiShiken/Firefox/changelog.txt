@@ -1,0 +1,11 @@
+## v1.0.0
+## 2016-09-16	Nathan Henninger	nathanhenninger@u.boisestate.edu
+	Initial release.
+
+## v1.0.1
+## 2016-10-03 Nathan Henninger nathanhenninger@u.boisestate.edu
+  Cleaned up global namespace.
+  Cleaned up unused code.
+  Added icon to about:addons page.
+  Increased font size.
+  Fixed typo in lesson 8.

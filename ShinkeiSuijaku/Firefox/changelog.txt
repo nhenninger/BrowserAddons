@@ -1,0 +1,16 @@
+## v1.0.0
+## 2016-08-02	Nathan Henninger	nathanhenninger@u.boisestate.edu
+	Initial release.
+
+## v1.0.1
+## 2016-08-03 Nathan Henninger nathanhenninger@u.boisestate.edu
+	Changing to asynchronous XMLHttpRequest.
+
+## v1.0.2
+## 2016-10-03 Nathan Henninger nathanhenninger@u.boisestate.edu
+  Cleaned up global namespace.
+  Cleaned up unused code.
+	Conforming to Google ESLint style guides.
+  Increased font size.
+  Added icon to about:addons page.
+	Fixed typo in lesson 8.
