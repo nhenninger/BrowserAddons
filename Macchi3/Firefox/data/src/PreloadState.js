@@ -13,7 +13,6 @@ Macchi3.PreloadState.prototype = {
       Macchi3.game.world.centerY,
       "ローディング...",
       {font: "30px Arial", fill: "#fff"}).anchor.set(0.5, 0.5);
-    // TODO: find font for the title on the menu page
     Macchi3.game.load.json("lessons", "lessons.json");
     Macchi3.game.load.spritesheet(
       "gems_spritesheet",
@@ -21,7 +20,6 @@ Macchi3.PreloadState.prototype = {
       Macchi3.GEM_DIMENSION,
       Macchi3.GEM_DIMENSION);
     Macchi3.game.load.image("backgroundPicture", "assets/back_cave.png");
-    Macchi3.game.load.image("startButton", "assets/start_button.png");
   },
 
   create: function() {

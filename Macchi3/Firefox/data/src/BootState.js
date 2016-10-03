@@ -25,13 +25,7 @@ Macchi3.BootState.prototype = {
   },
 
   create: function() {
-    // Macchi3.game.input.maxPointers = 1;
-    // Macchi3.game.stage.disableVisibilityChange = false;
-    // Macchi3.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    // Macchi3.game.scale.pageAlignHorizontally = true;
-    // Macchi3.game.scale.pageAlignVertically = true;
-    // Macchi3.game.input.addPointer();
-    // Macchi3.game.physics.startSystem(Phaser.Physics.ARCADE);
+    Macchi3.game.input.maxPointers = 1;
     Macchi3.game.state.start("PreloadState");
   }
 };

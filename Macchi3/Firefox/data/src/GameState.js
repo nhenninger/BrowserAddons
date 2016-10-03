@@ -45,7 +45,6 @@ Macchi3.GameState.prototype = {
     Macchi3.game.state.start("MenuState");
   },
 
-  // TODO: fix font loading problem
   getText: function(index) {
     if (Macchi3.lessonNum < 3) { // Syllabary
       return Macchi3.game.rnd.frac() <= 0.5 ?
@@ -100,7 +99,6 @@ Macchi3.GameState.prototype = {
             orbSprite: orb
           };
         } while (this.isMatch(i, j));
-        // console.log(orb.frame);
         var prelimText = this.getText(orb.frame);
         var text = Macchi3.game.add.text(
           0,
@@ -136,7 +134,6 @@ Macchi3.GameState.prototype = {
           pickedOrb.orbSprite.scale.setTo(1.2);
           pickedOrb.orbSprite.bringToTop();
           Macchi3.selectedOrb = pickedOrb;
-          // Macchi3.game.input.addMoveCallback(this.orbMove.bind(this));
         } else if (this.areTheSame(pickedOrb, Macchi3.selectedOrb)) {
           Macchi3.selectedOrb.orbSprite.scale.setTo(1);
           Macchi3.selectedOrb = null;
@@ -147,14 +144,12 @@ Macchi3.GameState.prototype = {
           Macchi3.selectedOrb.orbSprite.scale.setTo(1);
           pickedOrb.orbSprite.scale.setTo(1.2);
           Macchi3.selectedOrb = pickedOrb;
-          // Macchi3.game.input.addMoveCallback(this.orbMove.bind(this));
         }
       }
     }
   },
 
   orbDeselect: function(e) {
-    // Macchi3.game.input.deleteMoveCallback(this.orbMove.bind(this));
   },
 
   orbMove: function(event, pX, pY) {
@@ -183,7 +178,6 @@ Macchi3.GameState.prototype = {
         if (pickedOrb !== -1) {
           Macchi3.selectedOrb.orbSprite.scale.setTo(1);
           this.swapOrbs(Macchi3.selectedOrb, pickedOrb, true);
-          // Macchi3.game.input.deleteMoveCallback(this.orbMove.bind(this));
         }
       }
     }
@@ -355,7 +349,6 @@ Macchi3.GameState.prototype = {
   },
 
   destroyOrbs: function() {
-    // console.log(this);
     var destroyed = 0;
     for (let i = 0; i < Macchi3.BOARD_DIMENSION; i++) {
       for (let j = 0; j < Macchi3.BOARD_DIMENSION; j++) {
